@@ -8,11 +8,10 @@
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-family:'Segoe UI',Tahoma,sans-serif; }
 
-/* ── FIXED CONTROLS (outside scaled canvas) ── */
 .lang-toggle {
   position:fixed; top:12px; right:16px; z-index:999;
   display:flex; background:#e0e7ff; border-radius:30px; padding:3px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.25);
+  box-shadow:0 2px 10px rgba(0,0,0,0.15);
 }
 .lang-toggle button {
   border:none; background:transparent; padding:5px 18px;
@@ -21,196 +20,153 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
 }
 .lang-toggle button.active { background:#4f46e5; color:#fff; }
 
-
-/* ── SCALE STAGE: fixed 960×560, JS scales it ── */
 #stage {
   position:fixed;
-  width:960px; height:560px;
+  width:960px; height:580px;
   transform-origin:top left;
   background:#eef2ff;
   overflow:hidden;
 }
 
-/* ── SLIDES ── */
-.slide {
-  display:none; position:absolute; inset:0;
-  flex-direction:column;
-  animation:fi 0.3s ease;
-}
+.slide { display:none; position:absolute; inset:0; flex-direction:column; animation:fi 0.3s ease; }
 .slide.active { display:flex; }
-@keyframes fi { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fi { from{opacity:0;transform:translateY(5px)} to{opacity:1;transform:translateY(0)} }
 
-/* ── HEADER ── */
-.sh { text-align:center; padding:14px 20px 8px; flex-shrink:0; }
-.sn {
-  display:inline-block; background:#4f46e5; color:#fff;
-  width:26px; height:26px; border-radius:50%;
-  font-size:11px; font-weight:800; line-height:26px;
-  margin-bottom:4px;
-}
-.sh h2 { font-size:10px; font-weight:800; color:#6366f1; letter-spacing:2px; text-transform:uppercase; margin-bottom:3px; }
-.sh h3 { font-size:17px; font-weight:800; color:#1e1b4b; line-height:1.2; }
-.sh p  { font-size:10.5px; color:#6b7280; margin-top:3px; line-height:1.5; }
+/* HEADER */
+.sh { text-align:center; padding:12px 20px 6px; flex-shrink:0; }
+.sn { display:inline-block; background:#4f46e5; color:#fff; width:24px; height:24px; border-radius:50%; font-size:10px; font-weight:800; line-height:24px; margin-bottom:3px; }
+.sh h2 { font-size:10px; font-weight:800; color:#6366f1; letter-spacing:2px; text-transform:uppercase; margin-bottom:2px; }
+.sh h3 { font-size:16px; font-weight:800; color:#1e1b4b; line-height:1.2; }
+.sh p  { font-size:10px; color:#6b7280; margin-top:3px; line-height:1.45; }
 
-/* ── CONTENT AREA ── */
-.body { flex:1; min-height:0; padding:0 20px 12px; display:flex; flex-direction:column; justify-content:center; }
+.body { flex:1; min-height:0; padding:0 18px 10px; display:flex; flex-direction:column; justify-content:center; }
 
-/* ════════════════════════
-   S1 COVER
-════════════════════════ */
+/* COVER */
 .cover { text-align:center; }
 .cover .badge { display:inline-block; background:#4f46e5; color:#fff; font-size:11px; font-weight:800; padding:4px 16px; border-radius:16px; letter-spacing:1px; margin-bottom:14px; }
-.cover h1 { font-size:46px; font-weight:900; color:#1e1b4b; line-height:1.05; }
+.cover h1 { font-size:44px; font-weight:900; color:#1e1b4b; line-height:1.05; }
 .cover h1 span { color:#4f46e5; }
-.cover .bar { width:50px; height:4px; background:#4f46e5; border-radius:2px; margin:10px auto 12px; }
-.cover .sub { font-size:15px; font-weight:600; color:#4338ca; margin-bottom:10px; }
-.cover .tag { font-size:12px; color:#6b7280; font-style:italic; margin-bottom:16px; line-height:1.6; }
-.cover .foot { background:#fff; border-radius:10px; padding:10px 20px; font-size:11.5px; color:#374151; display:inline-block; box-shadow:0 2px 8px rgba(0,0,0,0.07); line-height:1.8; }
+.cover .bar { width:48px; height:4px; background:#4f46e5; border-radius:2px; margin:10px auto 12px; }
+.cover .sub { font-size:15px; font-weight:600; color:#4338ca; margin-bottom:8px; }
+.cover .tag { font-size:12px; color:#6b7280; font-style:italic; margin-bottom:14px; line-height:1.6; }
+.cover .foot { background:#fff; border-radius:10px; padding:10px 20px; font-size:11px; color:#374151; display:inline-block; box-shadow:0 2px 8px rgba(0,0,0,0.07); line-height:1.8; }
 
-/* ════════════════════════
-   S2 PROBLEM
-════════════════════════ */
-.prob { background:#fff; border-radius:14px; padding:22px 28px; box-shadow:0 2px 14px rgba(0,0,0,0.08); text-align:center; }
-.prob .bt { font-size:20px; font-weight:800; color:#1e1b4b; line-height:1.3; margin-bottom:18px; }
-.prob .bt span { color:#dc2626; }
-.srow { display:flex; gap:14px; justify-content:center; margin-bottom:16px; }
-.sc { background:#f8faff; border-radius:12px; padding:12px 16px; flex:1; max-width:175px; border:1px solid #e0e7ff; text-align:center; }
-.sc .n { font-size:26px; font-weight:900; color:#4f46e5; line-height:1; margin-bottom:4px; }
-.sc .l { font-size:11px; font-weight:700; color:#1e1b4b; margin-bottom:2px; }
-.sc .s { font-size:9.5px; color:#9ca3af; line-height:1.3; }
-.prob .desc { font-size:12px; color:#4b5563; line-height:1.6; max-width:620px; margin:0 auto; }
+/* STAT CARDS */
+.sgrid { display:flex; gap:10px; margin-bottom:10px; }
+.sc2 { background:#fff; border-radius:12px; padding:14px 12px; flex:1; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.07); }
+.sc2 .n { font-size:26px; font-weight:900; color:#4f46e5; line-height:1; margin-bottom:4px; }
+.sc2 .l { font-size:10.5px; font-weight:700; color:#1e1b4b; margin-bottom:2px; }
+.sc2 .s { font-size:9px; color:#9ca3af; line-height:1.35; }
 
-/* ════════════════════════
-   S3 OPPORTUNITY
-════════════════════════ */
-.sgrid { display:flex; gap:12px; }
-.stat-c { background:#fff; border-radius:13px; padding:16px 12px; flex:1; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.07); }
-.stat-c .n { font-size:28px; font-weight:900; color:#4f46e5; line-height:1; margin-bottom:4px; }
-.stat-c .l { font-size:11px; font-weight:700; color:#1e1b4b; margin-bottom:3px; }
-.stat-c .s { font-size:9.5px; color:#9ca3af; line-height:1.35; }
-.note { margin-top:11px; background:#fff; border-radius:9px; padding:9px 16px; font-size:11px; color:#374151; text-align:center; box-shadow:0 1px 5px rgba(0,0,0,0.05); }
+/* TABLE */
+.tbl { width:100%; border-collapse:collapse; font-size:10px; }
+.tbl th { background:#1e1b4b; color:#fff; padding:6px 8px; text-align:left; font-size:9.5px; font-weight:800; letter-spacing:0.5px; }
+.tbl td { padding:5px 8px; border-bottom:1px solid #e0e7ff; color:#374151; line-height:1.3; vertical-align:middle; }
+.tbl tr:nth-child(even) td { background:#f5f7ff; }
+.tbl .zero { color:#dc2626; font-weight:800; }
+.tbl-wrap { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.08); margin-bottom:8px; }
+.prob-desc { font-size:11px; color:#4b5563; line-height:1.55; text-align:center; background:#fff; border-radius:8px; padding:8px 14px; box-shadow:0 1px 5px rgba(0,0,0,0.05); }
 
-/* ════════════════════════
-   S4 SOLUTION
-════════════════════════ */
+/* NOTE */
+.note { background:#fff; border-radius:9px; padding:8px 14px; font-size:10.5px; color:#374151; text-align:center; box-shadow:0 1px 5px rgba(0,0,0,0.05); margin-top:8px; }
+
+/* LAYERS */
 .layers { display:flex; flex-direction:column; gap:6px; }
-.lay { border-radius:11px; padding:10px 16px; display:flex; align-items:flex-start; gap:12px; }
+.lay { border-radius:11px; padding:10px 15px; display:flex; align-items:flex-start; gap:12px; }
 .lay.l3 { background:#1e1b4b; color:#fff; }
 .lay.l2 { background:#4f46e5; color:#fff; }
 .lay.l1 { background:#dde5ff; color:#1e1b4b; }
-.lay .ln { font-size:9px; font-weight:800; letter-spacing:1px; opacity:.65; white-space:nowrap; margin-top:2px; min-width:48px; }
-.lay h4  { font-size:11.5px; font-weight:800; margin-bottom:3px; }
-.lay p   { font-size:10.5px; opacity:.85; line-height:1.45; }
-.arr { text-align:center; color:#6366f1; font-size:14px; line-height:1; }
-.sol-n { margin-top:9px; text-align:center; font-size:11px; color:#6b7280; font-style:italic; }
+.lay .ln { font-size:9px; font-weight:800; letter-spacing:1px; opacity:.65; white-space:nowrap; margin-top:2px; min-width:52px; }
+.lay h4  { font-size:11px; font-weight:800; margin-bottom:2px; }
+.lay p   { font-size:10px; opacity:.88; line-height:1.45; }
+.arr { text-align:center; color:#6366f1; font-size:13px; line-height:1; }
+.sol-notes { display:flex; gap:8px; margin-top:8px; }
+.sol-note { flex:1; text-align:center; font-size:10px; color:#4b5563; font-style:italic; background:#fff; border-radius:8px; padding:6px 10px; box-shadow:0 1px 5px rgba(0,0,0,0.05); }
 
-/* ════════════════════════
-   S5 VERTICALS
-════════════════════════ */
+/* VERTICALS */
 .vg { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
 .vc { background:#fff; border-radius:11px; padding:11px 9px; text-align:center; box-shadow:0 2px 7px rgba(0,0,0,0.07); }
 .vc .ico { font-size:20px; margin-bottom:5px; }
-.vc .t   { font-size:10.5px; font-weight:800; color:#1e1b4b; margin-bottom:3px; }
+.vc .t   { font-size:10.5px; font-weight:800; color:#1e1b4b; margin-bottom:2px; }
 .vc .d   { font-size:9px; color:#6b7280; line-height:1.35; }
 
-/* ════════════════════════
-   S6 REVENUE
-════════════════════════ */
-.rg { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
-.rc { background:#fff; border-radius:11px; padding:12px 12px; box-shadow:0 2px 7px rgba(0,0,0,0.07); }
+/* REVENUE */
+.rev-intro { font-size:10.5px; color:#4b5563; text-align:center; margin-bottom:8px; font-style:italic; }
+.rg { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; }
+.rc { background:#fff; border-radius:11px; padding:11px 11px; box-shadow:0 2px 7px rgba(0,0,0,0.07); }
 .rc .rn { font-size:9px; font-weight:800; color:#4f46e5; letter-spacing:1px; margin-bottom:3px; }
-.rc .rt { font-size:11.5px; font-weight:800; color:#1e1b4b; margin-bottom:3px; }
+.rc .rt { font-size:11px; font-weight:800; color:#1e1b4b; margin-bottom:2px; }
 .rc .rd { font-size:9.5px; color:#6b7280; line-height:1.4; }
-.rc .rl { margin-top:6px; font-size:8.5px; font-weight:700; color:#059669; background:#d1fae5; display:inline-block; padding:2px 7px; border-radius:7px; }
-.rfoot { text-align:center; margin-top:9px; font-size:10.5px; font-style:italic; color:#4b5563; }
+.rc .rl { margin-top:5px; font-size:8.5px; font-weight:700; color:#059669; background:#d1fae5; display:inline-block; padding:2px 7px; border-radius:7px; }
+.rfoot { text-align:center; margin-top:7px; font-size:10px; font-style:italic; color:#4b5563; }
 
-/* ════════════════════════
-   S7 CM VISION
-════════════════════════ */
-.phases { display:flex; gap:10px; margin-bottom:11px; }
-.pc { background:#fff; border-radius:11px; padding:13px 11px; flex:1; text-align:center; box-shadow:0 2px 7px rgba(0,0,0,0.07); border-top:3px solid #4f46e5; }
-.pc.p2 { border-top-color:#7c3aed; }
-.pc.p3 { border-top-color:#db2777; }
-.pc .pl { font-size:9.5px; font-weight:800; color:#4f46e5; letter-spacing:1px; margin-bottom:2px; }
+/* CM VISION */
+.phases { display:flex; gap:10px; margin-bottom:10px; }
+.pc { background:#fff; border-radius:11px; padding:12px 10px; flex:1; text-align:center; box-shadow:0 2px 7px rgba(0,0,0,0.07); border-top:3px solid #4f46e5; }
+.pc.p2 { border-top-color:#7c3aed; } .pc.p3 { border-top-color:#db2777; }
+.pc .pl { font-size:9px; font-weight:800; color:#4f46e5; letter-spacing:1px; margin-bottom:2px; }
 .pc.p2 .pl { color:#7c3aed; } .pc.p3 .pl { color:#db2777; }
-.pc .pt { font-size:9.5px; color:#9ca3af; margin-bottom:7px; }
-.pc .pn { font-size:24px; font-weight:900; color:#1e1b4b; line-height:1; }
-.pc .pu { font-size:9.5px; font-weight:700; color:#4b5563; margin-bottom:3px; }
-.pc .pd { font-size:9px; color:#6b7280; line-height:1.4; }
-.coh h4 { font-size:9.5px; font-weight:800; color:#4f46e5; letter-spacing:1px; margin-bottom:7px; }
-.cpills { display:flex; gap:7px; flex-wrap:wrap; }
-.cpill { background:#fff; border-radius:14px; padding:5px 11px; font-size:10.5px; font-weight:600; color:#1e1b4b; box-shadow:0 1px 5px rgba(0,0,0,0.07); }
+.pc .pt { font-size:9px; color:#9ca3af; margin-bottom:6px; }
+.pc .pn { font-size:22px; font-weight:900; color:#1e1b4b; line-height:1; }
+.pc .pu { font-size:9px; font-weight:700; color:#4b5563; margin-bottom:3px; }
+.pc .pd { font-size:8.5px; color:#6b7280; line-height:1.4; }
+.coh h4 { font-size:9px; font-weight:800; color:#4f46e5; letter-spacing:1px; margin-bottom:6px; }
+.cpills { display:flex; gap:6px; flex-wrap:wrap; }
+.cpill { background:#fff; border-radius:14px; padding:4px 11px; font-size:10px; font-weight:600; color:#1e1b4b; box-shadow:0 1px 5px rgba(0,0,0,0.07); }
 
-/* ════════════════════════
-   S8 ENTITY
-════════════════════════ */
-.two { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-.col { background:#fff; border-radius:13px; padding:13px 14px; box-shadow:0 2px 9px rgba(0,0,0,0.07); }
-.col h4 { font-size:9.5px; font-weight:800; color:#4f46e5; letter-spacing:1.5px; margin-bottom:9px; border-bottom:2px solid #e0e7ff; padding-bottom:6px; }
+/* ENTITY */
+.two { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+.col { background:#fff; border-radius:12px; padding:12px 13px; box-shadow:0 2px 8px rgba(0,0,0,0.07); }
+.col h4 { font-size:9px; font-weight:800; color:#4f46e5; letter-spacing:1.5px; margin-bottom:8px; border-bottom:2px solid #e0e7ff; padding-bottom:5px; }
 .col ul { list-style:none; }
-.col li { font-size:10px; color:#374151; padding:4px 0 4px 12px; border-bottom:1px solid #f3f4f6; line-height:1.4; position:relative; }
-.col li::before { content:'▸'; position:absolute; left:0; color:#4f46e5; font-size:8.5px; top:5px; }
-.efoot { margin-top:9px; background:#1e1b4b; color:#fff; border-radius:9px; padding:9px 14px; text-align:center; font-size:10.5px; font-style:italic; flex-shrink:0; }
+.col li { font-size:9.5px; color:#374151; padding:3px 0 3px 12px; border-bottom:1px solid #f3f4f6; line-height:1.4; position:relative; }
+.col li::before { content:'▸'; position:absolute; left:0; color:#4f46e5; font-size:8px; top:4px; }
+.efoot { margin-top:8px; background:#1e1b4b; color:#fff; border-radius:9px; padding:8px 14px; text-align:center; font-size:10px; font-style:italic; flex-shrink:0; }
 
-/* ════════════════════════
-   S9 ROADMAP
-════════════════════════ */
-.rm { display:flex; flex-direction:column; gap:7px; }
-.rp { background:#fff; border-radius:11px; padding:10px 13px; box-shadow:0 2px 6px rgba(0,0,0,0.06); display:flex; gap:13px; border-left:3px solid #4f46e5; }
+/* ROADMAP */
+.rm { display:flex; flex-direction:column; gap:6px; }
+.rp { background:#fff; border-radius:11px; padding:9px 12px; box-shadow:0 2px 6px rgba(0,0,0,0.06); display:flex; gap:12px; border-left:3px solid #4f46e5; }
 .rp.rp2 { border-left-color:#7c3aed; } .rp.rp3 { border-left-color:#db2777; }
-.rph { min-width:115px; flex-shrink:0; }
-.rpt { font-size:10.5px; font-weight:800; color:#4f46e5; }
+.rph { min-width:110px; flex-shrink:0; }
+.rpt { font-size:10px; font-weight:800; color:#4f46e5; }
 .rp.rp2 .rpt { color:#7c3aed; } .rp.rp3 .rpt { color:#db2777; }
-.rptm { font-size:9.5px; color:#9ca3af; margin-top:2px; }
-.rpi { font-size:10px; color:#374151; line-height:1.85; white-space:pre-line; }
+.rptm { font-size:9px; color:#9ca3af; margin-top:2px; }
+.rpi { font-size:9.5px; color:#374151; line-height:1.85; white-space:pre-line; }
 
-/* ════════════════════════
-   S10 GOVERNANCE
-════════════════════════ */
-.gt { background:#1e1b4b; color:#fff; border-radius:11px; padding:11px 18px; text-align:center; margin-bottom:9px; }
-.gt h4 { font-size:14px; font-weight:800; margin-bottom:3px; }
-.gt p  { font-size:10.5px; opacity:.7; }
-.gnodes { display:flex; gap:7px; margin-bottom:9px; }
-.gn { flex:1; background:#4f46e5; color:#fff; border-radius:9px; padding:9px; text-align:center; }
-.gn h5 { font-size:10.5px; font-weight:800; margin-bottom:2px; }
-.gn p  { font-size:9px; opacity:.8; }
-.gcyc { display:flex; gap:7px; margin-bottom:9px; }
-.gc { flex:1; background:#e0e7ff; border-radius:9px; padding:9px; text-align:center; }
-.gcl { font-size:9.5px; font-weight:800; color:#4f46e5; margin-bottom:2px; }
-.gcd { font-size:10px; color:#374151; }
-.gbot { background:#fff; border-radius:9px; padding:9px 16px; font-size:10.5px; color:#374151; text-align:center; box-shadow:0 1px 5px rgba(0,0,0,0.05); line-height:1.5; }
+/* GOVERNANCE TABLE */
+.gov-tbl { width:100%; border-collapse:collapse; font-size:9.5px; }
+.gov-tbl th { background:#1e1b4b; color:#fff; padding:6px 8px; text-align:left; font-size:9px; font-weight:800; letter-spacing:0.5px; }
+.gov-tbl td { padding:5px 8px; border-bottom:1px solid #e0e7ff; color:#374151; line-height:1.35; vertical-align:top; }
+.gov-tbl tr:nth-child(even) td { background:#f5f7ff; }
+.gov-tbl td:first-child { font-weight:700; color:#1e1b4b; width:40%; }
+.gov-notes { display:flex; gap:8px; margin-top:8px; }
+.gov-note { flex:1; background:#fff; border-radius:8px; padding:7px 12px; font-size:10px; color:#374151; box-shadow:0 1px 5px rgba(0,0,0,0.05); line-height:1.5; text-align:center; }
 
-/* ════════════════════════
-   S11 POLICY
-════════════════════════ */
-.pg { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+/* POLICY */
+.pg { display:grid; grid-template-columns:repeat(4,1fr); gap:7px; }
 .pc2 { background:#fff; border-radius:10px; padding:10px 10px; box-shadow:0 2px 6px rgba(0,0,0,0.06); border-left:3px solid #4f46e5; }
-.pc2 h5 { font-size:10px; font-weight:800; color:#1e1b4b; margin-bottom:3px; }
-.pc2 p  { font-size:9px; color:#6b7280; line-height:1.4; }
+.pc2 h5 { font-size:9.5px; font-weight:800; color:#1e1b4b; margin-bottom:3px; }
+.pc2 p  { font-size:8.5px; color:#6b7280; line-height:1.4; }
 
-/* ════════════════════════
-   S12 ASKS
-════════════════════════ */
-.ag { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-.ac { background:#fff; border-radius:13px; padding:14px 15px; box-shadow:0 2px 9px rgba(0,0,0,0.07); }
-.an { font-size:9.5px; font-weight:800; color:#4f46e5; letter-spacing:1px; margin-bottom:4px; }
-.at { font-size:12.5px; font-weight:800; color:#1e1b4b; margin-bottom:5px; }
-.aa { font-size:10.5px; color:#374151; line-height:1.45; margin-bottom:4px; }
-.ai { font-size:10px; color:#059669; font-style:italic; }
-.anote { text-align:center; margin-bottom:8px; font-size:10.5px; color:#6b7280; flex-shrink:0; }
+/* ASKS */
+.asks-note { text-align:center; margin-bottom:7px; font-size:10px; color:#6b7280; flex-shrink:0; }
+.ag { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+.ac { background:#fff; border-radius:12px; padding:13px 14px; box-shadow:0 2px 8px rgba(0,0,0,0.07); }
+.an { font-size:9px; font-weight:800; color:#4f46e5; letter-spacing:1px; margin-bottom:3px; }
+.at { font-size:12px; font-weight:800; color:#1e1b4b; margin-bottom:4px; }
+.aa { font-size:10px; color:#374151; line-height:1.45; margin-bottom:4px; }
+.ai { font-size:9.5px; color:#059669; font-style:italic; }
 
-/* ════════════════════════
-   S13 CLOSING
-════════════════════════ */
+/* CLOSING */
 .clos { text-align:center; }
-.clos h2 { font-size:28px; font-weight:900; color:#1e1b4b; margin-bottom:14px; }
+.clos h2 { font-size:26px; font-weight:900; color:#1e1b4b; margin-bottom:12px; }
 .clos h2 span { color:#4f46e5; }
-.cbb { background:#fff; border-radius:13px; padding:12px 22px; text-align:left; box-shadow:0 2px 9px rgba(0,0,0,0.07); margin-bottom:12px; }
-.cbb li { font-size:12px; color:#374151; padding:5px 0 5px 17px; border-bottom:1px solid #f3f4f6; line-height:1.4; list-style:none; position:relative; }
+.cbb { background:#fff; border-radius:12px; padding:10px 20px; text-align:left; box-shadow:0 2px 8px rgba(0,0,0,0.07); margin-bottom:10px; }
+.cbb li { font-size:11.5px; color:#374151; padding:5px 0 5px 16px; border-bottom:1px solid #f3f4f6; line-height:1.4; list-style:none; position:relative; }
 .cbb li:last-child { border-bottom:none; }
 .cbb li::before { content:'▸'; position:absolute; left:0; color:#4f46e5; }
-.cq { font-size:12px; color:#4b5563; font-style:italic; line-height:1.65; margin-bottom:10px; }
-.cs { font-size:10.5px; color:#9ca3af; }
+.cq { font-size:11.5px; color:#4b5563; font-style:italic; line-height:1.65; margin-bottom:8px; background:#fff; border-radius:10px; padding:10px 18px; box-shadow:0 1px 5px rgba(0,0,0,0.05); }
+.cs { font-size:10px; color:#9ca3af; }
 </style>
 </head>
 <body>
@@ -222,7 +178,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
 
 <div id="stage">
 
-<!-- ═══ S1 COVER ═══ -->
+<!-- ═══ SLIDE 1 ═══ -->
 <div class="slide active" id="s1">
   <div class="body" style="justify-content:center;">
     <div class="cover">
@@ -236,106 +192,125 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
   </div>
 </div>
 
-<!-- ═══ S2 PROBLEM ═══ -->
+<!-- ═══ SLIDE 2 ═══ -->
 <div class="slide" id="s2">
   <div class="sh"><div class="sn">02</div><h2 data-en="THE PROBLEM" data-te="సమస్య">THE PROBLEM</h2><h3 data-en="What Andhra Pradesh Loses Every Single Day" data-te="ఆంధ్రప్రదేశ్ ప్రతిరోజూ కోల్పోతున్నది">What Andhra Pradesh Loses Every Single Day</h3></div>
   <div class="body" style="justify-content:center;">
-    <div class="prob">
-      <div class="bt" data-en="Private platforms are <span>extracting value</span> from AP's consumers &amp; MSMEs — while the state earns <span>zero</span>." data-te="ప్రైవేట్ ప్లాట్‌ఫారమ్‌లు AP వినియోగదారుల నుండి <span>విలువను తీసుకుంటున్నాయి</span> — రాష్ట్రానికి మాత్రం <span>సున్నా</span> ఆదాయం.">Private platforms are <span>extracting value</span> from AP's consumers &amp; MSMEs — while the state earns <span>zero</span>.</div>
-      <div class="srow">
-        <div class="sc"><div class="n">5.3Cr</div><div class="l" data-en="AP Consumers" data-te="AP వినియోగదారులు">AP Consumers</div><div class="s" data-en="Paying commissions to private apps" data-te="ప్రైవేట్ యాప్‌లకు కమీషన్లు">Paying commissions to private apps</div></div>
-        <div class="sc"><div class="n">35L+</div><div class="l" data-en="AP MSMEs" data-te="AP MSMEలు">AP MSMEs</div><div class="s" data-en="Value extracted, zero to state" data-te="విలువ వెళ్ళిపోతోంది, రాష్ట్రానికి సున్నా">Value extracted, zero to state</div></div>
-        <div class="sc" style="border:2px solid #dc2626;"><div class="n" style="color:#dc2626;">₹0</div><div class="l" style="color:#dc2626;" data-en="State Revenue" data-te="రాష్ట్ర ఆదాయం">State Revenue</div><div class="s" data-en="From all digital commerce today" data-te="నేటి డిజిటల్ వాణిజ్యం నుండి">From all digital commerce today</div></div>
-      </div>
-      <div class="desc" data-en="AP's economy feeds private platforms every day. Every order placed, every delivery made — the value leaves the state. This must change." data-te="AP యొక్క ఆర్థిక వ్యవస్థ ప్రతిరోజూ ప్రైవేట్ ప్లాట్‌ఫారమ్‌లను పోషిస్తోంది. ప్రతి ఆర్డర్, ప్రతి డెలివరీ — విలువ రాష్ట్రాన్ని వదిలిపోతోంది. ఇది మారాలి.">AP's economy feeds private platforms every day. Every order placed, every delivery made — the value leaves the state. This must change.</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th data-en="COMMERCE VERTICAL" data-te="వాణిజ్య విభాగం">COMMERCE VERTICAL</th>
+            <th data-en="PLATFORM EXTRACTING VALUE" data-te="విలువను తీసుకునే ప్లాట్‌ఫారమ్">PLATFORM EXTRACTING VALUE</th>
+            <th data-en="COMMISSION RATE" data-te="కమీషన్ రేటు">COMMISSION RATE</th>
+            <th data-en="AP STATE REVENUE" data-te="AP రాష్ట్ర ఆదాయం">AP STATE REVENUE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td data-en="Food Delivery" data-te="ఆహార డెలివరీ">Food Delivery</td><td>Swiggy / Zomato</td><td>18–25%</td><td class="zero">ZERO</td></tr>
+          <tr><td data-en="Grocery" data-te="కిరాణా">Grocery</td><td>Blinkit / Zepto / Big Basket</td><td data-en="Full margin" data-te="పూర్తి మార్జిన్">Full margin</td><td class="zero">ZERO</td></tr>
+          <tr><td data-en="Ticket Booking" data-te="టికెట్ బుకింగ్">Ticket Booking</td><td>BookMyShow / Paytm</td><td data-en="Convenience fee" data-te="కన్వీనియన్స్ ఫీ">Convenience fee</td><td class="zero">ZERO</td></tr>
+          <tr><td data-en="GI Tag Products" data-te="GI ట్యాగ్ ఉత్పత్తులు">GI Tag Products</td><td>Amazon / Flipkart</td><td data-en="Sold without auth" data-te="అనుమతి లేకుండా అమ్ముతున్నారు">Sold without auth</td><td class="zero">ZERO</td></tr>
+          <tr><td data-en="MSME Products" data-te="MSME ఉత్పత్తులు">MSME Products</td><td>Flipkart Commerce</td><td>30–35%</td><td class="zero">ZERO</td></tr>
+          <tr><td data-en="Freelance / Services" data-te="ఫ్రీలాన్స్ / సేవలు">Freelance / Services</td><td>Urban Company / UrbanClap</td><td>25–30%</td><td class="zero">ZERO</td></tr>
+        </tbody>
+      </table>
     </div>
+    <div class="prob-desc" data-en="Private platforms extract value from AP's 5.3 crore consumers and 35 lakh+ MSMEs while the state earns zero." data-te="ప్రైవేట్ ప్లాట్‌ఫారమ్‌లు AP యొక్క 5.3 కోటి వినియోగదారుల నుండి మరియు 35 లక్షలకు పైగా MSMEల నుండి విలువను తీసుకుంటున్నాయి, రాష్ట్రానికి మాత్రం సున్నా ఆదాయం వస్తోంది.">Private platforms extract value from AP's 5.3 crore consumers and 35 lakh+ MSMEs while the state earns zero.</div>
   </div>
 </div>
 
-<!-- ═══ S3 OPPORTUNITY ═══ -->
+<!-- ═══ SLIDE 3 ═══ -->
 <div class="slide" id="s3">
   <div class="sh"><div class="sn">03</div><h2 data-en="THE OPPORTUNITY" data-te="అవకాశం">THE OPPORTUNITY</h2><h3 data-en="AP is the Anchor State — First Mover Advantage" data-te="AP యాంకర్ రాష్ట్రం — ఫస్ట్ మూవర్ అడ్వాంటేజ్">AP is the Anchor State — First Mover Advantage</h3></div>
   <div class="body" style="justify-content:center;">
     <div class="sgrid">
-      <div class="stat-c"><div class="n">35L+</div><div class="l" data-en="MSME Units" data-te="MSME యూనిట్లు">MSME Units</div><div class="s" data-en="National commerce access is stated policy priority" data-te="జాతీయ వాణిజ్య ప్రాప్యత విధాన ప్రాధాన్యత">National commerce access is stated policy priority</div></div>
-      <div class="stat-c"><div class="n">60%</div><div class="l" data-en="Population in Agri" data-te="వ్యవసాయంలో జనాభా">Population in Agri</div><div class="s" data-en="Highest agri output in South India" data-te="దక్షిణ భారతదేశంలో అత్యధిక వ్యవసాయ ఉత్పత్తి">Highest agri output in South India</div></div>
-      <div class="stat-c"><div class="n">14L+</div><div class="l" data-en="ONDC Daily Txns" data-te="ONDC రోజువారీ లావాదేవీలు">ONDC Daily Txns</div><div class="s" data-en="Network operational &amp; scaling fast" data-te="నెట్‌వర్క్ పనిచేస్తూ వేగంగా విస్తరిస్తోంది">Network operational &amp; scaling fast</div></div>
-      <div class="stat-c" style="background:#1e1b4b;"><div class="n" style="color:#a5b4fc;">#1</div><div class="l" style="color:#fff;" data-en="South India First Mover" data-te="దక్షిణ భారత మొదటి అడుగు">South India First Mover</div><div class="s" style="color:#c7d2fe;" data-en="No south Indian state has claimed ONDC NP yet" data-te="ఇంకా ఏ దక్షిణ భారత రాష్ట్రం ONDC NP తీసుకోలేదు">No south Indian state has claimed ONDC NP yet</div></div>
+      <div class="sc2"><div class="n">35L+</div><div class="l" data-en="MSME Units" data-te="MSME యూనిట్లు">MSME Units</div><div class="s" data-en="National commerce access is stated policy priority" data-te="జాతీయ వాణిజ్య ప్రాప్యత విధాన ప్రాధాన్యత">National commerce access is stated policy priority</div></div>
+      <div class="sc2"><div class="n">60%</div><div class="l" data-en="Population in Agri" data-te="వ్యవసాయంలో జనాభా">Population in Agri</div><div class="s" data-en="Highest agri output in South India" data-te="దక్షిణ భారతదేశంలో అత్యధిక వ్యవసాయ ఉత్పత్తి">Highest agri output in South India</div></div>
+      <div class="sc2"><div class="n">14L+</div><div class="l" data-en="ONDC Daily Txns" data-te="ONDC రోజువారీ లావాదేవీలు">ONDC Daily Txns</div><div class="s" data-en="National network operational &amp; scaling fast" data-te="జాతీయ నెట్‌వర్క్ పనిచేస్తూ వేగంగా విస్తరిస్తోంది">National network operational &amp; scaling fast</div></div>
+      <div class="sc2" style="background:#1e1b4b;"><div class="n" style="color:#a5b4fc;">#1</div><div class="l" style="color:#fff;" data-en="South India First Mover" data-te="దక్షిణ భారత మొదటి అడుగు">South India First Mover</div><div class="s" style="color:#c7d2fe;" data-en="No south Indian state has claimed ONDC NP" data-te="ఇంకా ఏ దక్షిణ భారత రాష్ట్రం ONDC NP తీసుకోలేదు">No south Indian state has claimed ONDC NP</div></div>
     </div>
     <div class="note" data-en="ONDC surpassed 14 lakh daily transactions in 2024. The Nagaland Ilandlo precedent (2023) fully validates the governance model." data-te="ONDC 2024లో రోజువారీ 14 లక్షల లావాదేవీలు దాటింది. నాగాలాండ్ ఇలాండ్లో నమూనా (2023) పాలన మోడల్‌ను పూర్తిగా ధృవీకరించింది.">ONDC surpassed 14 lakh daily transactions in 2024. The Nagaland Ilandlo precedent (2023) fully validates the governance model.</div>
   </div>
 </div>
 
-<!-- ═══ S4 SOLUTION ═══ -->
+<!-- ═══ SLIDE 4 ═══ -->
 <div class="slide" id="s4">
-  <div class="sh"><div class="sn">04</div><h2 data-en="THE SOLUTION" data-te="పరిష్కారం">THE SOLUTION</h2><h3 data-en="AP Commerce Stack — Architecture Overview" data-te="AP కామర్స్ స్టాక్ — నిర్మాణ అవలోకనం">AP Commerce Stack — Architecture Overview</h3><p data-en="APCS is state-owned digital commerce middleware on ONDC. Government of AP owns the platform, the data, and the revenue." data-te="APCS అనేది ONDC పై రాష్ట్ర యాజమాన్యంలో ఉన్న డిజిటల్ వాణిజ్య మిడిల్‌వేర్. AP ప్రభుత్వం ప్లాట్‌ఫారమ్, డేటా మరియు ఆదాయాన్ని స్వంతం చేసుకుంటుంది.">APCS is state-owned digital commerce middleware on ONDC. Government of AP owns the platform, the data, and the revenue.</p></div>
+  <div class="sh"><div class="sn">04</div><h2 data-en="THE SOLUTION" data-te="పరిష్కారం">THE SOLUTION</h2><h3 data-en="AP Commerce Stack — Architecture Overview" data-te="AP కామర్స్ స్టాక్ — నిర్మాణ అవలోకనం">AP Commerce Stack — Architecture Overview</h3><p data-en="APCS is state-owned digital commerce middleware on ONDC. Government of AP owns the platform, the data, and the revenue. Zian builds and operates it." data-te="APCS అనేది ONDC పై రాష్ట్ర యాజమాన్యంలో ఉన్న డిజిటల్ వాణిజ్య మిడిల్‌వేర్. AP ప్రభుత్వం ప్లాట్‌ఫారమ్, డేటా మరియు ఆదాయాన్ని స్వంతం చేసుకుంటుంది. జియాన్ దాన్ని నిర్మిస్తుంది మరియు నిర్వహిస్తుంది.">APCS is state-owned digital commerce middleware on ONDC. Government of AP owns the platform, the data, and the revenue. Zian builds and operates it.</p></div>
   <div class="body" style="justify-content:center;">
     <div class="layers">
-      <div class="lay l3"><div class="ln">LAYER 3</div><div><h4 data-en="ONDC NATIONAL PROTOCOL" data-te="ONDC జాతీయ ప్రోటోకాల్">ONDC NATIONAL PROTOCOL</h4><p data-en="Open protocol by ONDC Foundation / DPIIT. AP joins as certified Network Participant — every AP seller gets national market access instantly." data-te="ONDC ఫౌండేషన్ / DPIIT ఓపెన్ ప్రోటోకాల్. AP సర్టిఫైడ్ నెట్‌వర్క్ పార్టిసిపెంట్‌గా చేరుతుంది — ప్రతి AP విక్రేతకు తక్షణ జాతీయ మార్కెట్ ప్రాప్యత.">Open protocol by ONDC Foundation / DPIIT. AP joins as certified Network Participant — every AP seller gets national market access instantly.</p></div></div>
+      <div class="lay l3"><div class="ln">LAYER 3</div><div><h4 data-en="LAYER 3 — ONDC NATIONAL PROTOCOL" data-te="లేయర్ 3 — ONDC జాతీయ ప్రోటోకాల్">LAYER 3 — ONDC NATIONAL PROTOCOL</h4><p data-en="Open protocol operated by ONDC Foundation / DPIIT. AP joins as certified Network Participant. Every AP seller gets national market access instantly." data-te="ONDC ఫౌండేషన్ / DPIIT నిర్వహించే ఓపెన్ ప్రోటోకాల్. AP సర్టిఫైడ్ నెట్‌వర్క్ పార్టిసిపెంట్‌గా చేరుతుంది. ప్రతి AP విక్రేతకు తక్షణ జాతీయ మార్కెట్ ప్రాప్యత లభిస్తుంది.">Open protocol operated by ONDC Foundation / DPIIT. AP joins as certified Network Participant. Every AP seller gets national market access instantly.</p></div></div>
       <div class="arr">▼</div>
-      <div class="lay l2"><div class="ln">LAYER 2</div><div><h4 data-en="APCS STATE MIDDLEWARE (CORE)" data-te="APCS రాష్ట్ర మిడిల్‌వేర్ (కోర్)">APCS STATE MIDDLEWARE (CORE)</h4><p data-en="Government-owned: Aadhaar identity, payment settlement, GST compliance, ad marketplace, analytics, Brand Andhra GI registry. Operated by Zian as TSP." data-te="ప్రభుత్వ యాజమాన్యం: ఆధార్ గుర్తింపు, చెల్లింపు సెటిల్‌మెంట్, GST కంప్లయన్స్, యాడ్ మార్కెట్‌ప్లేస్, అనలిటిక్స్, బ్రాండ్ ఆంధ్ర GI రిజిస్ట్రీ. జియాన్ TSPగా నిర్వహిస్తుంది.">Government-owned: Aadhaar identity, payment settlement, GST compliance, ad marketplace, analytics, Brand Andhra GI registry. Operated by Zian as TSP.</p></div></div>
+      <div class="lay l2"><div class="ln">LAYER 2</div><div><h4 data-en="LAYER 2 — APCS STATE MIDDLEWARE (CORE)" data-te="లేయర్ 2 — APCS రాష్ట్ర మిడిల్‌వేర్ (కోర్)">LAYER 2 — APCS STATE MIDDLEWARE (CORE)</h4><p data-en="Government-owned platform: Aadhaar identity, payment settlement, GST compliance, advertising marketplace, analytics, Brand Andhra GI registry. Operated by Zian as TSP." data-te="ప్రభుత్వ యాజమాన్య ప్లాట్‌ఫారమ్: ఆధార్ గుర్తింపు, చెల్లింపు సెటిల్‌మెంట్, GST కంప్లయన్స్, ప్రకటనల మార్కెట్‌ప్లేస్, అనలిటిక్స్, బ్రాండ్ ఆంధ్ర GI రిజిస్ట్రీ. జియాన్ TSPగా నిర్వహిస్తుంది.">Government-owned platform: Aadhaar identity, payment settlement, GST compliance, advertising marketplace, analytics, Brand Andhra GI registry. Operated by Zian as TSP.</p></div></div>
       <div class="arr">▼</div>
-      <div class="lay l1"><div class="ln">LAYER 1</div><div><h4 data-en="8 COMMERCE VERTICALS" data-te="8 వాణిజ్య విభాగాలు">8 COMMERCE VERTICALS</h4><p data-en="Food Delivery | Grocery | Ticket Booking | My Services | Brand Andhra (GI) | My Products | MSME Products | Agri Products" data-te="ఆహార డెలివరీ | కిరాణా | టికెట్ బుకింగ్ | మై సర్వీసెస్ | బ్రాండ్ ఆంధ్ర (GI) | మై ప్రొడక్ట్స్ | MSME ఉత్పత్తులు | వ్యవసాయ ఉత్పత్తులు">Food Delivery | Grocery | Ticket Booking | My Services | Brand Andhra (GI) | My Products | MSME Products | Agri Products</p></div></div>
+      <div class="lay l1"><div class="ln">LAYER 1</div><div><h4 data-en="LAYER 1 — 8 COMMERCE VERTICALS" data-te="లేయర్ 1 — 8 వాణిజ్య విభాగాలు">LAYER 1 — 8 COMMERCE VERTICALS</h4><p data-en="Food Delivery  |  Grocery  |  Ticket Booking  |  My Services  |  Brand Andhra (GI)  |  My Products  |  MSME Products  |  Agri Products" data-te="ఆహార డెలివరీ  |  కిరాణా  |  టికెట్ బుకింగ్  |  మై సర్వీసెస్  |  బ్రాండ్ ఆంధ్ర (GI)  |  మై ప్రొడక్ట్స్  |  MSME ఉత్పత్తులు  |  వ్యవసాయ ఉత్పత్తులు">Food Delivery  |  Grocery  |  Ticket Booking  |  My Services  |  Brand Andhra (GI)  |  My Products  |  MSME Products  |  Agri Products</p></div></div>
     </div>
-    <div class="sol-n" data-en="NPCI owns UPI. Government of AP will own APCS — the state's commerce operating system." data-te="NPCI UPIని స్వంతం చేసుకుంది. AP ప్రభుత్వం APCSని స్వంతం చేసుకుంటుంది — రాష్ట్ర వాణిజ్య ఆపరేటింగ్ సిస్టమ్.">NPCI owns UPI. Government of AP will own APCS — the state's commerce operating system.</div>
+    <div class="sol-notes">
+      <div class="sol-note" data-en="NPCI owns UPI. Government of AP will own APCS — the state's commerce operating system." data-te="NPCI UPIని స్వంతం చేసుకుంది. AP ప్రభుత్వం APCSని స్వంతం చేసుకుంటుంది — రాష్ట్ర వాణిజ్య ఆపరేటింగ్ సిస్టమ్.">NPCI owns UPI. Government of AP will own APCS — the state's commerce operating system.</div>
+      <div class="sol-note" data-en="Zian Technologies LLP — Nodal Agency + Technology Service Provider. Single-window accountability." data-te="జియాన్ టెక్నాలజీస్ LLP — నోడల్ ఏజెన్సీ + టెక్నాలజీ సేవా ప్రదాత. సింగిల్-విండో జవాబుదారీతనం.">Zian Technologies LLP — Nodal Agency + Technology Service Provider. Single-window accountability.</div>
+    </div>
   </div>
 </div>
 
-<!-- ═══ S5 VERTICALS ═══ -->
+<!-- ═══ SLIDE 5 ═══ -->
 <div class="slide" id="s5">
   <div class="sh"><div class="sn">05</div><h2 data-en="PLATFORM SCOPE" data-te="ప్లాట్‌ఫారమ్ పరిధి">PLATFORM SCOPE</h2><h3 data-en="Eight Commerce Verticals — Unified Under AP Governance" data-te="ఎనిమిది వాణిజ్య విభాగాలు — AP పాలన కింద ఏకీకృతం">Eight Commerce Verticals — Unified Under AP Governance</h3></div>
   <div class="body" style="justify-content:center;">
     <div class="vg">
-      <div class="vc"><div class="ico">🍽️</div><div class="t" data-en="Food Delivery" data-te="ఆహార డెలివరీ">Food Delivery</div><div class="d" data-en="Govt-governed Swiggy/Zomato alternative. FSSAI-compliant. Commission set by GoAP." data-te="ప్రభుత్వ నియంత్రిత ప్రత్యామ్నాయం. FSSAI అనుకూలం. కమీషన్ GoAP నిర్ణయిస్తుంది.">Govt-governed Swiggy/Zomato alternative. FSSAI-compliant.</div></div>
-      <div class="vc"><div class="ico">🎟️</div><div class="t" data-en="Ticket Booking" data-te="టికెట్ బుకింగ్">Ticket Booking</div><div class="d" data-en="Cinema, culture, sports, pilgrimage, govt facilities. Convenience fee → state." data-te="సినిమా, సంస్కృతి, క్రీడలు, యాత్ర. కన్వీనియన్స్ ఫీ → రాష్ట్రానికి.">Cinema, culture, sports, pilgrimage. Convenience fee → state.</div></div>
-      <div class="vc"><div class="ico">🛒</div><div class="t" data-en="Grocery Delivery" data-te="కిరాణా డెలివరీ">Grocery Delivery</div><div class="d" data-en="Hyperlocal kirana network. Telugu-language interface. Rural Tier-3/4 inclusion." data-te="హైపర్‌లోకల్ కిరాణా నెట్‌వర్క్. తెలుగు భాషా ఇంటర్‌ఫేస్. గ్రామీణ చేరిక.">Hyperlocal kirana network. Telugu-language. Rural Tier-3/4 inclusion.</div></div>
-      <div class="vc"><div class="ico">🌾</div><div class="t" data-en="Agri Products" data-te="వ్యవసాయ ఉత్పత్తులు">Agri Products</div><div class="d" data-en="Farmer direct-to-buyer. eNAM integration. Guntur chilli, Banganapalli mango." data-te="రైతు నేరుగా కొనుగోలుదారుకు. eNAM ఇంటిగ్రేషన్. గుంటూరు మిర్చి, మామిడి.">Farmer direct-to-buyer. eNAM integration. Guntur chilli, mango.</div></div>
-      <div class="vc"><div class="ico">🏺</div><div class="t" data-en="Brand Andhra (GI)" data-te="బ్రాండ్ ఆంధ్ర (GI)">Brand Andhra (GI)</div><div class="d" data-en="Govt-authenticated GI store. Kondapalli Toys, Kalamkari. International export gateway." data-te="ప్రభుత్వ ధృవీకృత GI స్టోర్. కొండపల్లి బొమ్మలు, కలంకారీ. అంతర్జాతీయ ఎగుమతి.">Govt-authenticated GI store. Kondapalli Toys, Kalamkari. Export gateway.</div></div>
-      <div class="vc"><div class="ico">🏭</div><div class="t" data-en="MSME Products" data-te="MSME ఉత్పత్తులు">MSME Products</div><div class="d" data-en="35L+ MSME units on ONDC. B2B discovery + Govt procurement overlay." data-te="35 లక్షలకు పైగా MSME యూనిట్లు ONDC పై. B2B డిస్కవరీ + ప్రభుత్వ కొనుగోలు.">35L+ MSME units on ONDC. B2B + Govt procurement overlay.</div></div>
-      <div class="vc"><div class="ico">🔧</div><div class="t" data-en="My Services" data-te="మై సర్వీసెస్">My Services</div><div class="d" data-en="Electricians, doctors, tutors. Aadhaar-verified. Escrow payment. APSSDC certified." data-te="ఎలక్ట్రీషియన్లు, డాక్టర్లు, ట్యూటర్లు. ఆధార్ ధృవీకృత. ఎస్క్రో చెల్లింపు.">Electricians, doctors, tutors. Aadhaar-verified. Escrow payment.</div></div>
-      <div class="vc"><div class="ico">📦</div><div class="t" data-en="My Products (D2C)" data-te="మై ప్రొడక్ట్స్ (D2C)">My Products (D2C)</div><div class="d" data-en="Home-based sellers direct-to-consumer. GST auto-invoice. National ONDC reach Day 1." data-te="ఇంటి ఆధారిత విక్రేతలకు నేరుగా. GST ఆటో-ఇన్‌వాయిస్. మొదటి రోజు జాతీయ అందుబాటు.">Home-based sellers D2C. GST auto-invoice. National ONDC reach Day 1.</div></div>
+      <div class="vc"><div class="ico">🍽</div><div class="t" data-en="Food Delivery" data-te="ఆహార డెలివరీ">Food Delivery</div><div class="d" data-en="Govt-governed Swiggy/Zomato alternative. FSSAI-compliant. Commission set by GoAP." data-te="ప్రభుత్వ నియంత్రిత Swiggy/Zomato ప్రత్యామ్నాయం. FSSAI అనుకూలం. కమీషన్ GoAP నిర్ణయిస్తుంది.">Govt-governed Swiggy/Zomato alternative. FSSAI-compliant. Commission set by GoAP.</div></div>
+      <div class="vc"><div class="ico">🎟</div><div class="t" data-en="Ticket Booking" data-te="టికెట్ బుకింగ్">Ticket Booking</div><div class="d" data-en="Single AP layer: cinema, culture, sports, pilgrimage, govt facilities. Convenience fee → state." data-te="ఒకే AP పేజీ: సినిమా, సంస్కృతి, క్రీడలు, యాత్ర, ప్రభుత్వ సదుపాయాలు. కన్వీనియన్స్ ఫీ → రాష్ట్రానికి.">Single AP layer: cinema, culture, sports, pilgrimage, govt facilities. Convenience fee → state.</div></div>
+      <div class="vc"><div class="ico">🛒</div><div class="t" data-en="Grocery Delivery" data-te="కిరాణా డెలివరీ">Grocery Delivery</div><div class="d" data-en="Hyperlocal kirana network. Telugu-language interface. Rural Tier-3/4 inclusion." data-te="హైపర్‌లోకల్ కిరాణా నెట్‌వర్క్. తెలుగు భాషా ఇంటర్‌ఫేస్. గ్రామీణ టైర్-3/4 చేరిక.">Hyperlocal kirana network. Telugu-language interface. Rural Tier-3/4 inclusion.</div></div>
+      <div class="vc"><div class="ico">🌾</div><div class="t" data-en="Agri Products" data-te="వ్యవసాయ ఉత్పత్తులు">Agri Products</div><div class="d" data-en="Farmer direct-to-buyer. eNAM integration. Eliminates intermediaries. Guntur chilli, Banganapalli mango." data-te="రైతు నేరుగా కొనుగోలుదారుకు. eNAM ఇంటిగ్రేషన్. మధ్యవర్తులను తొలగిస్తుంది. గుంటూరు మిర్చి, బంగినపల్లి మామిడి.">Farmer direct-to-buyer. eNAM integration. Eliminates intermediaries. Guntur chilli, Banganapalli mango.</div></div>
+      <div class="vc"><div class="ico">🏺</div><div class="t" data-en="Brand Andhra (GI)" data-te="బ్రాండ్ ఆంధ్ర (GI)">Brand Andhra (GI)</div><div class="d" data-en="Govt-authenticated GI store. Kondapalli Toys, Kalamkari. International export gateway." data-te="ప్రభుత్వ ధృవీకృత GI స్టోర్. కొండపల్లి బొమ్మలు, కలంకారీ. అంతర్జాతీయ ఎగుమతి గేట్‌వే.">Govt-authenticated GI store. Kondapalli Toys, Kalamkari. International export gateway.</div></div>
+      <div class="vc"><div class="ico">🏭</div><div class="t" data-en="MSME Products" data-te="MSME ఉత్పత్తులు">MSME Products</div><div class="d" data-en="35L+ MSME units on national ONDC network. B2B discovery + Govt procurement overlay." data-te="35 లక్షలకు పైగా MSME యూనిట్లు జాతీయ ONDC నెట్‌వర్క్‌పై. B2B డిస్కవరీ + ప్రభుత్వ కొనుగోలు.">35L+ MSME units on national ONDC network. B2B discovery + Govt procurement overlay.</div></div>
+      <div class="vc"><div class="ico">🔧</div><div class="t" data-en="My Services" data-te="మై సర్వీసెస్">My Services</div><div class="d" data-en="Electricians, plumbers, tutors, doctors. Aadhaar-verified. Escrow payment. APSSDC certified." data-te="ఎలక్ట్రీషియన్లు, ప్లంబర్లు, ట్యూటర్లు, డాక్టర్లు. ఆధార్ ధృవీకృత. ఎస్క్రో చెల్లింపు. APSSDC సర్టిఫైడ్.">Electricians, plumbers, tutors, doctors. Aadhaar-verified. Escrow payment. APSSDC certified.</div></div>
+      <div class="vc"><div class="ico">📦</div><div class="t" data-en="My Products (D2C)" data-te="మై ప్రొడక్ట్స్ (D2C)">My Products (D2C)</div><div class="d" data-en="Direct-to-consumer for home-based sellers. GST auto-invoice. National ONDC reach Day 1." data-te="ఇంటి ఆధారిత విక్రేతలకు నేరుగా వినియోగదారుకు. GST ఆటో-ఇన్‌వాయిస్. మొదటి రోజు నుండి జాతీయ ONDC అందుబాటు.">Direct-to-consumer for home-based sellers. GST auto-invoice. National ONDC reach Day 1.</div></div>
     </div>
   </div>
 </div>
 
-<!-- ═══ S6 REVENUE ═══ -->
+<!-- ═══ SLIDE 6 ═══ -->
 <div class="slide" id="s6">
   <div class="sh"><div class="sn">06</div><h2 data-en="REVENUE MODEL" data-te="ఆదాయ నమూనా">REVENUE MODEL</h2><h3 data-en="Six Independent Income Streams for the State Exchequer" data-te="రాష్ట్ర ఖజానాకు ఆరు స్వతంత్ర ఆదాయ వనరులు">Six Independent Income Streams for the State Exchequer</h3></div>
   <div class="body" style="justify-content:center;">
+    <div class="rev-intro" data-en="Every transaction on APCS is a revenue event for Government of Andhra Pradesh. No dependency on a single vertical or partner." data-te="APCS పై ప్రతి లావాదేవీ ఆంధ్రప్రదేశ్ ప్రభుత్వానికి ఒక ఆదాయ సందర్భం. ఒకే విభాగం లేదా భాగస్వామిపై ఆధారపడటం లేదు.">Every transaction on APCS is a revenue event for Government of Andhra Pradesh. No dependency on a single vertical or partner.</div>
     <div class="rg">
-      <div class="rc"><div class="rn">01</div><div class="rt" data-en="Platform Transaction Fee" data-te="ప్లాట్‌ఫారమ్ లావాదేవీ రుసుము">Platform Transaction Fee</div><div class="rd" data-en="Micro-levy on every completed transaction. Rate set by GoAP. Differentiated per vertical." data-te="ప్రతి లావాదేవీపై మైక్రో-లెవీ. GoAP రేటు నిర్ణయిస్తుంది. విభాగానుసారం వేర్వేరు.">Micro-levy on every completed transaction. Rate set by GoAP.</div><span class="rl" data-en="Live: Month 1" data-te="లైవ్: నెల 1">Live: Month 1</span></div>
-      <div class="rc"><div class="rn">02</div><div class="rt" data-en="Advertising &amp; Sponsored Listings" data-te="ప్రకటనలు &amp; స్పాన్సర్డ్ లిస్టింగ్స్">Advertising &amp; Sponsored Listings</div><div class="rd" data-en="State-owned digital ad marketplace. National brands pay to reach AP consumers." data-te="రాష్ట్ర యాజమాన్య డిజిటల్ యాడ్ మార్కెట్‌ప్లేస్. జాతీయ బ్రాండ్లు AP వినియోగదారులకు చెల్లిస్తాయి.">State-owned ad marketplace. National brands pay to reach AP consumers.</div><span class="rl" data-en="Live: Month 6" data-te="లైవ్: నెల 6">Live: Month 6</span></div>
-      <div class="rc"><div class="rn">03</div><div class="rt" data-en="Brand Andhra GI Certification" data-te="బ్రాండ్ ఆంధ్ర GI సర్టిఫికేషన్">Brand Andhra GI Certification</div><div class="rd" data-en="Annual certification fee. Export per-shipment fee. Counterfeit penalty revenue." data-te="వార్షిక సర్టిఫికేషన్ రుసుము. ఎగుమతి షిప్‌మెంట్ రుసుము. నకిలీ వస్తువుల జరిమానా.">Annual certification fee. Export per-shipment fee. Counterfeit penalty.</div><span class="rl" data-en="Live: Month 3" data-te="లైవ్: నెల 3">Live: Month 3</span></div>
-      <div class="rc"><div class="rn">04</div><div class="rt" data-en="Seller SaaS Subscriptions" data-te="విక్రేత SaaS సభ్యత్వాలు">Seller SaaS Subscriptions</div><div class="rd" data-en="Tiered: Free / Growth / Enterprise. Analytics, priority placement, API access." data-te="స్థాయిలు: ఉచిత / గ్రోత్ / ఎంటర్‌ప్రైజ్. అనలిటిక్స్, ప్రాధాన్య ప్లేస్‌మెంట్.">Tiered: Free / Growth / Enterprise. Analytics, priority placement.</div><span class="rl" data-en="Live: Month 7" data-te="లైవ్: నెల 7">Live: Month 7</span></div>
-      <div class="rc"><div class="rn">05</div><div class="rt" data-en="GST Compliance Services" data-te="GST కంప్లయన్స్ సేవలు">GST Compliance Services</div><div class="rd" data-en="Auto-invoice, GSTR-1 auto-population, e-way bill. Monthly subscription per seller." data-te="ఆటో-ఇన్‌వాయిస్, GSTR-1 ఆటో-పాపులేషన్, ఇ-వే బిల్. మాసిక సభ్యత్వం.">Auto-invoice, GSTR-1 auto-population, e-way bill. Monthly subscription.</div><span class="rl" data-en="Live: Month 9" data-te="లైవ్: నెల 9">Live: Month 9</span></div>
-      <div class="rc"><div class="rn">06</div><div class="rt" data-en="Government Procurement Marketplace" data-te="ప్రభుత్వ కొనుగోలు మార్కెట్‌ప్లేస్">Government Procurement Marketplace</div><div class="rd" data-en="AP departments procure from MSMEs on APCS. Vendor registration + bid processing fee." data-te="AP శాఖలు APCS పై MSMEల నుండి కొనుగోలు చేస్తాయి. వెండర్ రిజిస్ట్రేషన్ + బిడ్ రుసుము.">AP departments procure from MSMEs on APCS. Vendor registration + bid fee.</div><span class="rl" data-en="Live: Month 22" data-te="లైవ్: నెల 22">Live: Month 22</span></div>
+      <div class="rc"><div class="rn">01</div><div class="rt" data-en="Platform Transaction Fee" data-te="ప్లాట్‌ఫారమ్ లావాదేవీ రుసుము">Platform Transaction Fee</div><div class="rd" data-en="Micro-levy on every completed transaction. Rate set by GoAP. Differentiated per vertical." data-te="ప్రతి పూర్తయిన లావాదేవీపై మైక్రో-లెవీ. GoAP రేటు నిర్ణయిస్తుంది. విభాగానుసారం వేర్వేరు.">Micro-levy on every completed transaction. Rate set by GoAP. Differentiated per vertical.</div><span class="rl" data-en="Live: Month 1" data-te="లైవ్: నెల 1">Live: Month 1</span></div>
+      <div class="rc"><div class="rn">02</div><div class="rt" data-en="Advertising &amp; Sponsored Listings" data-te="ప్రకటనలు &amp; స్పాన్సర్డ్ లిస్టింగ్స్">Advertising &amp; Sponsored Listings</div><div class="rd" data-en="State-owned digital ad marketplace. National brands pay to reach AP consumers. Seasonal campaign slots." data-te="రాష్ట్ర యాజమాన్య డిజిటల్ యాడ్ మార్కెట్‌ప్లేస్. జాతీయ బ్రాండ్లు AP వినియోగదారులకు చేరుకోవడానికి చెల్లిస్తాయి. సీజనల్ క్యాంపెయిన్ స్లాట్లు.">State-owned digital ad marketplace. National brands pay to reach AP consumers. Seasonal campaign slots.</div><span class="rl" data-en="Live: Month 6" data-te="లైవ్: నెల 6">Live: Month 6</span></div>
+      <div class="rc"><div class="rn">03</div><div class="rt" data-en="Brand Andhra GI Certification" data-te="బ్రాండ్ ఆంధ్ర GI సర్టిఫికేషన్">Brand Andhra GI Certification</div><div class="rd" data-en="Annual certification fee. Export per-shipment fee. Counterfeit penalty revenue." data-te="వార్షిక సర్టిఫికేషన్ రుసుము. ఎగుమతి షిప్‌మెంట్ రుసుము. నకిలీ వస్తువుల జరిమానా ఆదాయం.">Annual certification fee. Export per-shipment fee. Counterfeit penalty revenue.</div><span class="rl" data-en="Live: Month 3" data-te="లైవ్: నెల 3">Live: Month 3</span></div>
+      <div class="rc"><div class="rn">04</div><div class="rt" data-en="Seller SaaS Subscriptions" data-te="విక్రేత SaaS సభ్యత్వాలు">Seller SaaS Subscriptions</div><div class="rd" data-en="Tiered: Free / Growth / Enterprise. Analytics, priority placement, API access." data-te="స్థాయిలు: ఉచిత / గ్రోత్ / ఎంటర్‌ప్రైజ్. అనలిటిక్స్, ప్రాధాన్య ప్లేస్‌మెంట్, API యాక్సెస్.">Tiered: Free / Growth / Enterprise. Analytics, priority placement, API access.</div><span class="rl" data-en="Live: Month 7" data-te="లైవ్: నెల 7">Live: Month 7</span></div>
+      <div class="rc"><div class="rn">05</div><div class="rt" data-en="GST Compliance Services" data-te="GST కంప్లయన్స్ సేవలు">GST Compliance Services</div><div class="rd" data-en="Auto-invoice, GSTR-1 auto-population, e-way bill. Monthly subscription per seller." data-te="ఆటో-ఇన్‌వాయిస్, GSTR-1 ఆటో-పాపులేషన్, ఇ-వే బిల్. విక్రేతకు మాసిక సభ్యత్వం.">Auto-invoice, GSTR-1 auto-population, e-way bill. Monthly subscription per seller.</div><span class="rl" data-en="Live: Month 9" data-te="లైవ్: నెల 9">Live: Month 9</span></div>
+      <div class="rc"><div class="rn">06</div><div class="rt" data-en="Government Procurement Marketplace" data-te="ప్రభుత్వ కొనుగోలు మార్కెట్‌ప్లేస్">Government Procurement Marketplace</div><div class="rd" data-en="AP departments procure from MSMEs on APCS. Vendor registration + bid processing fee." data-te="AP శాఖలు APCS పై MSMEల నుండి కొనుగోలు చేస్తాయి. వెండర్ రిజిస్ట్రేషన్ + బిడ్ ప్రాసెసింగ్ రుసుము.">AP departments procure from MSMEs on APCS. Vendor registration + bid processing fee.</div><span class="rl" data-en="Live: Month 22" data-te="లైవ్: నెల 22">Live: Month 22</span></div>
     </div>
     <div class="rfoot" data-en="Revenue scales with AP's economy. No cap. No ceiling. The more the state grows — the more the state earns." data-te="ఆదాయం AP ఆర్థిక వ్యవస్థతో పెరుగుతుంది. పరిమితి లేదు. రాష్ట్రం ఎంత పెరిగితే — అంత ఆదాయం.">Revenue scales with AP's economy. No cap. No ceiling. The more the state grows — the more the state earns.</div>
   </div>
 </div>
 
-<!-- ═══ S7 CM VISION ═══ -->
+<!-- ═══ SLIDE 7 ═══ -->
 <div class="slide" id="s7">
   <div class="sh"><div class="sn">07</div><h2 data-en="CM'S VISION" data-te="సీఎం దార్శనికత">CM'S VISION</h2><h3 data-en='"One Entrepreneur Per One Family" — Operationalized at Scale' data-te='"ఒక్కో కుటుంబానికి ఒక్కో వ్యాపారవేత్త" — పెద్ద ఎత్తున అమలు'>"One Entrepreneur Per One Family" — Operationalized at Scale</h3></div>
   <div class="body" style="justify-content:center;">
     <div class="phases">
-      <div class="pc"><div class="pl" data-en="PHASE 1" data-te="దశ 1">PHASE 1</div><div class="pt" data-en="Months 1–6" data-te="నెలలు 1–6">Months 1–6</div><div class="pn">10,000</div><div class="pu" data-en="Active Entrepreneurs" data-te="క్రియాశీల వ్యాపారవేత్తలు">Active Entrepreneurs</div><div class="pd" data-en="3 pilot districts · Food, Grocery, My Services" data-te="3 పైలట్ జిల్లాలు · ఆహారం, కిరాణా, మై సర్వీసెస్">3 pilot districts · Food, Grocery, My Services</div></div>
-      <div class="pc p2"><div class="pl" data-en="PHASE 2" data-te="దశ 2">PHASE 2</div><div class="pt" data-en="Months 7–18" data-te="నెలలు 7–18">Months 7–18</div><div class="pn">1,00,000</div><div class="pu" data-en="Active Entrepreneurs" data-te="క్రియాశీల వ్యాపారవేత్తలు">Active Entrepreneurs</div><div class="pd" data-en="All 26 districts · All 8 verticals live" data-te="అన్ని 26 జిల్లాలు · 8 విభాగాలు లైవ్">All 26 districts · All 8 verticals live</div></div>
-      <div class="pc p3"><div class="pl" data-en="PHASE 3" data-te="దశ 3">PHASE 3</div><div class="pt" data-en="Months 19–36" data-te="నెలలు 19–36">Months 19–36</div><div class="pn">5,00,000</div><div class="pu" data-en="Active Entrepreneurs" data-te="క్రియాశీల వ్యాపారవేత్తలు">Active Entrepreneurs</div><div class="pd" data-en="Families with active digital commerce income" data-te="డిజిటల్ వాణిజ్య ఆదాయం ఉన్న కుటుంబాలు">Families with active digital commerce income</div></div>
+      <div class="pc"><div class="pl" data-en="PHASE 1" data-te="దశ 1">PHASE 1</div><div class="pt" data-en="Months 1–6" data-te="నెలలు 1–6">Months 1–6</div><div class="pn">10,000</div><div class="pu" data-en="Active Entrepreneurs" data-te="క్రియాశీల వ్యాపారవేత్తలు">Active Entrepreneurs</div><div class="pd" data-en="3 pilot districts&#10;Food, Grocery, My Services" data-te="3 పైలట్ జిల్లాలు&#10;ఆహారం, కిరాణా, మై సర్వీసెస్">3 pilot districts
+Food, Grocery, My Services</div></div>
+      <div class="pc p2"><div class="pl" data-en="PHASE 2" data-te="దశ 2">PHASE 2</div><div class="pt" data-en="Months 7–18" data-te="నెలలు 7–18">Months 7–18</div><div class="pn">1,00,000</div><div class="pu" data-en="Active Entrepreneurs" data-te="క్రియాశీల వ్యాపారవేత్తలు">Active Entrepreneurs</div><div class="pd" data-en="All 26 districts&#10;All 8 verticals live" data-te="అన్ని 26 జిల్లాలు&#10;8 విభాగాలు లైవ్">All 26 districts
+All 8 verticals live</div></div>
+      <div class="pc p3"><div class="pl" data-en="PHASE 3" data-te="దశ 3">PHASE 3</div><div class="pt" data-en="Months 19–36" data-te="నెలలు 19–36">Months 19–36</div><div class="pn">5,00,000</div><div class="pu" data-en="Active Entrepreneurs" data-te="క్రియాశీల వ్యాపారవేత్తలు">Active Entrepreneurs</div><div class="pd" data-en="Families with active&#10;digital commerce income" data-te="డిజిటల్ వాణిజ్య ఆదాయం&#10;ఉన్న కుటుంబాలు">Families with active
+digital commerce income</div></div>
     </div>
     <div class="coh">
       <h4 data-en="PRIORITY COHORTS FOR DELIVERY" data-te="అమలు కోసం ప్రాధాన్య సమూహాలు">PRIORITY COHORTS FOR DELIVERY</h4>
       <div class="cpills">
-        <div class="cpill" data-en="👩 Women SHG Members — Food, Handloom, Craft" data-te="👩 మహిళా SHG సభ్యులు — ఆహారం, హ్యాండ్‌లూమ్, క్రాఫ్ట్">👩 Women SHG Members — Food, Handloom, Craft</div>
-        <div class="cpill" data-en="🎨 SC/ST Artisans — Brand Andhra GI vertical" data-te="🎨 SC/ST కళాకారులు — బ్రాండ్ ఆంధ్ర GI విభాగం">🎨 SC/ST Artisans — Brand Andhra GI vertical</div>
-        <div class="cpill" data-en="🧑 Rural Youth (18–30) — Agri, My Services + APSSDC" data-te="🧑 గ్రామీణ యువత (18–30) — వ్యవసాయం, మై సర్వీసెస్">🧑 Rural Youth (18–30) — Agri, My Services + APSSDC</div>
-        <div class="cpill" data-en="🚶 Migrant Returnee Workers — My Services &amp; Food" data-te="🚶 వలస తిరిగొచ్చిన కార్మికులు — మై సర్వీసెస్ &amp; ఆహారం">🚶 Migrant Returnee Workers — My Services &amp; Food</div>
+        <div class="cpill" data-en="Women SHG Members — Food, Handloom, Craft (First Priority)" data-te="మహిళా SHG సభ్యులు — ఆహారం, హ్యాండ్‌లూమ్, క్రాఫ్ట్ (మొదటి ప్రాధాన్యత)">Women SHG Members — Food, Handloom, Craft (First Priority)</div>
+        <div class="cpill" data-en="SC/ST Artisans &amp; Traditional Craft Families — Brand Andhra GI vertical" data-te="SC/ST కళాకారులు &amp; సంప్రదాయ క్రాఫ్ట్ కుటుంబాలు — బ్రాండ్ ఆంధ్ర GI విభాగం">SC/ST Artisans &amp; Traditional Craft Families — Brand Andhra GI vertical</div>
+        <div class="cpill" data-en="Rural Youth (18–30) — Agri, My Services, My Products + APSSDC skill certification" data-te="గ్రామీణ యువత (18–30) — వ్యవసాయం, మై సర్వీసెస్, మై ప్రొడక్ట్స్ + APSSDC నైపుణ్య సర్టిఫికేషన్">Rural Youth (18–30) — Agri, My Services, My Products + APSSDC skill certification</div>
+        <div class="cpill" data-en="Migrant Returnee Workers — My Services and Food; APCS as re-integration vehicle" data-te="వలస తిరిగొచ్చిన కార్మికులు — మై సర్వీసెస్ మరియు ఆహారం; APCS పునరేకీకరణ వాహనంగా">Migrant Returnee Workers — My Services and Food; APCS as re-integration vehicle</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ═══ S8 ENTITY ═══ -->
+<!-- ═══ SLIDE 8 ═══ -->
 <div class="slide" id="s8">
   <div class="sh"><div class="sn">08</div><h2 data-en="PROPOSING ENTITY" data-te="ప్రతిపాదించే సంస్థ">PROPOSING ENTITY</h2><h3 data-en="Zian Technologies LLP — Dual Mandate, Single Accountability" data-te="జియాన్ టెక్నాలజీస్ LLP — ద్వంద్వ బాధ్యత, ఒకే జవాబుదారీతనం">Zian Technologies LLP — Dual Mandate, Single Accountability</h3></div>
   <div class="body" style="justify-content:center;">
@@ -345,13 +320,17 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
         <li data-en="Real-time APCS Revenue Ledger accessible to designated officers" data-te="నిర్ణీత అధికారులకు రియల్-టైమ్ APCS రెవెన్యూ లెడ్జర్ అందుబాటు">Real-time APCS Revenue Ledger accessible to designated officers</li>
         <li data-en="Annual CAG-empanelled audit; results tabled with state legislature" data-te="వార్షిక CAG ఎంపానెల్డ్ ఆడిట్; ఫలితాలు రాష్ట్ర శాసనసభకు సమర్పించబడతాయి">Annual CAG-empanelled audit; results tabled with state legislature</li>
         <li data-en="All commission &amp; fee rates set exclusively by Government of AP" data-te="అన్ని కమీషన్ &amp; రుసుము రేట్లు పూర్తిగా AP ప్రభుత్వం నిర్ణయిస్తుంది">All commission &amp; fee rates set exclusively by Government of AP</li>
-        <li data-en="Data sovereignty: all data owned by GoAP; stored in AP SDC" data-te="డేటా సార్వభౌమత్వం: అన్ని డేటా GoAP స్వంతం; AP SDCలో నిల్వ">Data sovereignty: all data owned by GoAP; stored in AP SDC</li>
+        <li data-en="Brand Andhra GI certification authority vested in government body" data-te="బ్రాండ్ ఆంధ్ర GI సర్టిఫికేషన్ అధికారం ప్రభుత్వ సంస్థలో నిక్షిప్తం">Brand Andhra GI certification authority vested in government body</li>
+        <li data-en="Seller grievance redressal: L1 24hrs, L2 72hrs, L3 7 days" data-te="విక్రేత ఫిర్యాదు పరిష్కారం: L1 24గంటలు, L2 72గంటలు, L3 7 రోజులు">Seller grievance redressal: L1 24hrs, L2 72hrs, L3 7 days</li>
+        <li data-en="Data sovereignty: all data owned by Government of AP; stored in AP SDC" data-te="డేటా సార్వభౌమత్వం: అన్ని డేటా AP ప్రభుత్వం స్వంతం; AP SDCలో నిల్వ">Data sovereignty: all data owned by Government of AP; stored in AP SDC</li>
       </ul></div>
       <div class="col"><h4 data-en="TECHNOLOGY SERVICE PROVIDER" data-te="టెక్నాలజీ సేవా ప్రదాత">TECHNOLOGY SERVICE PROVIDER</h4><ul>
-        <li data-en="ONDC NP integration — buyer app, seller app, logistics NP" data-te="ONDC NP ఇంటిగ్రేషన్ — బయ్యర్ యాప్, సెల్లర్ యాప్, లాజిస్టిక్స్ NP">ONDC NP integration — buyer app, seller app, logistics NP</li>
-        <li data-en="Telugu-language-first UX; mobile-first PWA + Android" data-te="తెలుగు భాష మొదట UX; మొబైల్-ఫస్ట్ PWA + Android">Telugu-language-first UX; mobile-first PWA + Android</li>
+        <li data-en="ONDC Network Participant integration — buyer app, seller app, logistics NP" data-te="ONDC నెట్‌వర్క్ పార్టిసిపెంట్ ఇంటిగ్రేషన్ — బయ్యర్ యాప్, సెల్లర్ యాప్, లాజిస్టిక్స్ NP">ONDC Network Participant integration — buyer app, seller app, logistics NP</li>
+        <li data-en="Telugu-language-first UX; mobile-first progressive web app + Android" data-te="తెలుగు భాష మొదట UX; మొబైల్-ఫస్ట్ ప్రోగ్రెసివ్ వెబ్ యాప్ + Android">Telugu-language-first UX; mobile-first progressive web app + Android</li>
+        <li data-en="Aadhaar/DigiLocker identity; UPI/RuPay payment settlement; GSTN integration" data-te="ఆధార్/డిజిలాకర్ గుర్తింపు; UPI/RuPay చెల్లింపు సెటిల్‌మెంట్; GSTN ఇంటిగ్రేషన్">Aadhaar/DigiLocker identity; UPI/RuPay payment settlement; GSTN integration</li>
         <li data-en="99.5% uptime SLA; 98% transaction success rate; auto-refund on failure" data-te="99.5% అప్‌టైమ్ SLA; 98% లావాదేవీ విజయ రేటు; వైఫల్యంపై ఆటో-రీఫండ్">99.5% uptime SLA; 98% transaction success rate; auto-refund on failure</li>
         <li data-en="ISO 27001 compliance within 18 months; bi-annual penetration testing" data-te="18 నెలలలో ISO 27001 కంప్లయన్స్; అర్ధ-వార్షిక పెనెట్రేషన్ టెస్టింగ్">ISO 27001 compliance within 18 months; bi-annual penetration testing</li>
+        <li data-en="Full data portability: GoAP can export all data with 30-day notice" data-te="పూర్ణ డేటా పోర్టబిలిటీ: GoAP 30 రోజుల నోటీసుతో అన్ని డేటా ఎగుమతి చేయవచ్చు">Full data portability: GoAP can export all data with 30-day notice</li>
         <li data-en="6-month guaranteed handover in any exit scenario — zero lock-in" data-te="ఏ ఎగ్జిట్ సందర్భంలోనైనా 6 నెలల హ్యాండోవర్ గ్యారంటీ — జీరో లాక్-ఇన్">6-month guaranteed handover in any exit scenario — zero lock-in</li>
       </ul></div>
     </div>
@@ -359,95 +338,107 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
   </div>
 </div>
 
-<!-- ═══ S9 ROADMAP ═══ -->
+<!-- ═══ SLIDE 9 ═══ -->
 <div class="slide" id="s9">
   <div class="sh"><div class="sn">09</div><h2 data-en="IMPLEMENTATION" data-te="అమలు">IMPLEMENTATION</h2><h3 data-en="36-Month Phased Roadmap to Self-Sustaining Platform" data-te="స్వయం-నిలకడ ప్లాట్‌ఫారమ్ కోసం 36 నెలల దశల రోడ్‌మ్యాప్">36-Month Phased Roadmap to Self-Sustaining Platform</h3></div>
   <div class="body" style="justify-content:center;">
     <div class="rm">
-      <div class="rp"><div class="rph"><div class="rpt" data-en="PHASE 1 — FOUNDATION" data-te="దశ 1 — పునాది">PHASE 1 — FOUNDATION</div><div class="rptm" data-en="Months 1–6" data-te="నెలలు 1–6">Months 1–6</div></div><div class="rpi" data-en="▸ MoU executed; APCS registered as ONDC Network Participant&#10;▸ APCS Governing Council constituted by Government Order&#10;▸ Platform core built: buyer app, seller app, payment, ONDC integration&#10;▸ Brand Andhra GI Registry — first 25 certified GI products&#10;▸ 3-district pilot: Food, Grocery, My Services go live" data-te="▸ MoU సంతకం; APCS ONDC నెట్‌వర్క్ పార్టిసిపెంట్‌గా నమోదు&#10;▸ ప్రభుత్వ ఉత్తర్వుతో APCS పాలక మండలి ఏర్పాటు&#10;▸ ప్లాట్‌ఫారమ్ కోర్ నిర్మాణం: బయ్యర్ యాప్, సెల్లర్ యాప్, ONDC ఇంటిగ్రేషన్&#10;▸ బ్రాండ్ ఆంధ్ర GI రిజిస్ట్రీ — మొదటి 25 GI ఉత్పత్తులు&#10;▸ 3 జిల్లాల పైలట్: ఆహారం, కిరాణా, మై సర్వీసెస్ లైవ్">▸ MoU executed; APCS registered as ONDC Network Participant
-▸ APCS Governing Council constituted by Government Order
-▸ Platform core built: buyer app, seller app, payment, ONDC integration
-▸ Brand Andhra GI Registry — first 25 certified GI products
-▸ 3-district pilot: Food, Grocery, My Services go live</div></div>
-      <div class="rp rp2"><div class="rph"><div class="rpt" data-en="PHASE 2 — SCALE" data-te="దశ 2 — విస్తరణ">PHASE 2 — SCALE</div><div class="rptm" data-en="Months 7–18" data-te="నెలలు 7–18">Months 7–18</div></div><div class="rpi" data-en="▸ Statewide rollout: all 26 districts, all 8 verticals by Month 12&#10;▸ Ticket Booking: cinema, events, tourism, government facilities&#10;▸ MSME &amp; Agri: RBK network integration for farmer onboarding&#10;▸ GST compliance live; subscription revenue begins Month 9&#10;▸ 1,00,000 active entrepreneurs on CM Dashboard by Month 18" data-te="▸ రాష్ట్రవ్యాప్త రోల్అవుట్: నెల 12కి అన్ని 26 జిల్లాలు, 8 విభాగాలు&#10;▸ టికెట్ బుకింగ్: సినిమా, ఈవెంట్లు, పర్యాటకం, ప్రభుత్వ సదుపాయాలు&#10;▸ MSME &amp; వ్యవసాయం: రైతుల నమోదుకు RBK నెట్‌వర్క్&#10;▸ GST కంప్లయన్స్ లైవ్; నెల 9 నుండి సభ్యత్వ ఆదాయం&#10;▸ నెల 18కి CM డాష్‌బోర్డ్‌పై 1,00,000 వ్యాపారవేత్తలు">▸ Statewide rollout: all 26 districts, all 8 verticals by Month 12
-▸ Ticket Booking: cinema, events, tourism, government facilities
-▸ MSME &amp; Agri: RBK network integration for farmer onboarding
-▸ GST compliance live; subscription revenue begins Month 9
-▸ 1,00,000 active entrepreneurs on CM Dashboard by Month 18</div></div>
-      <div class="rp rp3"><div class="rph"><div class="rpt" data-en="PHASE 3 — OPTIMISE &amp; EXPORT" data-te="దశ 3 — ఆప్టిమైజ్ &amp; ఎగుమతి">PHASE 3 — OPTIMISE &amp; EXPORT</div><div class="rptm" data-en="Months 19–36" data-te="నెలలు 19–36">Months 19–36</div></div><div class="rpi" data-en="▸ Brand Andhra Export Gateway — international buyers transact on APCS&#10;▸ Government Procurement Marketplace integrated with Central GeM&#10;▸ 5,00,000 active family entrepreneurs — CM vision delivered&#10;▸ Platform costs fully covered by platform revenue (Month 30)&#10;▸ IP transfer review: GoAP exercises ownership option on APCS" data-te="▸ బ్రాండ్ ఆంధ్ర ఎగుమతి గేట్‌వే — అంతర్జాతీయ కొనుగోలుదారులు APCS పై&#10;▸ ప్రభుత్వ కొనుగోలు మార్కెట్‌ప్లేస్ కేంద్ర GeM తో ఇంటిగ్రేట్&#10;▸ 5,00,000 క్రియాశీల కుటుంబ వ్యాపారవేత్తలు — సీఎం దార్శనికత నెరవేరింది&#10;▸ నెల 30కి ప్లాట్‌ఫారమ్ ఖర్చులు పూర్తిగా ఆదాయంతో భరించబడతాయి&#10;▸ IP బదిలీ సమీక్ష: GoAP APCS పై యాజమాన్య ఎంపిక వినియోగం">▸ Brand Andhra Export Gateway — international buyers transact on APCS
-▸ Government Procurement Marketplace integrated with Central GeM
-▸ 5,00,000 active family entrepreneurs — CM vision delivered
-▸ Platform costs fully covered by platform revenue (Month 30)
-▸ IP transfer review: GoAP exercises ownership option on APCS</div></div>
+      <div class="rp"><div class="rph"><div class="rpt" data-en="PHASE 1 — FOUNDATION" data-te="దశ 1 — పునాది">PHASE 1 — FOUNDATION</div><div class="rptm" data-en="Months 1–6" data-te="నెలలు 1–6">Months 1–6</div></div>
+      <div class="rpi" data-en="▸  MoU executed; APCS registered as ONDC Network Participant&#10;▸  APCS Governing Council constituted by Government Order&#10;▸  Platform core developed: buyer app, seller app, payment, ONDC integration&#10;▸  Brand Andhra GI Registry launched — first 25 certified GI products&#10;▸  3-district pilot: Food, Grocery, My Services go live&#10;▸  Advertising marketplace beta — first ad revenue to government" data-te="▸  MoU సంతకం; APCS ONDC నెట్‌వర్క్ పార్టిసిపెంట్‌గా నమోదు&#10;▸  ప్రభుత్వ ఉత్తర్వుతో APCS పాలక మండలి ఏర్పాటు&#10;▸  ప్లాట్‌ఫారమ్ కోర్ అభివృద్ధి: బయ్యర్ యాప్, సెల్లర్ యాప్, పేమెంట్, ONDC ఇంటిగ్రేషన్&#10;▸  బ్రాండ్ ఆంధ్ర GI రిజిస్ట్రీ లాంచ్ — మొదటి 25 సర్టిఫైడ్ GI ఉత్పత్తులు&#10;▸  3 జిల్లాల పైలట్: ఆహారం, కిరాణా, మై సర్వీసెస్ లైవ్&#10;▸  ప్రకటనల మార్కెట్‌ప్లేస్ బీటా — ప్రభుత్వానికి మొదటి యాడ్ ఆదాయం">▸  MoU executed; APCS registered as ONDC Network Participant
+▸  APCS Governing Council constituted by Government Order
+▸  Platform core developed: buyer app, seller app, payment, ONDC integration
+▸  Brand Andhra GI Registry launched — first 25 certified GI products
+▸  3-district pilot: Food, Grocery, My Services go live
+▸  Advertising marketplace beta — first ad revenue to government</div></div>
+      <div class="rp rp2"><div class="rph"><div class="rpt" data-en="PHASE 2 — SCALE" data-te="దశ 2 — విస్తరణ">PHASE 2 — SCALE</div><div class="rptm" data-en="Months 7–18" data-te="నెలలు 7–18">Months 7–18</div></div>
+      <div class="rpi" data-en="▸  Statewide rollout: all 26 districts, all 8 verticals live by Month 12&#10;▸  Ticket Booking module: cinema, events, tourism, government facilities&#10;▸  MSME &amp; Agri marketplace: RBK network integration for farmer onboarding&#10;▸  GST compliance layer live; subscription revenue begins Month 9&#10;▸  1,00,000 active entrepreneurs on CM Dashboard by Month 18&#10;▸  First annual CAG-empanelled revenue audit submitted" data-te="▸  రాష్ట్రవ్యాప్త రోల్అవుట్: నెల 12కి అన్ని 26 జిల్లాలు, 8 విభాగాలు లైవ్&#10;▸  టికెట్ బుకింగ్ మాడ్యూల్: సినిమా, ఈవెంట్లు, పర్యాటకం, ప్రభుత్వ సదుపాయాలు&#10;▸  MSME &amp; వ్యవసాయ మార్కెట్‌ప్లేస్: రైతుల నమోదుకు RBK నెట్‌వర్క్ ఇంటిగ్రేషన్&#10;▸  GST కంప్లయన్స్ పొర లైవ్; నెల 9 నుండి సభ్యత్వ ఆదాయం&#10;▸  నెల 18కి CM డాష్‌బోర్డ్‌పై 1,00,000 క్రియాశీల వ్యాపారవేత్తలు&#10;▸  మొదటి వార్షిక CAG-ఎంపానెల్డ్ రెవెన్యూ ఆడిట్ సమర్పించబడింది">▸  Statewide rollout: all 26 districts, all 8 verticals live by Month 12
+▸  Ticket Booking module: cinema, events, tourism, government facilities
+▸  MSME &amp; Agri marketplace: RBK network integration for farmer onboarding
+▸  GST compliance layer live; subscription revenue begins Month 9
+▸  1,00,000 active entrepreneurs on CM Dashboard by Month 18
+▸  First annual CAG-empanelled revenue audit submitted</div></div>
+      <div class="rp rp3"><div class="rph"><div class="rpt" data-en="PHASE 3 — OPTIMISE &amp; EXPORT" data-te="దశ 3 — ఆప్టిమైజ్ &amp; ఎగుమతి">PHASE 3 — OPTIMISE &amp; EXPORT</div><div class="rptm" data-en="Months 19–36" data-te="నెలలు 19–36">Months 19–36</div></div>
+      <div class="rpi" data-en="▸  Brand Andhra Export Gateway live — international buyers transact on APCS&#10;▸  Government Procurement Marketplace integrated with Central GeM&#10;▸  Credit Bridge: APCS Transaction Certificate for bank credit access&#10;▸  5,00,000 active family entrepreneurs — CM vision delivered&#10;▸  Platform operating costs fully covered by platform revenue (Month 30)&#10;▸  IP transfer review: GoAP exercises ownership option on APCS platform" data-te="▸  బ్రాండ్ ఆంధ్ర ఎగుమతి గేట్‌వే లైవ్ — అంతర్జాతీయ కొనుగోలుదారులు APCS పై లావాదేవీలు&#10;▸  ప్రభుత్వ కొనుగోలు మార్కెట్‌ప్లేస్ కేంద్ర GeM తో ఇంటిగ్రేట్&#10;▸  క్రెడిట్ బ్రిడ్జ్: బ్యాంక్ క్రెడిట్ యాక్సెస్ కోసం APCS లావాదేవీ సర్టిఫికేట్&#10;▸  5,00,000 క్రియాశీల కుటుంబ వ్యాపారవేత్తలు — సీఎం దార్శనికత నెరవేరింది&#10;▸  ప్లాట్‌ఫారమ్ ఆపరేటింగ్ ఖర్చులు పూర్తిగా ప్లాట్‌ఫారమ్ ఆదాయంతో (నెల 30)&#10;▸  IP బదిలీ సమీక్ష: GoAP APCS ప్లాట్‌ఫారమ్‌పై యాజమాన్య ఎంపిక వినియోగం">▸  Brand Andhra Export Gateway live — international buyers transact on APCS
+▸  Government Procurement Marketplace integrated with Central GeM
+▸  Credit Bridge: APCS Transaction Certificate for bank credit access
+▸  5,00,000 active family entrepreneurs — CM vision delivered
+▸  Platform operating costs fully covered by platform revenue (Month 30)
+▸  IP transfer review: GoAP exercises ownership option on APCS platform</div></div>
     </div>
   </div>
 </div>
 
-<!-- ═══ S10 GOVERNANCE ═══ -->
+<!-- ═══ SLIDE 10 ═══ -->
 <div class="slide" id="s10">
   <div class="sh"><div class="sn">10</div><h2 data-en="GOVERNANCE" data-te="పాలన">GOVERNANCE</h2><h3 data-en="APCS Governing Council — Government Authority, Full Accountability" data-te="APCS పాలక మండలి — ప్రభుత్వ అధికారం, పూర్ణ జవాబుదారీతనం">APCS Governing Council — Government Authority, Full Accountability</h3></div>
   <div class="body" style="justify-content:center;">
-    <div class="gt"><h4 data-en="APCS GOVERNING COUNCIL" data-te="APCS పాలక మండలి">APCS GOVERNING COUNCIL</h4><p data-en="Chaired by Principal Secretary IT&amp;C, Government of Andhra Pradesh" data-te="ప్రిన్సిపల్ సెక్రటరీ IT&amp;C, ఆంధ్రప్రదేశ్ ప్రభుత్వం అధ్యక్షత">Chaired by Principal Secretary IT&amp;C, Government of Andhra Pradesh</p></div>
-    <div class="gnodes">
-      <div class="gn"><h5 data-en="Dept. of IT&amp;C" data-te="IT&amp;C శాఖ">Dept. of IT&amp;C</h5><p data-en="Policy &amp; oversight" data-te="విధానం &amp; పర్యవేక్షణ">Policy &amp; oversight</p></div>
-      <div class="gn"><h5 data-en="Commerce &amp; Industries" data-te="వాణిజ్య &amp; పరిశ్రమలు">Commerce &amp; Industries</h5><p data-en="MSME &amp; Agri verticals" data-te="MSME &amp; వ్యవసాయ విభాగాలు">MSME &amp; Agri verticals</p></div>
-      <div class="gn"><h5>APEITA</h5><p data-en="Vendor empanelment" data-te="వెండర్ ఎంపానెల్‌మెంట్">Vendor empanelment</p></div>
-      <div class="gn"><h5 data-en="Zian Technologies" data-te="జియాన్ టెక్నాలజీస్">Zian Technologies</h5><p data-en="Nodal Agency &amp; TSP" data-te="నోడల్ ఏజెన్సీ &amp; TSP">Nodal Agency &amp; TSP</p></div>
+    <div class="tbl-wrap">
+      <table class="gov-tbl">
+        <thead><tr><th data-en="COUNCIL MEMBER" data-te="మండలి సభ్యుడు">COUNCIL MEMBER</th><th data-en="ROLE" data-te="పాత్ర">ROLE</th></tr></thead>
+        <tbody>
+          <tr><td data-en="Principal Secretary, IT&amp;C (CHAIR)" data-te="ప్రిన్సిపల్ సెక్రటరీ, IT&amp;C (అధ్యక్షుడు)">Principal Secretary, IT&amp;C (CHAIR)</td><td data-en="Policy authority; final approval on fee structure changes" data-te="విధాన అధికారం; రుసుము నిర్మాణ మార్పులపై తుది ఆమోదం">Policy authority; final approval on fee structure changes</td></tr>
+          <tr><td data-en="Principal Secretary, Commerce &amp; Industries" data-te="ప్రిన్సిపల్ సెక్రటరీ, వాణిజ్య &amp; పరిశ్రమలు">Principal Secretary, Commerce &amp; Industries</td><td data-en="Commerce policy oversight; MSME and GI vertical governance" data-te="వాణిజ్య విధాన పర్యవేక్షణ; MSME మరియు GI విభాగ పాలన">Commerce policy oversight; MSME and GI vertical governance</td></tr>
+          <tr><td data-en="Principal Secretary, Agriculture &amp; Cooperation" data-te="ప్రిన్సిపల్ సెక్రటరీ, వ్యవసాయం &amp; సహకారం">Principal Secretary, Agriculture &amp; Cooperation</td><td data-en="Agri vertical policy; RBK integration oversight" data-te="వ్యవసాయ విభాగ విధానం; RBK ఇంటిగ్రేషన్ పర్యవేక్షణ">Agri vertical policy; RBK integration oversight</td></tr>
+          <tr><td data-en="Director, APEITA (AP Electronics And Information Tech. Agency)" data-te="డైరెక్టర్, APEITA (AP ఎలక్ట్రానిక్స్ మరియు సమాచార సాంకేతిక సంస్థ)">Director, APEITA (AP Electronics And Information Tech. Agency)</td><td data-en="Vendor compliance and procurement governance" data-te="వెండర్ కంప్లయన్స్ మరియు కొనుగోలు పాలన">Vendor compliance and procurement governance</td></tr>
+          <tr><td data-en="CEO, Zian Technologies LLP (Nodal Agency Head)" data-te="CEO, జియాన్ టెక్నాలజీస్ LLP (నోడల్ ఏజెన్సీ హెడ్)">CEO, Zian Technologies LLP (Nodal Agency Head)</td><td data-en="Platform performance; revenue reporting; escalation management" data-te="ప్లాట్‌ఫారమ్ పనితీరు; ఆదాయ నివేదిక; ఎస్కలేషన్ మేనేజ్‌మెంట్">Platform performance; revenue reporting; escalation management</td></tr>
+          <tr><td data-en="CTO, Zian Technologies LLP (TSP Lead)" data-te="CTO, జియాన్ టెక్నాలజీస్ LLP (TSP లీడ్)">CTO, Zian Technologies LLP (TSP Lead)</td><td data-en="Technical architecture; SLA compliance; ONDC protocol governance" data-te="సాంకేతిక నిర్మాణం; SLA కంప్లయన్స్; ONDC ప్రోటోకాల్ పాలన">Technical architecture; SLA compliance; ONDC protocol governance</td></tr>
+          <tr><td data-en="Nominee — ONDC Foundation (Observer)" data-te="నామినీ — ONDC ఫౌండేషన్ (పరిశీలకుడు)">Nominee — ONDC Foundation (Observer)</td><td data-en="Protocol compliance; national network alignment" data-te="ప్రోటోకాల్ కంప్లయన్స్; జాతీయ నెట్‌వర్క్ సమన్వయం">Protocol compliance; national network alignment</td></tr>
+          <tr><td data-en="AP MSME Sector Representative" data-te="AP MSME సెక్టార్ ప్రతినిధి">AP MSME Sector Representative</td><td data-en="MSME vertical oversight; seller welfare representation" data-te="MSME విభాగ పర్యవేక్షణ; విక్రేత సంక్షేమ ప్రాతినిధ్యం">MSME vertical oversight; seller welfare representation</td></tr>
+        </tbody>
+      </table>
     </div>
-    <div class="gcyc">
-      <div class="gc"><div class="gcl" data-en="MONTHLY" data-te="మాసికం">MONTHLY</div><div class="gcd" data-en="Report to PS IT&amp;C" data-te="PS IT&amp;Cకి నివేదిక">Report to PS IT&amp;C</div></div>
-      <div class="gc"><div class="gcl" data-en="QUARTERLY" data-te="త్రైమాసికం">QUARTERLY</div><div class="gcd" data-en="Council Review" data-te="మండలి సమీక్ష">Council Review</div></div>
-      <div class="gc"><div class="gcl" data-en="ANNUAL" data-te="వార్షికం">ANNUAL</div><div class="gcd" data-en="CAG Audit — tabled in Legislature" data-te="CAG ఆడిట్ — శాసనసభలో సమర్పించబడుతుంది">CAG Audit — tabled in Legislature</div></div>
+    <div class="gov-notes">
+      <div class="gov-note" data-en="Reporting: Monthly to PS IT&amp;C | Quarterly Council Review | Annual CAG Audit tabled in State Legislature" data-te="నివేదిక: PS IT&amp;Cకి మాసికం | త్రైమాసిక మండలి సమీక్ష | వార్షిక CAG ఆడిట్ రాష్ట్ర శాసనసభలో సమర్పించబడుతుంది">Reporting: Monthly to PS IT&amp;C | Quarterly Council Review | Annual CAG Audit tabled in State Legislature</div>
+      <div class="gov-note" data-en="All platform IP developed for APCS is owned by Government of Andhra Pradesh. Full data portability. Zero lock-in." data-te="APCS కోసం అభివృద్ధి చేయబడిన అన్ని ప్లాట్‌ఫారమ్ IP ఆంధ్రప్రదేశ్ ప్రభుత్వానికి చెందుతుంది. పూర్ణ డేటా పోర్టబిలిటీ. జీరో లాక్-ఇన్.">All platform IP developed for APCS is owned by Government of Andhra Pradesh. Full data portability. Zero lock-in.</div>
     </div>
-    <div class="gbot" data-en="All platform IP developed for APCS is owned by Government of Andhra Pradesh. Full data portability. Zero lock-in." data-te="APCS కోసం అభివృద్ధి చేయబడిన అన్ని ప్లాట్‌ఫారమ్ IP ఆంధ్రప్రదేశ్ ప్రభుత్వానికి చెందుతుంది. పూర్ణ డేటా పోర్టబిలిటీ. జీరో లాక్-ఇన్.">All platform IP developed for APCS is owned by Government of Andhra Pradesh. Full data portability. Zero lock-in.</div>
   </div>
 </div>
 
-<!-- ═══ S11 POLICY ═══ -->
+<!-- ═══ SLIDE 11 ═══ -->
 <div class="slide" id="s11">
   <div class="sh"><div class="sn">11</div><h2 data-en="POLICY ALIGNMENT" data-te="విధాన సమన్వయం">POLICY ALIGNMENT</h2><h3 data-en="APCS Aligns with 8 National &amp; State Policy Mandates" data-te="APCS 8 జాతీయ &amp; రాష్ట్ర విధాన ఆదేశాలతో సమన్వయం">APCS Aligns with 8 National &amp; State Policy Mandates</h3></div>
   <div class="body" style="justify-content:center;">
     <div class="pg">
-      <div class="pc2"><h5 data-en="Digital India Mission" data-te="డిజిటల్ ఇండియా మిషన్">Digital India Mission</h5><p data-en="Direct implementation infrastructure for Digital India commerce digitization" data-te="డిజిటల్ ఇండియా వాణిజ్య డిజిటైజేషన్‌కు నేరుగా అమలు మౌలికసదుపాయం">Direct implementation infrastructure for Digital India commerce digitization</p></div>
-      <div class="pc2"><h5 data-en="ONDC National Expansion" data-te="ONDC జాతీయ విస్తరణ">ONDC National Expansion</h5><p data-en="Registers GoAP as Network Participant — fulfills DPIIT's stated state-government priority" data-te="GoAPని నెట్‌వర్క్ పార్టిసిపెంట్‌గా నమోదు — DPIIT ప్రాధాన్యత నెరవేరుస్తుంది">Registers GoAP as Network Participant — fulfills DPIIT's stated priority</p></div>
-      <div class="pc2"><h5 data-en="PM GatiShakti" data-te="PM గతిశక్తి">PM GatiShakti</h5><p data-en="Logistics integration and district-level connectivity supports last-mile commerce objective" data-te="లాజిస్టిక్స్ ఇంటిగ్రేషన్ మరియు జిల్లా స్థాయి కనెక్టివిటీ చివరి-మైలు వాణిజ్యానికి మద్దతు">Logistics integration and district-level connectivity supports last-mile commerce</p></div>
-      <div class="pc2"><h5 data-en="One District One Product" data-te="ఒక జిల్లా ఒక ఉత్పత్తి">One District One Product</h5><p data-en="Brand Andhra operationalizes ODOP for all AP districts with authenticated digital storefronts" data-te="బ్రాండ్ ఆంధ్ర AP జిల్లాలన్నిటికీ ధృవీకృత డిజిటల్ స్టోర్‌ఫ్రంట్‌లతో ODOP అమలు చేస్తుంది">Brand Andhra operationalizes ODOP for all AP districts</p></div>
-      <div class="pc2"><h5 data-en="AP Vision 2047" data-te="AP విజన్ 2047">AP Vision 2047</h5><p data-en="MSME and agri verticals support AP's $2.4T GSDP target — digital commerce formalization" data-te="MSME మరియు వ్యవసాయ విభాగాలు AP యొక్క $2.4T GSDP లక్ష్యానికి మద్దతు ఇస్తాయి">MSME and agri verticals support AP's $2.4T GSDP target</p></div>
-      <div class="pc2"><h5 data-en="National Credit Guarantee" data-te="జాతీయ క్రెడిట్ గ్యారంటీ">National Credit Guarantee</h5><p data-en="APCS Transaction Certificates integrate with credit guarantee — expands micro-entrepreneur credit" data-te="APCS లావాదేవీ సర్టిఫికేట్లు క్రెడిట్ గ్యారంటీతో ఇంటిగ్రేట్ అవుతాయి">APCS Transaction Certificates integrate with credit guarantee</p></div>
-      <div class="pc2"><h5 data-en="DPIIT Startup India" data-te="DPIIT స్టార్టప్ ఇండియా">DPIIT Startup India</h5><p data-en="My Products &amp; My Brand verticals provide AP startup sellers a government-backed marketplace" data-te="మై ప్రొడక్ట్స్ &amp; మై బ్రాండ్ విభాగాలు AP స్టార్టప్ విక్రేతలకు ప్రభుత్వ-మద్దతు మార్కెట్‌ప్లేస్">My Products &amp; My Brand — govt-backed marketplace for AP startups</p></div>
-      <div class="pc2"><h5 data-en="National Agri Export Policy" data-te="జాతీయ వ్యవసాయ ఎగుమతి విధానం">National Agri Export Policy</h5><p data-en="APCS Agri Export Gateway: AP GI agri products gain certified government-authenticated export channel" data-te="APCS వ్యవసాయ ఎగుమతి గేట్‌వే: AP GI వ్యవసాయ ఉత్పత్తులకు ధృవీకృత ఎగుమతి ఛానల్">APCS Agri Export Gateway: AP GI agri products gain certified export channel</p></div>
+      <div class="pc2"><h5 data-en="Digital India Mission (MeitY)" data-te="డిజిటల్ ఇండియా మిషన్ (MeitY)">Digital India Mission (MeitY)</h5><p data-en="Direct implementation infrastructure for Digital India commerce digitization" data-te="డిజిటల్ ఇండియా వాణిజ్య డిజిటైజేషన్‌కు నేరుగా అమలు మౌలికసదుపాయం">Direct implementation infrastructure for Digital India commerce digitization</p></div>
+      <div class="pc2"><h5 data-en="ONDC National Expansion (DPIIT)" data-te="ONDC జాతీయ విస్తరణ (DPIIT)">ONDC National Expansion (DPIIT)</h5><p data-en="Registers GoAP as Network Participant — fulfills DPIIT's stated state-government priority" data-te="GoAPని నెట్‌వర్క్ పార్టిసిపెంట్‌గా నమోదు — DPIIT యొక్క ప్రకటిత రాష్ట్ర-ప్రభుత్వ ప్రాధాన్యతను నెరవేరుస్తుంది">Registers GoAP as Network Participant — fulfills DPIIT's stated state-government priority</p></div>
+      <div class="pc2"><h5 data-en="PM GatiShakti Master Plan" data-te="PM గతిశక్తి మాస్టర్ ప్లాన్">PM GatiShakti Master Plan</h5><p data-en="Logistics integration and district-level connectivity supports last-mile commerce objective" data-te="లాజిస్టిక్స్ ఇంటిగ్రేషన్ మరియు జిల్లా స్థాయి కనెక్టివిటీ చివరి-మైలు వాణిజ్య లక్ష్యాన్ని మద్దతు ఇస్తుంది">Logistics integration and district-level connectivity supports last-mile commerce objective</p></div>
+      <div class="pc2"><h5 data-en="One District One Product (ODOP)" data-te="ఒక జిల్లా ఒక ఉత్పత్తి (ODOP)">One District One Product (ODOP)</h5><p data-en="Brand Andhra operationalizes ODOP for all AP districts with authenticated digital storefronts" data-te="బ్రాండ్ ఆంధ్ర AP జిల్లాలన్నిటికీ ధృవీకృత డిజిటల్ స్టోర్‌ఫ్రంట్‌లతో ODOP అమలు చేస్తుంది">Brand Andhra operationalizes ODOP for all AP districts with authenticated digital storefronts</p></div>
+      <div class="pc2"><h5 data-en="AP Vision 2047 Industrial Policy" data-te="AP విజన్ 2047 పారిశ్రామిక విధానం">AP Vision 2047 Industrial Policy</h5><p data-en="MSME and agri verticals support AP's $2.4T GSDP target — digital commerce formalization" data-te="MSME మరియు వ్యవసాయ విభాగాలు AP యొక్క $2.4T GSDP లక్ష్యానికి మద్దతు ఇస్తాయి — డిజిటల్ వాణిజ్య అధికారికీకరణ">MSME and agri verticals support AP's $2.4T GSDP target — digital commerce formalization</p></div>
+      <div class="pc2"><h5 data-en="National Credit Guarantee Scheme" data-te="జాతీయ క్రెడిట్ గ్యారంటీ పథకం">National Credit Guarantee Scheme</h5><p data-en="APCS Transaction Certificates integrate with credit guarantee — expands micro-entrepreneur credit" data-te="APCS లావాదేవీ సర్టిఫికేట్లు క్రెడిట్ గ్యారంటీతో ఇంటిగ్రేట్ అవుతాయి — మైక్రో-వ్యాపారవేత్త క్రెడిట్ విస్తరిస్తుంది">APCS Transaction Certificates integrate with credit guarantee — expands micro-entrepreneur credit</p></div>
+      <div class="pc2"><h5 data-en="DPIIT Startup India" data-te="DPIIT స్టార్టప్ ఇండియా">DPIIT Startup India</h5><p data-en="My Products &amp; My Brand verticals provide AP startup sellers a government-backed marketplace" data-te="మై ప్రొడక్ట్స్ &amp; మై బ్రాండ్ విభాగాలు AP స్టార్టప్ విక్రేతలకు ప్రభుత్వ-మద్దతు మార్కెట్‌ప్లేస్ అందిస్తాయి">My Products &amp; My Brand verticals provide AP startup sellers a government-backed marketplace</p></div>
+      <div class="pc2"><h5 data-en="National Agri Export Policy" data-te="జాతీయ వ్యవసాయ ఎగుమతి విధానం">National Agri Export Policy</h5><p data-en="APCS Agri Export Gateway: AP GI agri products gain certified government-authenticated export channel" data-te="APCS వ్యవసాయ ఎగుమతి గేట్‌వే: AP GI వ్యవసాయ ఉత్పత్తులకు సర్టిఫైడ్ ప్రభుత్వ-ధృవీకృత ఎగుమతి ఛానల్ లభిస్తుంది">APCS Agri Export Gateway: AP GI agri products gain certified government-authenticated export channel</p></div>
     </div>
   </div>
 </div>
 
-<!-- ═══ S12 ASKS ═══ -->
+<!-- ═══ SLIDE 12 ═══ -->
 <div class="slide" id="s12">
   <div class="sh"><div class="sn">12</div><h2 data-en="FORMAL REQUEST" data-te="అధికారిక అభ్యర్థన">FORMAL REQUEST</h2><h3 data-en="Four Actions Requested from Government of Andhra Pradesh" data-te="ఆంధ్రప్రదేశ్ ప్రభుత్వం నుండి నాలుగు చర్యలు కోరడం">Four Actions Requested from Government of Andhra Pradesh</h3></div>
   <div class="body" style="justify-content:center;">
-    <div class="anote" data-en="These actions are sequenced. None requires capital outlay from the state government at this stage." data-te="ఈ చర్యలు క్రమంగా అమలవుతాయి. ఈ దశలో రాష్ట్ర ప్రభుత్వం నుండి ఏ మూలధన వ్యయమూ అవసరం లేదు.">These actions are sequenced. None requires capital outlay from the state government at this stage.</div>
+    <div class="asks-note" data-en="These actions are sequenced. None requires capital outlay from the state government at this stage." data-te="ఈ చర్యలు క్రమంగా అమలవుతాయి. ఈ దశలో రాష్ట్ర ప్రభుత్వం నుండి ఏ మూలధన వ్యయమూ అవసరం లేదు.">These actions are sequenced. None requires capital outlay from the state government at this stage.</div>
     <div class="ag">
-      <div class="ac"><div class="an">ASK 01</div><div class="at" data-en="Letter of Intent — Dept. of IT&amp;C" data-te="ఉద్దేశ్య లేఖ — IT&amp;C శాఖ">Letter of Intent — Dept. of IT&amp;C</div><div class="aa" data-en="Principal Secretary IT&amp;C issues LoI appointing Zian as proposed Nodal Agency &amp; TSP for APCS." data-te="ప్రిన్సిపల్ సెక్రటరీ IT&amp;C APCS కోసం జియాన్‌ను నోడల్ ఏజెన్సీ &amp; TSPగా నియమిస్తూ LoI జారీ చేస్తారు.">Principal Secretary IT&amp;C issues LoI appointing Zian as proposed Nodal Agency &amp; TSP for APCS.</div><div class="ai" data-en="Enables ONDC NP registration &amp; platform development to begin. Zero financial commitment." data-te="ONDC NP నమోదు &amp; ప్లాట్‌ఫారమ్ అభివృద్ధి ప్రారంభించడానికి అనుమతిస్తుంది. ఆర్థిక నిబద్ధత సున్నా.">Enables ONDC NP registration &amp; development to begin. Zero financial commitment.</div></div>
-      <div class="ac"><div class="an">ASK 02</div><div class="at" data-en="APEITA Registration &amp; Vendor Empanelment" data-te="APEITA నమోదు &amp; వెండర్ ఎంపానెల్‌మెంట్">APEITA Registration &amp; Vendor Empanelment</div><div class="aa" data-en="Formal empanelment of Zian Technologies through APEITA in digital commerce &amp; e-governance category." data-te="డిజిటల్ కామర్స్ &amp; ఇ-గవర్నెన్స్ విభాగంలో APEITA ద్వారా జియాన్ టెక్నాలజీస్ అధికారిక ఎంపానెల్‌మెంట్.">Formal empanelment of Zian Technologies through APEITA in digital commerce &amp; e-governance.</div><div class="ai" data-en="Enables MoU execution, development procurement, and revenue-sharing agreement activation." data-te="MoU అమలు, డెవలప్‌మెంట్ కొనుగోలు, మరియు రెవెన్యూ-షేరింగ్ అగ్రిమెంట్ యాక్టివేషన్‌కు అనుమతిస్తుంది.">Enables MoU execution, development procurement, and revenue-sharing agreement.</div></div>
-      <div class="ac"><div class="an">ASK 03</div><div class="at" data-en="Government Order — APCS Governing Council" data-te="ప్రభుత్వ ఉత్తర్వు — APCS పాలక మండలి">Government Order — APCS Governing Council</div><div class="aa" data-en="GO constituting the APCS Governing Council as defined in the proposal. Published in AP Gazette." data-te="ప్రతిపాదనలో నిర్వచించిన విధంగా APCS పాలక మండలిని ఏర్పాటు చేసే GO. AP గెజిట్‌లో ప్రచురించబడుతుంది.">GO constituting the APCS Governing Council as defined in the proposal. Published in AP Gazette.</div><div class="ai" data-en="Formally vests governance authority; establishes accountability chain between Zian &amp; GoAP." data-te="అధికారికంగా పాలన అధికారాన్ని కట్టడి చేస్తుంది; జియాన్ &amp; GoAP మధ్య జవాబుదారీతనం గొలుసు స్థాపిస్తుంది.">Formally vests governance authority; establishes accountability chain.</div></div>
-      <div class="ac"><div class="an">ASK 04</div><div class="at" data-en="Pilot District Authorization — 3 Districts, 90 Days" data-te="పైలట్ జిల్లా అనుమతి — 3 జిల్లాలు, 90 రోజులు">Pilot District Authorization — 3 Districts, 90 Days</div><div class="aa" data-en="Sanction of 90-day live pilot in 3 AP districts: Food Delivery, Grocery, and My Services verticals." data-te="3 AP జిల్లాలలో 90 రోజుల లైవ్ పైలట్‌కు మంజూరు: ఆహార డెలివరీ, కిరాణా, మరియు మై సర్వీసెస్.">Sanction of 90-day live pilot in 3 AP districts: Food Delivery, Grocery, My Services.</div><div class="ai" data-en="Generates live data, first revenue events, and measurable PoC for statewide rollout approval." data-te="లైవ్ డేటా, మొదటి ఆదాయ ఈవెంట్లు, మరియు రాష్ట్రవ్యాప్త రోల్అవుట్ అనుమతికి కొలవగలిగే PoC సృష్టిస్తుంది.">Generates live data, first revenue events, and measurable PoC for statewide rollout.</div></div>
+      <div class="ac"><div class="an">ASK 01</div><div class="at" data-en="Letter of Intent — Department of IT&amp;C" data-te="ఉద్దేశ్య లేఖ — IT&amp;C శాఖ">Letter of Intent — Department of IT&amp;C</div><div class="aa" data-en="ACTION: Principal Secretary IT&amp;C issues LoI appointing Zian as proposed Nodal Agency &amp; TSP for APCS." data-te="చర్య: ప్రిన్సిపల్ సెక్రటరీ IT&amp;C APCS కోసం జియాన్‌ను నోడల్ ఏజెన్సీ &amp; TSPగా నియమిస్తూ LoI జారీ చేస్తారు.">ACTION: Principal Secretary IT&amp;C issues LoI appointing Zian as proposed Nodal Agency &amp; TSP for APCS.</div><div class="ai" data-en="Enables ONDC NP registration &amp; platform development to begin. Zero financial commitment." data-te="ONDC NP నమోదు &amp; ప్లాట్‌ఫారమ్ అభివృద్ధి ప్రారంభించడానికి అనుమతిస్తుంది. ఆర్థిక నిబద్ధత సున్నా.">Enables ONDC NP registration &amp; platform development to begin. Zero financial commitment.</div></div>
+      <div class="ac"><div class="an">ASK 02</div><div class="at" data-en="APEITA Registration &amp; Vendor Empanelment" data-te="APEITA నమోదు &amp; వెండర్ ఎంపానెల్‌మెంట్">APEITA Registration &amp; Vendor Empanelment</div><div class="aa" data-en="ACTION: Formal empanelment of Zian Technologies through APEITA in digital commerce &amp; e-governance category." data-te="చర్య: డిజిటల్ కామర్స్ &amp; ఇ-గవర్నెన్స్ విభాగంలో APEITA ద్వారా జియాన్ టెక్నాలజీస్ అధికారిక ఎంపానెల్‌మెంట్.">ACTION: Formal empanelment of Zian Technologies through APEITA in digital commerce &amp; e-governance category.</div><div class="ai" data-en="Enables MoU execution, development procurement, and revenue-sharing agreement activation." data-te="MoU అమలు, డెవలప్‌మెంట్ కొనుగోలు, మరియు రెవెన్యూ-షేరింగ్ అగ్రిమెంట్ యాక్టివేషన్‌కు అనుమతిస్తుంది.">Enables MoU execution, development procurement, and revenue-sharing agreement activation.</div></div>
+      <div class="ac"><div class="an">ASK 03</div><div class="at" data-en="Government Order — APCS Governing Council" data-te="ప్రభుత్వ ఉత్తర్వు — APCS పాలక మండలి">Government Order — APCS Governing Council</div><div class="aa" data-en="ACTION: GO constituting the APCS Governing Council as defined in the proposal. Published in AP Gazette." data-te="చర్య: ప్రతిపాదనలో నిర్వచించిన విధంగా APCS పాలక మండలిని ఏర్పాటు చేసే GO. AP గెజిట్‌లో ప్రచురించబడుతుంది.">ACTION: GO constituting the APCS Governing Council as defined in the proposal. Published in AP Gazette.</div><div class="ai" data-en="Formally vests governance authority; establishes accountability chain between Zian &amp; GoAP." data-te="అధికారికంగా పాలన అధికారాన్ని కట్టడి చేస్తుంది; జియాన్ &amp; GoAP మధ్య జవాబుదారీతనం గొలుసు స్థాపిస్తుంది.">Formally vests governance authority; establishes accountability chain between Zian &amp; GoAP.</div></div>
+      <div class="ac"><div class="an">ASK 04</div><div class="at" data-en="Pilot District Authorization — 3 Districts, 90 Days" data-te="పైలట్ జిల్లా అనుమతి — 3 జిల్లాలు, 90 రోజులు">Pilot District Authorization — 3 Districts, 90 Days</div><div class="aa" data-en="ACTION: Sanction of 90-day live pilot in 3 AP districts: Food Delivery, Grocery, and My Services verticals." data-te="చర్య: 3 AP జిల్లాలలో 90 రోజుల లైవ్ పైలట్‌కు మంజూరు: ఆహార డెలివరీ, కిరాణా, మరియు మై సర్వీసెస్ విభాగాలు.">ACTION: Sanction of 90-day live pilot in 3 AP districts: Food Delivery, Grocery, and My Services verticals.</div><div class="ai" data-en="Generates live data, first revenue events, and measurable PoC for statewide rollout approval." data-te="లైవ్ డేటా, మొదటి ఆదాయ ఈవెంట్లు, మరియు రాష్ట్రవ్యాప్త రోల్అవుట్ అనుమతికి కొలవగలిగే PoC సృష్టిస్తుంది.">Generates live data, first revenue events, and measurable PoC for statewide rollout approval.</div></div>
     </div>
   </div>
 </div>
 
-<!-- ═══ S13 CLOSING ═══ -->
+<!-- ═══ SLIDE 13 ═══ -->
 <div class="slide" id="s13">
   <div class="body" style="justify-content:center;">
     <div class="clos">
-      <h2 data-en="THE OPPORTUNITY IS <span>NOW.</span>" data-te="అవకాశం <span>ఇప్పుడే.</span>">THE OPPORTUNITY IS <span>NOW.</span></h2>
+      <h2 data-en="THE OPPORTUNITY IS NOW." data-te="అవకాశం ఇప్పుడే.">THE OPPORTUNITY IS NOW.</h2>
       <div class="cbb">
-        <li data-en="The Nagaland Ilandlo model has proven the governance architecture." data-te="నాగాలాండ్ ఇలాండ్లో నమూనా పాలన నిర్మాణాన్ని నిరూపించింది.">The Nagaland Ilandlo model has proven the governance architecture.</li>
-        <li data-en="The NPCI-UPI precedent has proven the revenue model at national scale." data-te="NPCI-UPI పూర్వాపరం జాతీయ స్థాయిలో ఆదాయ నమూనాను నిరూపించింది.">The NPCI-UPI precedent has proven the revenue model at national scale.</li>
-        <li data-en="The CM's vision has defined the social and economic objective." data-te="సీఎం దార్శనికత సామాజిక మరియు ఆర్థిక లక్ష్యాన్ని నిర్వచించింది.">The CM's vision has defined the social and economic objective.</li>
-        <li data-en="ONDC is live, expanding, and time-sensitive — first-mover advantage is available today." data-te="ONDC లైవ్‌గా ఉంది, విస్తరిస్తోంది — ఫస్ట్-మూవర్ అడ్వాంటేజ్ ఈరోజు అందుబాటులో ఉంది.">ONDC is live, expanding, and time-sensitive — first-mover advantage is available today.</li>
-        <li data-en="All three threads converge in the AP Commerce Stack." data-te="మూడు దారాలు AP కామర్స్ స్టాక్‌లో ఒక్కటిగా కలుస్తాయి.">All three threads converge in the AP Commerce Stack.</li>
+        <li data-en="▸  The Nagaland Ilandlo model has proven the governance architecture." data-te="▸  నాగాలాండ్ ఇలాండ్లో నమూనా పాలన నిర్మాణాన్ని నిరూపించింది.">▸  The Nagaland Ilandlo model has proven the governance architecture.</li>
+        <li data-en="▸  The NPCI-UPI precedent has proven the revenue model at national scale." data-te="▸  NPCI-UPI పూర్వాపరం జాతీయ స్థాయిలో ఆదాయ నమూనాను నిరూపించింది.">▸  The NPCI-UPI precedent has proven the revenue model at national scale.</li>
+        <li data-en="▸  The CM's vision has defined the social and economic objective." data-te="▸  సీఎం దార్శనికత సామాజిక మరియు ఆర్థిక లక్ష్యాన్ని నిర్వచించింది.">▸  The CM's vision has defined the social and economic objective.</li>
+        <li data-en="▸  ONDC is live, expanding, and time-sensitive — first-mover advantage is available today." data-te="▸  ONDC లైవ్‌గా ఉంది, విస్తరిస్తోంది, సమయ-సున్నితం — ఫస్ట్-మూవర్ అడ్వాంటేజ్ ఈరోజు అందుబాటులో ఉంది.">▸  ONDC is live, expanding, and time-sensitive — first-mover advantage is available today.</li>
+        <li data-en="▸  All three threads converge in the AP Commerce Stack." data-te="▸  మూడు దారాలు AP కామర్స్ స్టాక్‌లో ఒక్కటిగా కలుస్తాయి.">▸  All three threads converge in the AP Commerce Stack.</li>
       </div>
       <div class="cq" data-en='"Every transaction on AP Commerce Stack is a revenue event for Government of Andhra Pradesh.<br/>Every seller registered is a family empowered. Every rupee earned is the CM\'s vision made real."' data-te='"AP కామర్స్ స్టాక్‌పై ప్రతి లావాదేవీ ఆంధ్రప్రదేశ్ ప్రభుత్వానికి ఒక ఆదాయ సందర్భం.<br/>నమోదైన ప్రతి విక్రేత ఒక సాధికారత చెందిన కుటుంబం. సంపాదించిన ప్రతి రూపాయి సీఎం దార్శనికతను నిజం చేస్తుంది."'>"Every transaction on AP Commerce Stack is a revenue event for Government of Andhra Pradesh.<br/>Every seller registered is a family empowered. Every rupee earned is the CM's vision made real."</div>
-      <div class="cs" data-en="Bhushan Thangirala — CEO, Zian Technologies LLP | Proposed Nodal Agency Head, AP Commerce Stack | Visakhapatnam" data-te="భూషణ్ తంగిరాల — CEO, జియాన్ టెక్నాలజీస్ LLP | ప్రతిపాదిత నోడల్ ఏజెన్సీ హెడ్, AP కామర్స్ స్టాక్ | విశాఖపట్నం">Bhushan Thangirala — CEO, Zian Technologies LLP | Proposed Nodal Agency Head, AP Commerce Stack | Visakhapatnam</div>
+      <div class="cs" data-en="Bhushan Thangirala — CEO, Zian Technologies LLP  |  Proposed Nodal Agency Head, AP Commerce Stack  |  Visakhapatnam" data-te="భూషణ్ తంగిరాల — CEO, జియాన్ టెక్నాలజీస్ LLP  |  ప్రతిపాదిత నోడల్ ఏజెన్సీ హెడ్, AP కామర్స్ స్టాక్  |  విశాఖపట్నం">Bhushan Thangirala — CEO, Zian Technologies LLP  |  Proposed Nodal Agency Head, AP Commerce Stack  |  Visakhapatnam</div>
     </div>
   </div>
 </div>
@@ -457,19 +448,14 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
 <script>
   var cur = 1, total = 13, lang = 'en';
 
-  // ── SCALE TO FIT ANY SCREEN ──
   function resize() {
     var stage = document.getElementById('stage');
-    var bw = 960, bh = 560;
-    var aw = window.innerWidth;
-    var ah = window.innerHeight;
-    var scale = Math.min(aw / bw, ah / bh, 1.2);
-    var left  = (aw - bw * scale) / 2;
-    var top   = (ah - bh * scale) / 2;
-    stage.style.transform       = 'scale(' + scale + ')';
+    var bw = 960, bh = 580;
+    var scale = Math.min(window.innerWidth / bw, window.innerHeight / bh, 1.2);
+    stage.style.transform = 'scale(' + scale + ')';
     stage.style.transformOrigin = 'top left';
-    stage.style.left            = left + 'px';
-    stage.style.top             = top  + 'px';
+    stage.style.left = ((window.innerWidth  - bw * scale) / 2) + 'px';
+    stage.style.top  = ((window.innerHeight - bh * scale) / 2) + 'px';
   }
   window.addEventListener('resize', resize);
   resize();
