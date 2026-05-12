@@ -21,25 +21,6 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
 }
 .lang-toggle button.active { background:#4f46e5; color:#fff; }
 
-.nav-btn {
-  position:fixed; top:50%; transform:translateY(-50%);
-  width:42px; height:42px; border-radius:50%; border:none;
-  background:#4f46e5; color:#fff; font-size:20px; cursor:pointer;
-  box-shadow:0 4px 14px rgba(79,70,229,0.5); z-index:999;
-  display:flex; align-items:center; justify-content:center;
-  transition:background 0.2s;
-}
-.nav-btn:hover  { background:#3730a3; }
-.nav-btn:disabled { background:#4f46e588; cursor:default; box-shadow:none; }
-.nav-btn.left  { left:10px; }
-.nav-btn.right { right:10px; }
-
-.counter {
-  position:fixed; bottom:12px; left:50%; transform:translateX(-50%);
-  background:#4f46e5; color:#fff; padding:4px 18px;
-  border-radius:16px; font-size:12px; font-weight:700; z-index:999;
-  box-shadow:0 2px 8px rgba(0,0,0,0.3);
-}
 
 /* ── SCALE STAGE: fixed 960×560, JS scales it ── */
 #stage {
@@ -238,9 +219,6 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
   <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
   <button id="btn-te" onclick="setLang('te')">TE</button>
 </div>
-<button class="nav-btn left"  id="prevBtn" onclick="go(-1)">&#8592;</button>
-<button class="nav-btn right" id="nextBtn" onclick="go(1)">&#8594;</button>
-<div class="counter" id="ctr">1 / 13</div>
 
 <div id="stage">
 
@@ -483,11 +461,11 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
   function resize() {
     var stage = document.getElementById('stage');
     var bw = 960, bh = 560;
-    var aw = window.innerWidth  - 112; // nav buttons 56px each side
-    var ah = window.innerHeight - 50;  // counter 44px + gap
-    var scale = Math.min(aw / bw, ah / bh, 1.2); // cap at 1.2x
-    var left  = (window.innerWidth  - bw * scale) / 2;
-    var top   = (window.innerHeight - 50 - bh * scale) / 2;
+    var aw = window.innerWidth;
+    var ah = window.innerHeight;
+    var scale = Math.min(aw / bw, ah / bh, 1.2);
+    var left  = (aw - bw * scale) / 2;
+    var top   = (ah - bh * scale) / 2;
     stage.style.transform       = 'scale(' + scale + ')';
     stage.style.transformOrigin = 'top left';
     stage.style.left            = left + 'px';
@@ -502,9 +480,6 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
     document.getElementById('s' + cur).classList.remove('active');
     cur = n;
     document.getElementById('s' + cur).classList.add('active');
-    document.getElementById('ctr').textContent = cur + ' / ' + total;
-    document.getElementById('prevBtn').disabled = cur === 1;
-    document.getElementById('nextBtn').disabled = cur === total;
   }
 
   function setLang(l) {
@@ -516,7 +491,6 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
     });
   }
 
-  document.getElementById('prevBtn').disabled = true;
   setLang('en');
 
   document.addEventListener('keydown', function(e) {
