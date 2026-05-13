@@ -1098,7 +1098,7 @@ digital commerce income</div></div>
 
     // Slides with pre-generated MP3 (PrabhatNeural / MohanNeural)
     if (cur <= 2) {
-      var idx = '01';
+      var idx = String(cur).padStart(2, '0');
       var src = 'audio/' + lang + '_' + idx + '.mp3';
       var ao = new Audio(src);
       _audioObj = ao;
