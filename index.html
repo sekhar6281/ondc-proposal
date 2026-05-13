@@ -560,8 +560,8 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
   transition:background 0.2s, transform 0.15s;
 }
 .voice-btn:hover { background:#4338ca; transform:scale(1.1); }
-.voice-btn.speaking { background:#dc2626; animation:pulse 1s infinite; }
-@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,0.4)} 50%{box-shadow:0 0 0 10px rgba(220,38,38,0)} }
+.voice-btn.speaking { background:#4f46e5; animation:vpulse 1.2s ease-in-out infinite; }
+@keyframes vpulse { 0%,100%{box-shadow:0 0 0 0 rgba(79,70,229,0.5)} 50%{box-shadow:0 0 0 12px rgba(79,70,229,0)} }
 </style>
 </head>
 <body>
@@ -982,33 +982,106 @@ digital commerce income</div></div>
     s1: {
       en: "AP Commerce Stack is Andhra Pradesh's own digital commerce platform — where every order placed, every rupee earned, and every data point generated belongs to the state, not to a private company. Proposed by Zian Technologies LLP, Visakhapatnam — built to make the CM's vision of One Entrepreneur Per One Family a measurable, funded reality.",
       te: "AP కామర్స్ స్టాక్ అనేది ఆంధ్రప్రదేశ్ సొంత డిజిటల్ వాణిజ్య వేదిక — ఇక్కడ జరిగే ప్రతి ఆర్డర్, సంపాదించిన ప్రతి రూపాయి, తయారైన ప్రతి డేటా రాష్ట్రానిదే, ఏ ప్రైవేట్ కంపెనీదీ కాదు. జియాన్ టెక్నాలజీస్ LLP, విశాఖపట్నం సమర్పించింది — సీఎం ఒక్కో కుటుంబానికి ఒక్కో వ్యాపారవేత్త అనే దార్శనికతను నిజంగా అమలు చేయడానికి."
+    },
+    s2: {
+      en: "Every single day, Swiggy, Amazon, and Flipkart collect 18 to 35 percent commission from AP's own consumers and MSMEs — and the state of Andhra Pradesh receives zero rupees from transactions happening on its own soil. AP built the market, AP has the people — Zian Technologies LLP is here to make sure AP finally keeps the money too.",
+      te: "రోజూ Swiggy, Amazon, Flipkart లు AP వినియోగదారుల నుండి 18 నుండి 35 శాతం కమీషన్ తీసుకుంటున్నాయి — AP సొంత భూమిపై జరిగే లావాదేవీల నుండి రాష్ట్రానికి ఒక్క రూపాయి కూడా రావట్లేదు. AP మార్కెట్ సృష్టించింది, AP దగ్గర జనం ఉన్నారు — ఆ డబ్బు కూడా AP కే చెందేలా చేయడానికి జియాన్ టెక్నాలజీస్ LLP ఇక్కడ ఉంది."
+    },
+    s3: {
+      en: "ONDC is already processing 14 lakh transactions daily across India — and not a single South Indian state has claimed Network Participant status yet, leaving that first-mover advantage open for AP to take today. Zian Technologies LLP has the technical readiness and ONDC expertise to make AP that first mover — immediately.",
+      te: "ONDC ఇప్పటికే భారతదేశంలో రోజుకు 14 లక్షల లావాదేవీలు నిర్వహిస్తోంది — ఇంకా ఒక్క దక్షిణ భారత రాష్ట్రం కూడా నెట్‌వర్క్ పార్టిసిపెంట్ హోదా తీసుకోలేదు, ఆ అవకాశం AP కోసం నేటికీ తెరుచుకునే ఉంది. జియాన్ టెక్నాలజీస్ LLP సాంకేతిక సంసిద్ధత మరియు ONDC నైపుణ్యంతో AP ని వెంటనే ఆ స్థానంలో నిలపగలదు."
+    },
+    s4: {
+      en: "Just as NPCI owns UPI, Government of AP will own APCS — the state's digital commerce operating system built on ONDC, where AP controls the platform, the data, and the revenue, with Zian Technologies LLP building and running it as the appointed Technology Service Provider.",
+      te: "NPCI UPIని స్వంతం చేసుకున్నట్టే, AP ప్రభుత్వం APCSని స్వంతం చేసుకుంటుంది — ONDC పైన నిర్మించిన రాష్ట్ర డిజిటల్ వాణిజ్య వ్యవస్థ, ప్లాట్‌ఫారమ్, డేటా, ఆదాయం అన్నీ AP వే, జియాన్ టెక్నాలజీస్ LLP నియమిత TSPగా దాన్ని నిర్మించి నడుపుతుంది."
+    },
+    s5: {
+      en: "Eight verticals under one government-owned roof — food, grocery, tickets, services, GI crafts, agri, MSMEs, and D2C — every sector AP earns zero from today becomes a direct state revenue source tomorrow, all operated by Zian Technologies LLP.",
+      te: "ఒకే ప్రభుత్వ వేదిక కింద ఎనిమిది విభాగాలు — ఆహారం, కిరాణా, టికెట్లు, సేవలు, GI క్రాఫ్ట్స్, వ్యవసాయం, MSMEలు, D2C — ఈరోజు AP సున్నా సంపాదిస్తున్న ప్రతి రంగం రేపు నేరుగా రాష్ట్ర ఆదాయ వనరుగా మారుతుంది, అన్నీ జియాన్ టెక్నాలజీస్ LLP నిర్వహిస్తుంది."
+    },
+    s6: {
+      en: "Six income streams start flowing from Month 1 — transaction fees, advertising marketplace, GI certification, seller subscriptions, GST services, and government procurement — all to the state exchequer, every rate decided by Government of AP, no ceiling.",
+      te: "నెల 1 నుండే ఆరు ఆదాయ వనరులు మొదలవుతాయి — లావాదేవీ రుసుము, యాడ్ మార్కెట్‌ప్లేస్, GI సర్టిఫికేషన్, విక్రేత సభ్యత్వాలు, GST సేవలు, ప్రభుత్వ కొనుగోలు — అన్నీ రాష్ట్ర ఖజానాకే, ప్రతి రేటు AP ప్రభుత్వమే నిర్ణయిస్తుంది, పరిమితి లేదు."
+    },
+    s7: {
+      en: "10,000 entrepreneurs in 3 pilot districts, 1 lakh across all 26 districts by Month 18, and 5 lakh families earning real digital income by Month 36 — Zian Technologies LLP delivers the CM's vision with a hard number and deadline on every single phase.",
+      te: "3 పైలట్ జిల్లాలలో 10,000 వ్యాపారవేత్తలు, 18వ నెలలోగా 26 జిల్లాలలో 1 లక్ష, 36వ నెలలోగా 5 లక్షల కుటుంబాలకు నిజమైన డిజిటల్ ఆదాయం — జియాన్ టెక్నాలజీస్ LLP సీఎం దార్శనికతను ప్రతి దశకు స్పష్టమైన సంఖ్య మరియు గడువుతో అందిస్తుంది."
+    },
+    s8: {
+      en: "Zian Technologies LLP holds both roles — Nodal Agency remitting revenue to government within 7 working days, and Technology Service Provider guaranteeing 99.5 percent uptime — all data and IP owned by Government of AP, all rates set by Government of AP, zero lock-in guaranteed.",
+      te: "జియాన్ టెక్నాలజీస్ LLP రెండు పాత్రలు నిర్వహిస్తుంది — 7 పని రోజులలో ప్రభుత్వానికి ఆదాయం చెల్లించే నోడల్ ఏజెన్సీ, మరియు 99.5 శాతం అప్‌టైమ్ హామీ ఇచ్చే టెక్నాలజీ సేవా ప్రదాత — అన్ని డేటా మరియు IP GoAP కే చెందుతాయి, అన్ని రేట్లు GoAP నిర్ణయిస్తుంది, జీరో లాక్-ఇన్."
+    },
+    s9: {
+      en: "Month 6 — platform live in 3 districts, first revenue to government. Month 18 — all 26 districts, 8 verticals, 1 lakh entrepreneurs. Month 30 — platform fully self-sustaining from its own revenue, zero ongoing cost to the state.",
+      te: "నెల 6 — 3 జిల్లాలలో ప్లాట్‌ఫారమ్ లైవ్, ప్రభుత్వానికి మొదటి ఆదాయం. నెల 18 — 26 జిల్లాలు, 8 విభాగాలు, 1 లక్ష వ్యాపారవేత్తలు. నెల 30 — ప్లాట్‌ఫారమ్ సొంత ఆదాయంతో స్వయంగా నిలబడుతుంది, రాష్ట్రానికి నిరంతర ఖర్చు సున్నా."
+    },
+    s10: {
+      en: "Principal Secretary IT and C chairs the Governing Council, government sets every fee rate, CAG audit goes to the state legislature — Zian Technologies LLP operates under complete government oversight, all data in AP State Data Centre, all IP owned by Government of AP, zero vendor control.",
+      te: "PS IT&C పాలక మండలికి అధ్యక్షుడు, ప్రభుత్వం ప్రతి రేటు నిర్ణయిస్తుంది, CAG ఆడిట్ శాసనసభకు వెళ్తుంది — జియాన్ టెక్నాలజీస్ LLP పూర్తి ప్రభుత్వ పర్యవేక్షణ కింద పనిచేస్తుంది, డేటా AP రాష్ట్ర డేటా సెంటర్‌లో, IP అంతా GoAP కే చెందుతుంది."
+    },
+    s11: {
+      en: "APCS needs no new policy — Zian Technologies LLP directly executes 8 mandates already committed by Central and AP governments, from Digital India and ONDC expansion to AP Vision 2047 and the National Agri Export Policy.",
+      te: "APCSకు కొత్త విధానం అక్కరలేదు — జియాన్ టెక్నాలజీస్ LLP కేంద్ర మరియు AP ప్రభుత్వాలు ఇప్పటికే నిర్ణయించిన 8 విధానాలను నేరుగా అమలు చేస్తుంది, డిజిటల్ ఇండియా మరియు ONDC విస్తరణ నుండి AP విజన్ 2047 మరియు జాతీయ వ్యవసాయ ఎగుమతి విధానం వరకు."
+    },
+    s12: {
+      en: "Four actions only — Letter of Intent from Principal Secretary IT and C, APEITA empanelment of Zian Technologies LLP, Government Order for the Governing Council, and 90-day pilot sanction in 3 districts — zero capital outlay from the state, revenue flowing back from Month 1.",
+      te: "కేవలం నాలుగు చర్యలు — PS IT&C నుండి ఉద్దేశ్య లేఖ, జియాన్ టెక్నాలజీస్ LLP కి APEITA ఎంపానెల్‌మెంట్, పాలక మండలికి ప్రభుత్వ ఉత్తర్వు, మరియు 3 జిల్లాలలో 90 రోజుల పైలట్ మంజూరు — రాష్ట్రం నుండి ఖర్చు సున్నా, నెల 1 నుండే ఆదాయం వస్తుంది."
+    },
+    s13: {
+      en: "The governance model is proven. The revenue model is proven. The CM's vision is clear. The ONDC window is open right now — Zian Technologies LLP is ready, and one decision from Government of AP turns all of this into reality today. The platform is ready, the team is ready, the opportunity won't wait — the only thing left is a yes from Government of Andhra Pradesh.",
+      te: "పాలన నమూనా నిరూపించబడింది. ఆదాయ నమూనా నిరూపించబడింది. సీఎం దార్శనికత స్పష్టంగా ఉంది. ONDC అవకాశం ఇప్పుడే తెరుచుకుని ఉంది — జియాన్ టెక్నాలజీస్ LLP సిద్ధంగా ఉంది, AP ప్రభుత్వం ఒక్క నిర్ణయం తీసుకుంటే ఇవన్నీ నేడే వాస్తవమవుతాయి. ప్లాట్‌ఫారమ్ సిద్ధంగా ఉంది, టీమ్ సిద్ధంగా ఉంది, అవకాశం ఆగదు — మిగిలింది ఒక్కటే, ఆంధ్రప్రదేశ్ ప్రభుత్వం అవును అనాలి."
     }
   };
 
   var voiceSpeaking = false;
 
+  function getBestVoice(isTE) {
+    var voices = window.speechSynthesis.getVoices();
+    if (isTE) {
+      return voices.find(function(v){ return v.lang === 'te-IN' || v.lang === 'te'; }) || null;
+    }
+    // Indian English male: try Ravi, then any en-IN, then any en
+    var male = voices.find(function(v){ return v.lang === 'en-IN' && /ravi|male/i.test(v.name); });
+    if (male) return male;
+    var anyIN = voices.find(function(v){ return v.lang === 'en-IN'; });
+    if (anyIN) return anyIN;
+    return voices.find(function(v){ return v.lang.startsWith('en'); }) || null;
+  }
+
+  function stopVoice() {
+    window.speechSynthesis.cancel();
+    voiceSpeaking = false;
+    var btn = document.getElementById('vbtn-global');
+    if (btn) { btn.innerHTML = '🔊'; btn.classList.remove('speaking'); }
+    resumeProgress();
+  }
+
   function speakCurrentSlide() {
     if (!('speechSynthesis' in window)) { alert('Your browser does not support audio.'); return; }
     var btn = document.getElementById('vbtn-global');
-    if (voiceSpeaking) {
-      window.speechSynthesis.cancel();
-      voiceSpeaking = false;
-      btn.innerHTML = '🔊';
-      btn.classList.remove('speaking');
-      return;
-    }
+    if (voiceSpeaking) { stopVoice(); return; }
     var slideId = 's' + cur;
     var text = slideAudio[slideId] ? slideAudio[slideId][lang] : '';
-    if (!text) { btn.title = 'No audio for this slide yet'; return; }
+    if (!text) return;
     window.speechSynthesis.cancel();
     var utter = new SpeechSynthesisUtterance(text);
-    utter.lang = lang === 'te' ? 'te-IN' : 'en-IN';
-    utter.rate = 0.92;
+    var isTE = lang === 'te';
+    utter.lang = isTE ? 'te-IN' : 'en-IN';
+    utter.rate = 0.88;
+    utter.pitch = 1;
+    // Wait for voices to load then assign
+    var assignVoice = function() {
+      var v = getBestVoice(isTE);
+      if (v) utter.voice = v;
+    };
+    if (window.speechSynthesis.getVoices().length) { assignVoice(); }
+    else { window.speechSynthesis.onvoiceschanged = function() { assignVoice(); window.speechSynthesis.onvoiceschanged = null; }; }
+    pauseProgress();
     voiceSpeaking = true;
     btn.innerHTML = '⏹';
     btn.classList.add('speaking');
-    utter.onend = function() { voiceSpeaking = false; btn.innerHTML = '🔊'; btn.classList.remove('speaking'); };
-    utter.onerror = function() { voiceSpeaking = false; btn.innerHTML = '🔊'; btn.classList.remove('speaking'); };
+    utter.onend = function() { voiceSpeaking = false; btn.innerHTML = '🔊'; btn.classList.remove('speaking'); resumeProgress(); };
+    utter.onerror = function() { voiceSpeaking = false; btn.innerHTML = '🔊'; btn.classList.remove('speaking'); resumeProgress(); };
     window.speechSynthesis.speak(utter);
   }
 
