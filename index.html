@@ -1077,8 +1077,11 @@ digital commerce income</div></div>
   }
 
   var voiceSpeaking = false;
+  var _audioObj = null;
 
   function stopVoice() {
+    // stop MP3 player if active
+    if (_audioObj) { _audioObj.pause(); _audioObj.currentTime = 0; _audioObj = null; }
     window.speechSynthesis.cancel();
     voiceSpeaking = false;
     _stopKA();
@@ -1086,8 +1089,24 @@ digital commerce income</div></div>
   }
 
   function speakCurrentSlide() {
-    if (!('speechSynthesis' in window)) return;
     if (voiceSpeaking) { stopVoice(); return; }
+
+    // Slide 1 — use pre-generated MP3 (PrabhatNeural / MohanNeural)
+    if (cur === 1) {
+      var idx = '01';
+      var src = 'audio/' + lang + '_' + idx + '.mp3';
+      var ao = new Audio(src);
+      _audioObj = ao;
+      pauseProgress();
+      voiceSpeaking = true;
+      ao.onended = function() { voiceSpeaking = false; _audioObj = null; resumeProgress(); };
+      ao.onerror = function() { voiceSpeaking = false; _audioObj = null; resumeProgress(); };
+      ao.play();
+      return;
+    }
+
+    // Slides 2–13 — Web Speech API
+    if (!('speechSynthesis' in window)) return;
     var slideId = 's' + cur;
     var isTE = lang === 'te';
     var text = slideAudio[slideId] ? slideAudio[slideId][lang] : '';
@@ -1096,7 +1115,7 @@ digital commerce income</div></div>
     var utter = new SpeechSynthesisUtterance(text);
     utter.lang  = isTE ? 'te-IN' : 'en-IN';
     utter.rate  = 0.88;
-    utter.pitch = isTE ? 1 : 0.75;  // lower pitch = deeper/male sound on devices without Ravi
+    utter.pitch = isTE ? 1 : 0.75;
     var v = getBestVoice(isTE);
     if (v) utter.voice = v;
     pauseProgress();
