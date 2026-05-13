@@ -25,6 +25,8 @@ scripts = {
     "te_09": "నెల 6 — 3 జిల్లాలలో ప్లాట్‌ఫారమ్ లైవ్, ప్రభుత్వానికి మొదటి ఆదాయం. నెల 18 — 26 జిల్లాలు, 8 విభాగాలు, 1 లక్ష వ్యాపారవేత్తలు. నెల 30 — ప్లాట్‌ఫారమ్ స్వయంగా నిలబడుతుంది, రాష్ట్రానికి నిరంతర ఖర్చు సున్నా.",
     "en_10": "PS IT&C chairs the council, government sets every fee rate, CAG audit goes to the legislature — Zian Technologies LLP operates under complete government oversight, all data in AP SDC, all IP owned by GoAP, zero vendor control.",
     "te_10": "PS IT&C పాలక మండలికి అధ్యక్షుడు, ప్రభుత్వం ప్రతి రేటు నిర్ణయిస్తుంది, CAG ఆడిట్ శాసనసభకు వెళ్తుంది — జియాన్ టెక్నాలజీస్ LLP పూర్తి ప్రభుత్వ పర్యవేక్షణ కింద పనిచేస్తుంది, డేటా AP SDCలో, IP అంతా GoAP కే చెందుతుంది.",
+    "en_11": "APCS needs no new policy — Zian Technologies LLP directly executes 8 mandates already committed by Central and AP governments, from Digital India and ONDC expansion to AP Vision 2047 and the National Agri Export Policy.",
+    "te_11": "APCSకు కొత్త విధానం అక్కరలేదు — జియాన్ టెక్నాలజీస్ LLP కేంద్ర మరియు AP ప్రభుత్వాలు ఇప్పటికే నిర్ణయించిన 8 విధానాలను నేరుగా అమలు చేస్తుంది, డిజిటల్ ఇండియా మరియు ONDC విస్తరణ నుండి AP విజన్ 2047 మరియు జాతీయ వ్యవసాయ ఎగుమతి విధానం వరకు.",
 }
 
 async def generate(key, text):
