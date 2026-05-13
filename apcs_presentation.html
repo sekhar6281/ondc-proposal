@@ -204,13 +204,13 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
 .rpi { font-size:12px; color:#374151; line-height:1.8; white-space:pre-line; }
 
 /* GOVERNANCE TABLE */
-.gov-tbl { width:100%; border-collapse:collapse; font-size:12px; }
-.gov-tbl th { background:#1e1b4b; color:#fff; padding:7px 9px; text-align:left; font-size:11px; font-weight:800; letter-spacing:0.5px; }
-.gov-tbl td { padding:6px 9px; border-bottom:1px solid #e0e7ff; color:#374151; line-height:1.35; vertical-align:top; }
+.gov-tbl { width:100%; border-collapse:collapse; font-size:14px; }
+.gov-tbl th { background:#1e1b4b; color:#fff; padding:7px 10px; text-align:left; font-size:13px; font-weight:800; letter-spacing:0.5px; }
+.gov-tbl td { padding:6px 10px; border-bottom:1px solid #e0e7ff; color:#374151; line-height:1.35; vertical-align:top; }
 .gov-tbl tr:nth-child(even) td { background:#f5f7ff; }
 .gov-tbl td:first-child { font-weight:700; color:#1e1b4b; width:40%; }
-.gov-notes { display:flex; gap:8px; margin-top:8px; }
-.gov-note { flex:1; background:#fff; border-radius:9px; padding:8px 13px; font-size:12px; color:#374151; box-shadow:0 6px 18px rgba(79,70,229,0.10); border-left:3px solid #4f46e5; line-height:1.5; text-align:center; transform:translateY(-1px); }
+.gov-notes { display:flex; flex-direction:column; gap:7px; margin-top:8px; }
+.gov-note { flex:none; background:#fff; border-radius:9px; padding:9px 14px; font-size:14px; color:#374151; box-shadow:0 6px 18px rgba(79,70,229,0.10); border-left:3px solid #4f46e5; line-height:1.5; text-align:center; transform:translateY(-1px); }
 
 /* POLICY */
 .pg { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
@@ -247,6 +247,10 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
 #s9.active .s9-anim:nth-child(1) { animation:s3Up 0.4s ease both; animation-delay:0.6s; }
 #s9.active .s9-anim:nth-child(2) { animation:s3Up 0.4s ease both; animation-delay:0.9s; }
 #s9.active .s9-anim:nth-child(3) { animation:s3Up 0.4s ease both; animation-delay:1.2s; }
+
+/* Slide 10 — smaller subtitle, push box upward */
+#s10 .sh { padding-top:20px; }
+#s10 .sh h3 { font-size:26px; line-height:1.2; }
 
 /* Slide 10 staggered animations */
 #s10.active .s10-label { animation:s3Down 0.5s ease both; animation-delay:0s; }
