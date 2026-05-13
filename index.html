@@ -6,6 +6,8 @@
 <title>AP Commerce Stack</title>
 <link rel="preload" href="audio/en_01.mp3" as="audio" type="audio/mpeg">
 <link rel="preload" href="audio/te_01.mp3" as="audio" type="audio/mpeg">
+<link rel="preload" href="audio/en_02.mp3" as="audio" type="audio/mpeg">
+<link rel="preload" href="audio/te_02.mp3" as="audio" type="audio/mpeg">
 <style>
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-family:'Segoe UI',Tahoma,sans-serif; }
@@ -1094,8 +1096,8 @@ digital commerce income</div></div>
   function speakCurrentSlide() {
     if (voiceSpeaking) { stopVoice(); return; }
 
-    // Slide 1 — use pre-generated MP3 (PrabhatNeural / MohanNeural)
-    if (cur === 1) {
+    // Slides with pre-generated MP3 (PrabhatNeural / MohanNeural)
+    if (cur <= 2) {
       var idx = '01';
       var src = 'audio/' + lang + '_' + idx + '.mp3';
       var ao = new Audio(src);
