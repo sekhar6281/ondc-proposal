@@ -127,15 +127,27 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
 .vc .t   { font-size:15px; font-weight:800; color:#1e1b4b; margin-bottom:4px; }
 .vc .d   { font-size:13px; color:#6b7280; line-height:1.45; }
 
+/* Slide 6 staggered animations */
+#s6.active .s6-label { animation:s3Down 0.5s ease both; animation-delay:0s; }
+#s6.active .s6-head  { animation:s3Down 0.5s ease both; animation-delay:0.3s; }
+#s6.active .s6-intro { animation:s3Down 0.5s ease both; animation-delay:0.55s; }
+#s6.active .s6-anim:nth-child(1) { animation:s3Up 0.4s ease both; animation-delay:0.80s; }
+#s6.active .s6-anim:nth-child(2) { animation:s3Up 0.4s ease both; animation-delay:1.05s; }
+#s6.active .s6-anim:nth-child(3) { animation:s3Up 0.4s ease both; animation-delay:1.30s; }
+#s6.active .s6-anim:nth-child(4) { animation:s3Up 0.4s ease both; animation-delay:1.55s; }
+#s6.active .s6-anim:nth-child(5) { animation:s3Up 0.4s ease both; animation-delay:1.80s; }
+#s6.active .s6-anim:nth-child(6) { animation:s3Up 0.4s ease both; animation-delay:2.05s; }
+#s6.active .s6-note  { animation:s3Up 0.4s ease both; animation-delay:2.35s; }
+
 /* REVENUE */
-.rev-intro { font-size:12px; color:#4b5563; text-align:center; margin-bottom:8px; font-style:italic; }
-.rg { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; }
-.rc { background:#fff; border-radius:11px; padding:11px 11px; box-shadow:0 2px 7px rgba(0,0,0,0.07); }
-.rc .rn { font-size:11px; font-weight:800; color:#4f46e5; letter-spacing:1px; margin-bottom:3px; }
-.rc .rt { font-size:12px; font-weight:800; color:#1e1b4b; margin-bottom:2px; }
-.rc .rd { font-size:11px; color:#6b7280; line-height:1.4; }
-.rc .rl { margin-top:5px; font-size:10px; font-weight:700; color:#059669; background:#d1fae5; display:inline-block; padding:2px 7px; border-radius:7px; }
-.rfoot { text-align:center; margin-top:7px; font-size:11px; font-style:italic; color:#4b5563; }
+.rev-intro { font-size:13px; color:#4b5563; text-align:center; margin-bottom:8px; font-style:italic; }
+.rg { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; }
+.rc { background:#fff; border-radius:12px; padding:13px 14px; box-shadow:0 8px 24px rgba(79,70,229,0.13); border-left:4px solid #4f46e5; transform:translateY(-2px); }
+.rc .rn { font-size:16px; font-weight:800; color:#4f46e5; letter-spacing:1px; margin-bottom:3px; }
+.rc .rt { font-size:15px; font-weight:800; color:#1e1b4b; margin-bottom:3px; line-height:1.3; }
+.rc .rd { font-size:13px; color:#6b7280; line-height:1.45; }
+.rc .rl { margin-top:6px; font-size:12px; font-weight:700; color:#059669; background:#d1fae5; display:inline-block; padding:2px 9px; border-radius:7px; }
+.rfoot { text-align:center; margin-top:8px; font-size:14px; font-style:italic; color:#4b5563; font-weight:600; }
 
 /* CM VISION */
 .phases { display:flex; gap:10px; margin-bottom:10px; }
@@ -258,10 +270,14 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
   .vc .d { font-size:15px; line-height:1.5; }
 
   /* Revenue */
-  .rev-intro { font-size:14px; margin-bottom:12px; }
-  .rg { grid-template-columns:repeat(2,1fr); gap:10px; }
-  .rc { padding:14px 12px; } .rc .rn { font-size:11px; } .rc .rt { font-size:14px; } .rc .rd { font-size:13px; }
-  .rfoot { font-size:13px; margin-top:10px; }
+  .rev-intro { font-size:16px; margin-bottom:14px; }
+  .rg { grid-template-columns:repeat(2,1fr); gap:12px; }
+  .rc { padding:16px 14px; }
+  .rc .rn { font-size:15px; margin-bottom:4px; }
+  .rc .rt { font-size:17px; margin-bottom:4px; }
+  .rc .rd { font-size:15px; line-height:1.5; }
+  .rc .rl { font-size:13px; margin-top:8px; }
+  .rfoot { font-size:15px; margin-top:12px; }
 
   /* Phases */
   .phases { flex-direction:column; gap:12px; margin-bottom:14px; }
@@ -417,18 +433,21 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
 
 <!-- ═══ SLIDE 6 ═══ -->
 <div class="slide" id="s6">
-  <div class="sh"><h2 data-en="REVENUE MODEL" data-te="ఆదాయ నమూనా">REVENUE MODEL</h2><h3 data-en="Six Independent Income Streams for the State Exchequer" data-te="రాష్ట్ర ఖజానాకు ఆరు స్వతంత్ర ఆదాయ వనరులు">Six Independent Income Streams for the State Exchequer</h3></div>
+  <div class="sh">
+    <h2 class="s6-label" data-en="REVENUE MODEL" data-te="ఆదాయ నమూనా">REVENUE MODEL</h2>
+    <h3 class="s6-head" data-en="Six Independent Income Streams for the State Exchequer" data-te="రాష్ట్ర ఖజానాకు ఆరు స్వతంత్ర ఆదాయ వనరులు">Six Independent Income Streams for the State Exchequer</h3>
+  </div>
   <div class="body" style="justify-content:center;">
-    <div class="rev-intro" data-en="Every transaction on APCS is a revenue event for Government of Andhra Pradesh. No dependency on a single vertical or partner." data-te="APCS పై ప్రతి లావాదేవీ ఆంధ్రప్రదేశ్ ప్రభుత్వానికి ఒక ఆదాయ సందర్భం. ఒకే విభాగం లేదా భాగస్వామిపై ఆధారపడటం లేదు.">Every transaction on APCS is a revenue event for Government of Andhra Pradesh. No dependency on a single vertical or partner.</div>
+    <div class="rev-intro s6-intro" data-en="Every transaction on APCS is a revenue event for Government of Andhra Pradesh. No dependency on a single vertical or partner." data-te="APCS పై ప్రతి లావాదేవీ ఆంధ్రప్రదేశ్ ప్రభుత్వానికి ఒక ఆదాయ సందర్భం. ఒకే విభాగం లేదా భాగస్వామిపై ఆధారపడటం లేదు.">Every transaction on APCS is a revenue event for Government of Andhra Pradesh. No dependency on a single vertical or partner.</div>
     <div class="rg">
-      <div class="rc"><div class="rn">01</div><div class="rt" data-en="Platform Transaction Fee" data-te="ప్లాట్‌ఫారమ్ లావాదేవీ రుసుము">Platform Transaction Fee</div><div class="rd" data-en="Micro-levy on every completed transaction. Rate set by GoAP. Differentiated per vertical." data-te="ప్రతి పూర్తయిన లావాదేవీపై మైక్రో-లెవీ. GoAP రేటు నిర్ణయిస్తుంది. విభాగానుసారం వేర్వేరు.">Micro-levy on every completed transaction. Rate set by GoAP. Differentiated per vertical.</div><span class="rl" data-en="Live: Month 1" data-te="లైవ్: నెల 1">Live: Month 1</span></div>
-      <div class="rc"><div class="rn">02</div><div class="rt" data-en="Advertising &amp; Sponsored Listings" data-te="ప్రకటనలు &amp; స్పాన్సర్డ్ లిస్టింగ్స్">Advertising &amp; Sponsored Listings</div><div class="rd" data-en="State-owned digital ad marketplace. National brands pay to reach AP consumers. Seasonal campaign slots." data-te="రాష్ట్ర యాజమాన్య డిజిటల్ యాడ్ మార్కెట్‌ప్లేస్. జాతీయ బ్రాండ్లు AP వినియోగదారులకు చేరుకోవడానికి చెల్లిస్తాయి. సీజనల్ క్యాంపెయిన్ స్లాట్లు.">State-owned digital ad marketplace. National brands pay to reach AP consumers. Seasonal campaign slots.</div><span class="rl" data-en="Live: Month 6" data-te="లైవ్: నెల 6">Live: Month 6</span></div>
-      <div class="rc"><div class="rn">03</div><div class="rt" data-en="Brand Andhra GI Certification" data-te="బ్రాండ్ ఆంధ్ర GI సర్టిఫికేషన్">Brand Andhra GI Certification</div><div class="rd" data-en="Annual certification fee. Export per-shipment fee. Counterfeit penalty revenue." data-te="వార్షిక సర్టిఫికేషన్ రుసుము. ఎగుమతి షిప్‌మెంట్ రుసుము. నకిలీ వస్తువుల జరిమానా ఆదాయం.">Annual certification fee. Export per-shipment fee. Counterfeit penalty revenue.</div><span class="rl" data-en="Live: Month 3" data-te="లైవ్: నెల 3">Live: Month 3</span></div>
-      <div class="rc"><div class="rn">04</div><div class="rt" data-en="Seller SaaS Subscriptions" data-te="విక్రేత SaaS సభ్యత్వాలు">Seller SaaS Subscriptions</div><div class="rd" data-en="Tiered: Free / Growth / Enterprise. Analytics, priority placement, API access." data-te="స్థాయిలు: ఉచిత / గ్రోత్ / ఎంటర్‌ప్రైజ్. అనలిటిక్స్, ప్రాధాన్య ప్లేస్‌మెంట్, API యాక్సెస్.">Tiered: Free / Growth / Enterprise. Analytics, priority placement, API access.</div><span class="rl" data-en="Live: Month 7" data-te="లైవ్: నెల 7">Live: Month 7</span></div>
-      <div class="rc"><div class="rn">05</div><div class="rt" data-en="GST Compliance Services" data-te="GST కంప్లయన్స్ సేవలు">GST Compliance Services</div><div class="rd" data-en="Auto-invoice, GSTR-1 auto-population, e-way bill. Monthly subscription per seller." data-te="ఆటో-ఇన్‌వాయిస్, GSTR-1 ఆటో-పాపులేషన్, ఇ-వే బిల్. విక్రేతకు మాసిక సభ్యత్వం.">Auto-invoice, GSTR-1 auto-population, e-way bill. Monthly subscription per seller.</div><span class="rl" data-en="Live: Month 9" data-te="లైవ్: నెల 9">Live: Month 9</span></div>
-      <div class="rc"><div class="rn">06</div><div class="rt" data-en="Government Procurement Marketplace" data-te="ప్రభుత్వ కొనుగోలు మార్కెట్‌ప్లేస్">Government Procurement Marketplace</div><div class="rd" data-en="AP departments procure from MSMEs on APCS. Vendor registration + bid processing fee." data-te="AP శాఖలు APCS పై MSMEల నుండి కొనుగోలు చేస్తాయి. వెండర్ రిజిస్ట్రేషన్ + బిడ్ ప్రాసెసింగ్ రుసుము.">AP departments procure from MSMEs on APCS. Vendor registration + bid processing fee.</div><span class="rl" data-en="Live: Month 22" data-te="లైవ్: నెల 22">Live: Month 22</span></div>
+      <div class="rc s6-anim"><div class="rn">01</div><div class="rt" data-en="Platform Transaction Fee" data-te="ప్లాట్‌ఫారమ్ లావాదేవీ రుసుము">Platform Transaction Fee</div><div class="rd" data-en="Micro-levy on every completed transaction. Rate set by GoAP. Differentiated per vertical." data-te="ప్రతి పూర్తయిన లావాదేవీపై మైక్రో-లెవీ. GoAP రేటు నిర్ణయిస్తుంది. విభాగానుసారం వేర్వేరు.">Micro-levy on every completed transaction. Rate set by GoAP. Differentiated per vertical.</div><span class="rl" data-en="Live: Month 1" data-te="లైవ్: నెల 1">Live: Month 1</span></div>
+      <div class="rc s6-anim"><div class="rn">02</div><div class="rt" data-en="Advertising &amp; Sponsored Listings" data-te="ప్రకటనలు &amp; స్పాన్సర్డ్ లిస్టింగ్స్">Advertising &amp; Sponsored Listings</div><div class="rd" data-en="State-owned digital ad marketplace. National brands pay to reach AP consumers. Seasonal campaign slots." data-te="రాష్ట్ర యాజమాన్య డిజిటల్ యాడ్ మార్కెట్‌ప్లేస్. జాతీయ బ్రాండ్లు AP వినియోగదారులకు చేరుకోవడానికి చెల్లిస్తాయి. సీజనల్ క్యాంపెయిన్ స్లాట్లు.">State-owned digital ad marketplace. National brands pay to reach AP consumers. Seasonal campaign slots.</div><span class="rl" data-en="Live: Month 6" data-te="లైవ్: నెల 6">Live: Month 6</span></div>
+      <div class="rc s6-anim"><div class="rn">03</div><div class="rt" data-en="Brand Andhra GI Certification" data-te="బ్రాండ్ ఆంధ్ర GI సర్టిఫికేషన్">Brand Andhra GI Certification</div><div class="rd" data-en="Annual certification fee. Export per-shipment fee. Counterfeit penalty revenue." data-te="వార్షిక సర్టిఫికేషన్ రుసుము. ఎగుమతి షిప్‌మెంట్ రుసుము. నకిలీ వస్తువుల జరిమానా ఆదాయం.">Annual certification fee. Export per-shipment fee. Counterfeit penalty revenue.</div><span class="rl" data-en="Live: Month 3" data-te="లైవ్: నెల 3">Live: Month 3</span></div>
+      <div class="rc s6-anim"><div class="rn">04</div><div class="rt" data-en="Seller SaaS Subscriptions" data-te="విక్రేత SaaS సభ్యత్వాలు">Seller SaaS Subscriptions</div><div class="rd" data-en="Tiered: Free / Growth / Enterprise. Analytics, priority placement, API access." data-te="స్థాయిలు: ఉచిత / గ్రోత్ / ఎంటర్‌ప్రైజ్. అనలిటిక్స్, ప్రాధాన్య ప్లేస్‌మెంట్, API యాక్సెస్.">Tiered: Free / Growth / Enterprise. Analytics, priority placement, API access.</div><span class="rl" data-en="Live: Month 7" data-te="లైవ్: నెల 7">Live: Month 7</span></div>
+      <div class="rc s6-anim"><div class="rn">05</div><div class="rt" data-en="GST Compliance Services" data-te="GST కంప్లయన్స్ సేవలు">GST Compliance Services</div><div class="rd" data-en="Auto-invoice, GSTR-1 auto-population, e-way bill. Monthly subscription per seller." data-te="ఆటో-ఇన్‌వాయిస్, GSTR-1 ఆటో-పాపులేషన్, ఇ-వే బిల్. విక్రేతకు మాసిక సభ్యత్వం.">Auto-invoice, GSTR-1 auto-population, e-way bill. Monthly subscription per seller.</div><span class="rl" data-en="Live: Month 9" data-te="లైవ్: నెల 9">Live: Month 9</span></div>
+      <div class="rc s6-anim"><div class="rn">06</div><div class="rt" data-en="Government Procurement Marketplace" data-te="ప్రభుత్వ కొనుగోలు మార్కెట్‌ప్లేస్">Government Procurement Marketplace</div><div class="rd" data-en="AP departments procure from MSMEs on APCS. Vendor registration + bid processing fee." data-te="AP శాఖలు APCS పై MSMEల నుండి కొనుగోలు చేస్తాయి. వెండర్ రిజిస్ట్రేషన్ + బిడ్ ప్రాసెసింగ్ రుసుము.">AP departments procure from MSMEs on APCS. Vendor registration + bid processing fee.</div><span class="rl" data-en="Live: Month 22" data-te="లైవ్: నెల 22">Live: Month 22</span></div>
     </div>
-    <div class="rfoot" data-en="Revenue scales with AP's economy. No cap. No ceiling. The more the state grows — the more the state earns." data-te="ఆదాయం AP ఆర్థిక వ్యవస్థతో పెరుగుతుంది. పరిమితి లేదు. రాష్ట్రం ఎంత పెరిగితే — అంత ఆదాయం.">Revenue scales with AP's economy. No cap. No ceiling. The more the state grows — the more the state earns.</div>
+    <div class="rfoot s6-note" data-en="Revenue scales with AP's economy. No cap. No ceiling. The more the state grows — the more the state earns." data-te="ఆదాయం AP ఆర్థిక వ్యవస్థతో పెరుగుతుంది. పరిమితి లేదు. రాష్ట్రం ఎంత పెరిగితే — అంత ఆదాయం.">Revenue scales with AP's economy. No cap. No ceiling. The more the state grows — the more the state earns.</div>
   </div>
 </div>
 
@@ -613,7 +632,7 @@ digital commerce income</div></div>
     cur = n;
     var slide = document.getElementById('s' + cur);
     // Reset animations so they replay every time the slide is entered
-    slide.querySelectorAll('.s3-label,.s3-head,.s3-anim,.s3-note,.s4-label,.s4-head,.s4-p,.s4-anim,.s4-note,.s5-label,.s5-head,.s5-anim').forEach(function(el) {
+    slide.querySelectorAll('.s3-label,.s3-head,.s3-anim,.s3-note,.s4-label,.s4-head,.s4-p,.s4-anim,.s4-note,.s5-label,.s5-head,.s5-anim,.s6-label,.s6-head,.s6-intro,.s6-anim,.s6-note').forEach(function(el) {
       el.style.animation = 'none';
       el.offsetHeight; // force reflow
       el.style.animation = '';
