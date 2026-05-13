@@ -29,6 +29,8 @@ scripts = {
     "te_11": "APCSకు కొత్త విధానం అక్కరలేదు — జియాన్ టెక్నాలజీస్ LLP కేంద్ర మరియు AP ప్రభుత్వాలు ఇప్పటికే నిర్ణయించిన 8 విధానాలను నేరుగా అమలు చేస్తుంది, డిజిటల్ ఇండియా మరియు ONDC విస్తరణ నుండి AP విజన్ 2047 మరియు జాతీయ వ్యవసాయ ఎగుమతి విధానం వరకు.",
     "en_12": "Four actions only — LoI from PS IT&C, APEITA empanelment of Zian Technologies LLP, GO for Governing Council, and 90-day pilot sanction — zero capital outlay from the state, revenue flowing back from Month 1.",
     "te_12": "కేవలం నాలుగు చర్యలు — PS IT&C నుండి LoI, జియాన్ టెక్నాలజీస్ LLP కి APEITA ఎంపానెల్‌మెంట్, పాలక మండలికి GO, మరియు 90 రోజుల పైలట్ మంజూరు — రాష్ట్రం నుండి ఖర్చు సున్నా, నెల 1 నుండే ఆదాయం వస్తుంది.",
+    "en_13": "The governance model is proven. The revenue model is proven. The CM's vision is clear. The ONDC window is open right now — Zian Technologies LLP is ready, and one decision from Government of AP turns all of this into reality today. The platform is ready, the team is ready, the opportunity won't wait — the only thing left is a yes from Government of Andhra Pradesh.",
+    "te_13": "పాలన నమూనా నిరూపించబడింది. ఆదాయ నమూనా నిరూపించబడింది. సీఎం దార్శనికత స్పష్టంగా ఉంది. ONDC అవకాశం ఇప్పుడే తెరుచుకుని ఉంది — జియాన్ టెక్నాలజీస్ LLP సిద్ధంగా ఉంది, AP ప్రభుత్వం ఒక్క నిర్ణయం తీసుకుంటే ఇవన్నీ నేడే వాస్తవమవుతాయి. ప్లాట్‌ఫారమ్ సిద్ధంగా ఉంది, టీమ్ సిద్ధంగా ఉంది, అవకాశం ఆగదు — మిగిలింది ఒక్కటే, ఆంధ్రప్రదేశ్ ప్రభుత్వం అవును అనాలి.",
 }
 
 async def generate(key, text):
