@@ -21,6 +21,8 @@ scripts = {
     "te_07": "3 పైలట్ జిల్లాలలో 10,000 వ్యాపారవేత్తలు, 18వ నెలలోగా 26 జిల్లాలలో 1 లక్ష, 36వ నెలలోగా 5 లక్షల కుటుంబాలకు నిజమైన డిజిటల్ ఆదాయం — జియాన్ టెక్నాలజీస్ LLP సీఎం దార్శనికతను ప్రతి దశకు స్పష్టమైన సంఖ్య మరియు గడువుతో అందిస్తుంది.",
     "en_08": "Zian Technologies LLP holds both roles — Nodal Agency remitting revenue to government within 7 working days, and TSP guaranteeing 99.5% uptime — all data and IP owned by GoAP, all rates set by GoAP, zero lock-in guaranteed.",
     "te_08": "జియాన్ టెక్నాలజీస్ LLP రెండు పాత్రలు నిర్వహిస్తుంది — 7 పని రోజులలో ప్రభుత్వానికి ఆదాయం చెల్లించే నోడల్ ఏజెన్సీ, మరియు 99.5% అప్‌టైమ్ హామీ ఇచ్చే TSP — అన్ని డేటా మరియు IP GoAP కే చెందుతాయి, అన్ని రేట్లు GoAP నిర్ణయిస్తుంది, జీరో లాక్-ఇన్.",
+    "en_09": "Month 6 — platform live in 3 districts, first revenue to government. Month 18 — all 26 districts, 8 verticals, 1 lakh entrepreneurs. Month 30 — platform fully self-sustaining, zero ongoing cost to the state.",
+    "te_09": "నెల 6 — 3 జిల్లాలలో ప్లాట్‌ఫారమ్ లైవ్, ప్రభుత్వానికి మొదటి ఆదాయం. నెల 18 — 26 జిల్లాలు, 8 విభాగాలు, 1 లక్ష వ్యాపారవేత్తలు. నెల 30 — ప్లాట్‌ఫారమ్ స్వయంగా నిలబడుతుంది, రాష్ట్రానికి నిరంతర ఖర్చు సున్నా.",
 }
 
 async def generate(key, text):
