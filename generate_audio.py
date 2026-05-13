@@ -17,6 +17,8 @@ scripts = {
     "te_05": "ఒకే ప్రభుత్వ వేదిక కింద ఎనిమిది విభాగాలు — ఆహారం, కిరాణా, టికెట్లు, సేవలు, GI క్రాఫ్ట్స్, వ్యవసాయం, MSMEలు, D2C — ఈరోజు AP సున్నా సంపాదిస్తున్న ప్రతి రంగం రేపు నేరుగా రాష్ట్ర ఆదాయ వనరుగా మారుతుంది, అన్నీ జియాన్ టెక్నాలజీస్ LLP నిర్వహిస్తుంది.",
     "en_06": "Six income streams start flowing from Month 1 — transaction fees, advertising, GI certification, seller subscriptions, GST services, and government procurement — all to the state exchequer, every rate decided by Government of AP, no ceiling.",
     "te_06": "నెల 1 నుండే ఆరు ఆదాయ వనరులు మొదలవుతాయి — లావాదేవీ రుసుము, యాడ్స్, GI సర్టిఫికేషన్, విక్రేత సభ్యత్వాలు, GST సేవలు, ప్రభుత్వ కొనుగోలు — అన్నీ రాష్ట్ర ఖజానాకే, ప్రతి రేటు AP ప్రభుత్వమే నిర్ణయిస్తుంది, పరిమితి లేదు.",
+    "en_07": "10,000 entrepreneurs in 3 pilot districts, 1 lakh across all 26 districts by Month 18, and 5 lakh families earning real digital income by Month 36 — Zian Technologies LLP delivers the CM's vision with a hard number and deadline on every phase.",
+    "te_07": "3 పైలట్ జిల్లాలలో 10,000 వ్యాపారవేత్తలు, 18వ నెలలోగా 26 జిల్లాలలో 1 లక్ష, 36వ నెలలోగా 5 లక్షల కుటుంబాలకు నిజమైన డిజిటల్ ఆదాయం — జియాన్ టెక్నాలజీస్ LLP సీఎం దార్శనికతను ప్రతి దశకు స్పష్టమైన సంఖ్య మరియు గడువుతో అందిస్తుంది.",
 }
 
 async def generate(key, text):
