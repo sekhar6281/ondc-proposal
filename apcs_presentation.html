@@ -140,7 +140,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
 #s6.active .s6-note  { animation:s3Up 0.4s ease both; animation-delay:2.35s; }
 
 /* REVENUE */
-.rev-intro { font-size:13px; color:#4b5563; text-align:center; margin-bottom:8px; font-style:italic; }
+.rev-intro { font-size:15px; color:#4b5563; text-align:center; margin-bottom:8px; font-style:italic; font-weight:600; }
 .rg { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; }
 .rc { background:#fff; border-radius:12px; padding:13px 14px; box-shadow:0 8px 24px rgba(79,70,229,0.13); border-left:4px solid #4f46e5; transform:translateY(-2px); }
 .rc .rn { font-size:16px; font-weight:800; color:#4f46e5; letter-spacing:1px; margin-bottom:3px; }
@@ -149,28 +149,48 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
 .rc .rl { margin-top:6px; font-size:12px; font-weight:700; color:#059669; background:#d1fae5; display:inline-block; padding:2px 9px; border-radius:7px; }
 .rfoot { text-align:center; margin-top:8px; font-size:14px; font-style:italic; color:#4b5563; font-weight:600; }
 
+/* Slide 7 staggered animations */
+#s7.active .s7-label { animation:s3Down 0.5s ease both; animation-delay:0s; }
+#s7.active .s7-head  { animation:s3Down 0.5s ease both; animation-delay:0.3s; }
+#s7.active .s7-anim:nth-child(1) { animation:s3Up 0.4s ease both; animation-delay:0.6s; }
+#s7.active .s7-anim:nth-child(2) { animation:s3Up 0.4s ease both; animation-delay:0.9s; }
+#s7.active .s7-anim:nth-child(3) { animation:s3Up 0.4s ease both; animation-delay:1.2s; }
+#s7.active .s7-sub   { animation:s3Down 0.4s ease both; animation-delay:1.5s; }
+#s7.active .s7-pill:nth-child(1) { animation:s3Up 0.4s ease both; animation-delay:1.75s; }
+#s7.active .s7-pill:nth-child(2) { animation:s3Up 0.4s ease both; animation-delay:2.0s; }
+#s7.active .s7-pill:nth-child(3) { animation:s3Up 0.4s ease both; animation-delay:2.25s; }
+#s7.active .s7-pill:nth-child(4) { animation:s3Up 0.4s ease both; animation-delay:2.5s; }
+
 /* CM VISION */
 .phases { display:flex; gap:10px; margin-bottom:10px; }
-.pc { background:#fff; border-radius:11px; padding:12px 10px; flex:1; text-align:center; box-shadow:0 2px 7px rgba(0,0,0,0.07); border-top:3px solid #4f46e5; }
-.pc.p2 { border-top-color:#7c3aed; } .pc.p3 { border-top-color:#db2777; }
-.pc .pl { font-size:11px; font-weight:800; color:#4f46e5; letter-spacing:1px; margin-bottom:2px; }
+.pc { background:#fff; border-radius:12px; padding:14px 12px; flex:1; text-align:center; box-shadow:0 8px 20px rgba(79,70,229,0.12); border-left:4px solid #4f46e5; transform:translateY(-2px); }
+.pc.p2 { border-left-color:#7c3aed; box-shadow:0 8px 20px rgba(124,58,237,0.12); }
+.pc.p3 { border-left-color:#db2777; box-shadow:0 8px 20px rgba(219,39,119,0.12); }
+.pc .pl { font-size:13px; font-weight:800; color:#4f46e5; letter-spacing:1px; margin-bottom:2px; }
 .pc.p2 .pl { color:#7c3aed; } .pc.p3 .pl { color:#db2777; }
-.pc .pt { font-size:11px; color:#9ca3af; margin-bottom:6px; }
-.pc .pn { font-size:22px; font-weight:900; color:#1e1b4b; line-height:1; }
-.pc .pu { font-size:11px; font-weight:700; color:#4b5563; margin-bottom:3px; }
-.pc .pd { font-size:10px; color:#6b7280; line-height:1.4; }
-.coh h4 { font-size:11px; font-weight:800; color:#4f46e5; letter-spacing:1px; margin-bottom:6px; }
-.cpills { display:flex; gap:6px; flex-wrap:wrap; }
-.cpill { background:#fff; border-radius:14px; padding:4px 11px; font-size:12px; font-weight:600; color:#1e1b4b; box-shadow:0 1px 5px rgba(0,0,0,0.07); }
+.pc .pt { font-size:13px; color:#9ca3af; margin-bottom:6px; }
+.pc .pn { font-size:26px; font-weight:900; color:#1e1b4b; line-height:1; }
+.pc .pu { font-size:13px; font-weight:700; color:#4b5563; margin-bottom:3px; }
+.pc .pd { font-size:12px; color:#6b7280; line-height:1.4; }
+.coh h4 { font-size:13px; font-weight:800; color:#4f46e5; letter-spacing:1px; margin-bottom:7px; }
+.cpills { display:flex; flex-direction:column; gap:7px; }
+.cpill { background:#fff; border-radius:10px; padding:11px 14px; font-size:15px; font-weight:600; color:#1e1b4b; box-shadow:0 3px 10px rgba(0,0,0,0.07); border-left:3px solid #4f46e5; text-align:left; line-height:1.4; }
+
+/* Slide 8 staggered animations */
+#s8.active .s8-label { animation:s3Down 0.5s ease both; animation-delay:0s; }
+#s8.active .s8-head  { animation:s3Down 0.5s ease both; animation-delay:0.3s; }
+#s8.active .s8-anim:nth-child(1) { animation:s3Up 0.5s ease both; animation-delay:0.6s; }
+#s8.active .s8-anim:nth-child(2) { animation:s3Up 0.5s ease both; animation-delay:0.9s; }
+#s8.active .s8-foot  { animation:s3Up 0.4s ease both; animation-delay:1.2s; }
 
 /* ENTITY */
-.two { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
-.col { background:#fff; border-radius:12px; padding:12px 13px; box-shadow:0 2px 8px rgba(0,0,0,0.07); }
-.col h4 { font-size:11px; font-weight:800; color:#4f46e5; letter-spacing:1.5px; margin-bottom:8px; border-bottom:2px solid #e0e7ff; padding-bottom:5px; }
+.two { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.col { background:#fff; border-radius:12px; padding:13px 15px; box-shadow:0 12px 32px rgba(79,70,229,0.15); transform:translateY(-4px); }
+.col h4 { font-size:15px; font-weight:800; color:#4f46e5; letter-spacing:1.5px; margin-bottom:7px; border-bottom:2px solid #e0e7ff; padding-bottom:4px; }
 .col ul { list-style:none; }
-.col li { font-size:11px; color:#374151; padding:2.5px 0 2.5px 12px; border-bottom:1px solid #f3f4f6; line-height:1.4; position:relative; }
-.col li::before { content:'▸'; position:absolute; left:0; color:#4f46e5; font-size:9px; top:3px; }
-.efoot { margin-top:8px; background:#1e1b4b; color:#fff; border-radius:9px; padding:8px 14px; text-align:center; font-size:11px; font-style:italic; flex-shrink:0; }
+.col li { font-size:14px; color:#374151; padding:2.5px 0 2.5px 14px; border-bottom:1px solid #f3f4f6; line-height:1.4; position:relative; }
+.col li::before { content:'▸'; position:absolute; left:0; color:#4f46e5; font-size:11px; top:3px; }
+.efoot { margin-top:8px; background:#1e1b4b; color:#fff; border-radius:9px; padding:9px 16px; text-align:center; font-size:15px; font-style:italic; flex-shrink:0; }
 
 /* ROADMAP */
 .rm { display:flex; flex-direction:column; gap:6px; }
@@ -281,9 +301,10 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
 
   /* Phases */
   .phases { flex-direction:column; gap:12px; margin-bottom:14px; }
-  .pc { padding:16px 14px; } .pc .pl { font-size:11px; } .pc .pt { font-size:12px; }
-  .pc .pn { font-size:32px; } .pc .pu { font-size:12px; } .pc .pd { font-size:12px; }
-  .cpill { font-size:13px; padding:6px 14px; }
+  .pc { padding:18px 16px; }
+  .pc .pl { font-size:13px; } .pc .pt { font-size:13px; }
+  .pc .pn { font-size:34px; } .pc .pu { font-size:13px; } .pc .pd { font-size:13px; }
+  .cpill { font-size:16px; padding:12px 16px; }
 
   /* Entity */
   .two { grid-template-columns:1fr; gap:12px; }
@@ -453,23 +474,26 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
 
 <!-- ═══ SLIDE 7 ═══ -->
 <div class="slide" id="s7">
-  <div class="sh"><h2 data-en="CM'S VISION" data-te="సీఎం దార్శనికత">CM'S VISION</h2><h3 data-en='"One Entrepreneur Per One Family" — Operationalized at Scale' data-te='"ఒక్కో కుటుంబానికి ఒక్కో వ్యాపారవేత్త" — పెద్ద ఎత్తున అమలు'>"One Entrepreneur Per One Family" — Operationalized at Scale</h3></div>
+  <div class="sh">
+    <h2 class="s7-label" data-en="CM'S VISION" data-te="సీఎం దార్శనికత">CM'S VISION</h2>
+    <h3 class="s7-head" data-en='"One Entrepreneur Per One Family" — Operationalized at Scale' data-te='"ఒక్కో కుటుంబానికి ఒక్కో వ్యాపారవేత్త" — పెద్ద ఎత్తున అమలు'>"One Entrepreneur Per One Family" — Operationalized at Scale</h3>
+  </div>
   <div class="body" style="justify-content:center;">
     <div class="phases">
-      <div class="pc"><div class="pl" data-en="PHASE 1" data-te="దశ 1">PHASE 1</div><div class="pt" data-en="Months 1–6" data-te="నెలలు 1–6">Months 1–6</div><div class="pn">10,000</div><div class="pu" data-en="Active Entrepreneurs" data-te="క్రియాశీల వ్యాపారవేత్తలు">Active Entrepreneurs</div><div class="pd" data-en="3 pilot districts&#10;Food, Grocery, My Services" data-te="3 పైలట్ జిల్లాలు&#10;ఆహారం, కిరాణా, మై సర్వీసెస్">3 pilot districts
+      <div class="pc s7-anim"><div class="pl" data-en="PHASE 1" data-te="దశ 1">PHASE 1</div><div class="pt" data-en="Months 1–6" data-te="నెలలు 1–6">Months 1–6</div><div class="pn">10,000</div><div class="pu" data-en="Active Entrepreneurs" data-te="క్రియాశీల వ్యాపారవేత్తలు">Active Entrepreneurs</div><div class="pd" data-en="3 pilot districts&#10;Food, Grocery, My Services" data-te="3 పైలట్ జిల్లాలు&#10;ఆహారం, కిరాణా, మై సర్వీసెస్">3 pilot districts
 Food, Grocery, My Services</div></div>
-      <div class="pc p2"><div class="pl" data-en="PHASE 2" data-te="దశ 2">PHASE 2</div><div class="pt" data-en="Months 7–18" data-te="నెలలు 7–18">Months 7–18</div><div class="pn">1,00,000</div><div class="pu" data-en="Active Entrepreneurs" data-te="క్రియాశీల వ్యాపారవేత్తలు">Active Entrepreneurs</div><div class="pd" data-en="All 26 districts&#10;All 8 verticals live" data-te="అన్ని 26 జిల్లాలు&#10;8 విభాగాలు లైవ్">All 26 districts
+      <div class="pc p2 s7-anim"><div class="pl" data-en="PHASE 2" data-te="దశ 2">PHASE 2</div><div class="pt" data-en="Months 7–18" data-te="నెలలు 7–18">Months 7–18</div><div class="pn">1,00,000</div><div class="pu" data-en="Active Entrepreneurs" data-te="క్రియాశీల వ్యాపారవేత్తలు">Active Entrepreneurs</div><div class="pd" data-en="All 26 districts&#10;All 8 verticals live" data-te="అన్ని 26 జిల్లాలు&#10;8 విభాగాలు లైవ్">All 26 districts
 All 8 verticals live</div></div>
-      <div class="pc p3"><div class="pl" data-en="PHASE 3" data-te="దశ 3">PHASE 3</div><div class="pt" data-en="Months 19–36" data-te="నెలలు 19–36">Months 19–36</div><div class="pn">5,00,000</div><div class="pu" data-en="Active Entrepreneurs" data-te="క్రియాశీల వ్యాపారవేత్తలు">Active Entrepreneurs</div><div class="pd" data-en="Families with active&#10;digital commerce income" data-te="డిజిటల్ వాణిజ్య ఆదాయం&#10;ఉన్న కుటుంబాలు">Families with active
+      <div class="pc p3 s7-anim"><div class="pl" data-en="PHASE 3" data-te="దశ 3">PHASE 3</div><div class="pt" data-en="Months 19–36" data-te="నెలలు 19–36">Months 19–36</div><div class="pn">5,00,000</div><div class="pu" data-en="Active Entrepreneurs" data-te="క్రియాశీల వ్యాపారవేత్తలు">Active Entrepreneurs</div><div class="pd" data-en="Families with active&#10;digital commerce income" data-te="డిజిటల్ వాణిజ్య ఆదాయం&#10;ఉన్న కుటుంబాలు">Families with active
 digital commerce income</div></div>
     </div>
     <div class="coh">
-      <h4 data-en="PRIORITY COHORTS FOR DELIVERY" data-te="అమలు కోసం ప్రాధాన్య సమూహాలు">PRIORITY COHORTS FOR DELIVERY</h4>
+      <h4 class="s7-sub" data-en="PRIORITY COHORTS FOR DELIVERY" data-te="అమలు కోసం ప్రాధాన్య సమూహాలు">PRIORITY COHORTS FOR DELIVERY</h4>
       <div class="cpills">
-        <div class="cpill" data-en="Women SHG Members — Food, Handloom, Craft (First Priority)" data-te="మహిళా SHG సభ్యులు — ఆహారం, హ్యాండ్‌లూమ్, క్రాఫ్ట్ (మొదటి ప్రాధాన్యత)">Women SHG Members — Food, Handloom, Craft (First Priority)</div>
-        <div class="cpill" data-en="SC/ST Artisans &amp; Traditional Craft Families — Brand Andhra GI vertical" data-te="SC/ST కళాకారులు &amp; సంప్రదాయ క్రాఫ్ట్ కుటుంబాలు — బ్రాండ్ ఆంధ్ర GI విభాగం">SC/ST Artisans &amp; Traditional Craft Families — Brand Andhra GI vertical</div>
-        <div class="cpill" data-en="Rural Youth (18–30) — Agri, My Services, My Products + APSSDC skill certification" data-te="గ్రామీణ యువత (18–30) — వ్యవసాయం, మై సర్వీసెస్, మై ప్రొడక్ట్స్ + APSSDC నైపుణ్య సర్టిఫికేషన్">Rural Youth (18–30) — Agri, My Services, My Products + APSSDC skill certification</div>
-        <div class="cpill" data-en="Migrant Returnee Workers — My Services and Food; APCS as re-integration vehicle" data-te="వలస తిరిగొచ్చిన కార్మికులు — మై సర్వీసెస్ మరియు ఆహారం; APCS పునరేకీకరణ వాహనంగా">Migrant Returnee Workers — My Services and Food; APCS as re-integration vehicle</div>
+        <div class="cpill s7-pill" data-en="Women SHG Members — Food, Handloom, Craft (First Priority)" data-te="మహిళా SHG సభ్యులు — ఆహారం, హ్యాండ్‌లూమ్, క్రాఫ్ట్ (మొదటి ప్రాధాన్యత)">Women SHG Members — Food, Handloom, Craft (First Priority)</div>
+        <div class="cpill s7-pill" data-en="SC/ST Artisans &amp; Traditional Craft Families — Brand Andhra GI vertical" data-te="SC/ST కళాకారులు &amp; సంప్రదాయ క్రాఫ్ట్ కుటుంబాలు — బ్రాండ్ ఆంధ్ర GI విభాగం">SC/ST Artisans &amp; Traditional Craft Families — Brand Andhra GI vertical</div>
+        <div class="cpill s7-pill" data-en="Rural Youth (18–30) — Agri, My Services, My Products + APSSDC skill certification" data-te="గ్రామీణ యువత (18–30) — వ్యవసాయం, మై సర్వీసెస్, మై ప్రొడక్ట్స్ + APSSDC నైపుణ్య సర్టిఫికేషన్">Rural Youth (18–30) — Agri, My Services, My Products + APSSDC skill certification</div>
+        <div class="cpill s7-pill" data-en="Migrant Returnee Workers — My Services and Food; APCS as re-integration vehicle" data-te="వలస తిరిగొచ్చిన కార్మికులు — మై సర్వీసెస్ మరియు ఆహారం; APCS పునరేకీకరణ వాహనంగా">Migrant Returnee Workers — My Services and Food; APCS as re-integration vehicle</div>
       </div>
     </div>
   </div>
@@ -477,10 +501,13 @@ digital commerce income</div></div>
 
 <!-- ═══ SLIDE 8 ═══ -->
 <div class="slide" id="s8">
-  <div class="sh"><h2 data-en="PROPOSING ENTITY" data-te="ప్రతిపాదించే సంస్థ">PROPOSING ENTITY</h2><h3 data-en="Zian Technologies LLP — Dual Mandate, Single Accountability" data-te="జియాన్ టెక్నాలజీస్ LLP — ద్వంద్వ బాధ్యత, ఒకే జవాబుదారీతనం">Zian Technologies LLP — Dual Mandate, Single Accountability</h3></div>
+  <div class="sh">
+    <h2 class="s8-label" data-en="PROPOSING ENTITY" data-te="ప్రతిపాదించే సంస్థ">PROPOSING ENTITY</h2>
+    <h3 class="s8-head" data-en="Zian Technologies LLP — Dual Mandate, Single Accountability" data-te="జియాన్ టెక్నాలజీస్ LLP — ద్వంద్వ బాధ్యత, ఒకే జవాబుదారీతనం">Zian Technologies LLP — Dual Mandate, Single Accountability</h3>
+  </div>
   <div class="body" style="justify-content:center;">
     <div class="two">
-      <div class="col"><h4 data-en="NODAL AGENCY" data-te="నోడల్ ఏజెన్సీ">NODAL AGENCY</h4><ul>
+      <div class="col s8-anim"><h4 data-en="NODAL AGENCY" data-te="నోడల్ ఏజెన్సీ">NODAL AGENCY</h4><ul>
         <li data-en="Revenue remittance to GoAP within 7 working days of month close" data-te="నెల ముగింపు నుండి 7 పని రోజులలో GoAPకి ఆదాయ చెల్లింపు">Revenue remittance to GoAP within 7 working days of month close</li>
         <li data-en="Real-time APCS Revenue Ledger accessible to designated officers" data-te="నిర్ణీత అధికారులకు రియల్-టైమ్ APCS రెవెన్యూ లెడ్జర్ అందుబాటు">Real-time APCS Revenue Ledger accessible to designated officers</li>
         <li data-en="Annual CAG-empanelled audit; results tabled with state legislature" data-te="వార్షిక CAG ఎంపానెల్డ్ ఆడిట్; ఫలితాలు రాష్ట్ర శాసనసభకు సమర్పించబడతాయి">Annual CAG-empanelled audit; results tabled with state legislature</li>
@@ -489,7 +516,7 @@ digital commerce income</div></div>
         <li data-en="Seller grievance redressal: L1 24hrs, L2 72hrs, L3 7 days" data-te="విక్రేత ఫిర్యాదు పరిష్కారం: L1 24గంటలు, L2 72గంటలు, L3 7 రోజులు">Seller grievance redressal: L1 24hrs, L2 72hrs, L3 7 days</li>
         <li data-en="Data sovereignty: all data owned by Government of AP; stored in AP SDC" data-te="డేటా సార్వభౌమత్వం: అన్ని డేటా AP ప్రభుత్వం స్వంతం; AP SDCలో నిల్వ">Data sovereignty: all data owned by Government of AP; stored in AP SDC</li>
       </ul></div>
-      <div class="col"><h4 data-en="TECHNOLOGY SERVICE PROVIDER" data-te="టెక్నాలజీ సేవా ప్రదాత">TECHNOLOGY SERVICE PROVIDER</h4><ul>
+      <div class="col s8-anim"><h4 data-en="TECHNOLOGY SERVICE PROVIDER" data-te="టెక్నాలజీ సేవా ప్రదాత">TECHNOLOGY SERVICE PROVIDER</h4><ul>
         <li data-en="ONDC Network Participant integration — buyer app, seller app, logistics NP" data-te="ONDC నెట్‌వర్క్ పార్టిసిపెంట్ ఇంటిగ్రేషన్ — బయ్యర్ యాప్, సెల్లర్ యాప్, లాజిస్టిక్స్ NP">ONDC Network Participant integration — buyer app, seller app, logistics NP</li>
         <li data-en="Telugu-language-first UX; mobile-first progressive web app + Android" data-te="తెలుగు భాష మొదట UX; మొబైల్-ఫస్ట్ ప్రోగ్రెసివ్ వెబ్ యాప్ + Android">Telugu-language-first UX; mobile-first progressive web app + Android</li>
         <li data-en="Aadhaar/DigiLocker identity; UPI/RuPay payment settlement; GSTN integration" data-te="ఆధార్/డిజిలాకర్ గుర్తింపు; UPI/RuPay చెల్లింపు సెటిల్‌మెంట్; GSTN ఇంటిగ్రేషన్">Aadhaar/DigiLocker identity; UPI/RuPay payment settlement; GSTN integration</li>
@@ -499,7 +526,7 @@ digital commerce income</div></div>
         <li data-en="6-month guaranteed handover in any exit scenario — zero lock-in" data-te="ఏ ఎగ్జిట్ సందర్భంలోనైనా 6 నెలల హ్యాండోవర్ గ్యారంటీ — జీరో లాక్-ఇన్">6-month guaranteed handover in any exit scenario — zero lock-in</li>
       </ul></div>
     </div>
-    <div class="efoot" data-en="These two roles are inseparable. The same entity that builds the platform is accountable for what it produces. No outsourced accountability." data-te="ఈ రెండు పాత్రలు విడదీయలేనివి. ప్లాట్‌ఫారమ్ నిర్మించే అదే సంస్థ దాని ఫలితాలకు జవాబుదారీగా ఉంటుంది. జవాబుదారీతనాన్ని బయటకు పెట్టడం లేదు.">These two roles are inseparable. The same entity that builds the platform is accountable for what it produces. No outsourced accountability.</div>
+    <div class="efoot s8-foot" data-en="These two roles are inseparable. The same entity that builds the platform is accountable for what it produces. No outsourced accountability." data-te="ఈ రెండు పాత్రలు విడదీయలేనివి. ప్లాట్‌ఫారమ్ నిర్మించే అదే సంస్థ దాని ఫలితాలకు జవాబుదారీగా ఉంటుంది. జవాబుదారీతనాన్ని బయటకు పెట్టడం లేదు.">These two roles are inseparable. The same entity that builds the platform is accountable for what it produces. No outsourced accountability.</div>
   </div>
 </div>
 
@@ -632,7 +659,7 @@ digital commerce income</div></div>
     cur = n;
     var slide = document.getElementById('s' + cur);
     // Reset animations so they replay every time the slide is entered
-    slide.querySelectorAll('.s3-label,.s3-head,.s3-anim,.s3-note,.s4-label,.s4-head,.s4-p,.s4-anim,.s4-note,.s5-label,.s5-head,.s5-anim,.s6-label,.s6-head,.s6-intro,.s6-anim,.s6-note').forEach(function(el) {
+    slide.querySelectorAll('.s3-label,.s3-head,.s3-anim,.s3-note,.s4-label,.s4-head,.s4-p,.s4-anim,.s4-note,.s5-label,.s5-head,.s5-anim,.s6-label,.s6-head,.s6-intro,.s6-anim,.s6-note,.s7-label,.s7-head,.s7-anim,.s7-sub,.s7-pill,.s8-label,.s8-head,.s8-anim,.s8-foot').forEach(function(el) {
       el.style.animation = 'none';
       el.offsetHeight; // force reflow
       el.style.animation = '';
