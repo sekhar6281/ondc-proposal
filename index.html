@@ -1060,11 +1060,15 @@ digital commerce income</div></div>
     if (isTE) {
       return _voices.find(function(v){ return v.lang === 'te-IN' || v.lang === 'te'; }) || null;
     }
-    // Male en-IN: Ravi (Windows) → any named male → exclude Heera/female → any en-IN → any en
+    // Male priority: Ravi (Windows) → Google UK English Male (Android) → any named male en → Google US English → exclude Heera/female en-IN → any en-IN → any en
     var ravi = _voices.find(function(v){ return /ravi/i.test(v.name); });
     if (ravi) return ravi;
+    var ukMale = _voices.find(function(v){ return /google uk english male/i.test(v.name); });
+    if (ukMale) return ukMale;
     var namedMale = _voices.find(function(v){ return /male/i.test(v.name) && v.lang.startsWith('en'); });
     if (namedMale) return namedMale;
+    var usEng = _voices.find(function(v){ return /google us english/i.test(v.name); });
+    if (usEng) return usEng;
     var nonFemIN = _voices.find(function(v){ return v.lang === 'en-IN' && !/heera|female|woman/i.test(v.name); });
     if (nonFemIN) return nonFemIN;
     var anyIN = _voices.find(function(v){ return v.lang === 'en-IN'; });
@@ -1092,7 +1096,7 @@ digital commerce income</div></div>
     var utter = new SpeechSynthesisUtterance(text);
     utter.lang  = isTE ? 'te-IN' : 'en-IN';
     utter.rate  = 0.88;
-    utter.pitch = isTE ? 1 : 0.8;  // lower pitch = deeper/male sound on devices without Ravi
+    utter.pitch = isTE ? 1 : 0.75;  // lower pitch = deeper/male sound on devices without Ravi
     var v = getBestVoice(isTE);
     if (v) utter.voice = v;
     pauseProgress();
