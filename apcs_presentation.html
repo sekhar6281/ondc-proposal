@@ -935,12 +935,7 @@ digital commerce income</div></div>
   document.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') go(1);
     if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   go(-1);
-  });
-
-  // Click to pause/resume (desktop)
-  document.addEventListener('click', function(e) {
-    if (e.target.closest('button')) return;
-    toggleProgress();
+    if (e.key === 'Tab') { e.preventDefault(); toggleProgress(); }
   });
 
   // Touch swipe navigation + tap to pause/resume (mobile)
