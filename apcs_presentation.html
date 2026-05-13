@@ -229,14 +229,14 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
 
 /* CLOSING */
 .clos { text-align:center; }
-.clos h2 { font-size:32px; font-weight:900; color:#1e1b4b; margin-bottom:14px; }
+.clos h2 { font-size:40px; font-weight:900; color:#1e1b4b; margin-bottom:16px; }
 .clos h2 span { color:#4f46e5; }
-.cbb { background:#fff; border-radius:12px; padding:11px 22px; text-align:left; box-shadow:0 8px 24px rgba(79,70,229,0.12); margin-bottom:12px; transform:translateY(-2px); }
-.cbb li { font-size:14px; color:#374151; padding:6px 0 6px 18px; border-bottom:1px solid #f3f4f6; line-height:1.45; list-style:none; position:relative; }
+.cbb { background:#fff; border-radius:12px; padding:12px 24px; text-align:left; box-shadow:0 8px 24px rgba(79,70,229,0.12); margin-bottom:14px; transform:translateY(-2px); }
+.cbb li { font-size:16px; color:#374151; padding:7px 0 7px 20px; border-bottom:1px solid #f3f4f6; line-height:1.5; list-style:none; position:relative; }
 .cbb li:last-child { border-bottom:none; }
-.cbb li::before { content:'▸'; position:absolute; left:0; color:#4f46e5; }
-.cq { font-size:14px; color:#4b5563; font-style:italic; line-height:1.65; margin-bottom:10px; background:#fff; border-radius:10px; padding:13px 20px; box-shadow:0 8px 24px rgba(79,70,229,0.10); transform:translateY(-1px); }
-.cs { font-size:12px; color:#9ca3af; }
+.cbb li::before { content:'▸'; position:absolute; left:0; color:#4f46e5; font-size:13px; }
+.cq { font-size:16px; color:#4b5563; font-style:italic; line-height:1.7; margin-bottom:12px; background:#fff; border-radius:10px; padding:15px 22px; box-shadow:0 8px 24px rgba(79,70,229,0.10); transform:translateY(-1px); }
+.cs { font-size:14px; color:#9ca3af; }
 
 /* Slide 9 — smaller subtitle, larger box content */
 #s9 .sh h3 { font-size:24px; line-height:1.25; }
@@ -287,6 +287,9 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
 #s12.active .s12-anim:nth-child(2) { animation:s3Up 0.4s ease both; animation-delay:1.05s; }
 #s12.active .s12-anim:nth-child(3) { animation:s3Up 0.4s ease both; animation-delay:1.30s; }
 #s12.active .s12-anim:nth-child(4) { animation:s3Up 0.4s ease both; animation-delay:1.55s; }
+
+/* Slide 13 — push content to top */
+#s13 .body { justify-content:flex-start; padding-top:28px; }
 
 /* Slide 13 staggered animations */
 #s13.active .s13-head { animation:s3Down 0.6s ease both; animation-delay:0s; }
