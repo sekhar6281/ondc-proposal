@@ -560,8 +560,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
   transition:background 0.2s, transform 0.15s;
 }
 .voice-btn:hover { background:#4338ca; transform:scale(1.1); }
-.voice-btn.speaking { background:#4f46e5; animation:vpulse 1.2s ease-in-out infinite; }
-@keyframes vpulse { 0%,100%{box-shadow:0 0 0 0 rgba(79,70,229,0.5)} 50%{box-shadow:0 0 0 12px rgba(79,70,229,0)} }
+.voice-btn.speaking { background:#4f46e5; }
 </style>
 </head>
 <body>
@@ -919,12 +918,7 @@ digital commerce income</div></div>
   });
 
   function go(d) {
-    if (typeof voiceSpeaking !== 'undefined' && voiceSpeaking) {
-      window.speechSynthesis.cancel();
-      voiceSpeaking = false;
-      var gb = document.getElementById('vbtn-global');
-      if (gb) { gb.innerHTML = '🔊'; gb.classList.remove('speaking'); }
-    }
+    if (typeof voiceSpeaking !== 'undefined' && voiceSpeaking) stopVoice();
     var n = cur + d;
     if (n > total) n = 1;
     if (n < 1) n = total;
@@ -942,6 +936,7 @@ digital commerce income</div></div>
   }
 
   function setLang(l) {
+    if (typeof voiceSpeaking !== 'undefined' && voiceSpeaking) stopVoice();
     lang = l;
     document.getElementById('btn-en').classList.toggle('active', l === 'en');
     document.getElementById('btn-te').classList.toggle('active', l === 'te');
@@ -1033,55 +1028,55 @@ digital commerce income</div></div>
     }
   };
 
-  var voiceSpeaking = false;
+  // Preload voices immediately to avoid delay
+  var _voices = [];
+  function _loadVoices() { _voices = window.speechSynthesis.getVoices(); }
+  _loadVoices();
+  if ('onvoiceschanged' in window.speechSynthesis) {
+    window.speechSynthesis.onvoiceschanged = _loadVoices;
+  }
 
   function getBestVoice(isTE) {
-    var voices = window.speechSynthesis.getVoices();
+    if (!_voices.length) _voices = window.speechSynthesis.getVoices();
     if (isTE) {
-      return voices.find(function(v){ return v.lang === 'te-IN' || v.lang === 'te'; }) || null;
+      return _voices.find(function(v){ return v.lang === 'te-IN' || v.lang === 'te'; }) || null;
     }
-    // Indian English male: try Ravi, then any en-IN, then any en
-    var male = voices.find(function(v){ return v.lang === 'en-IN' && /ravi|male/i.test(v.name); });
-    if (male) return male;
-    var anyIN = voices.find(function(v){ return v.lang === 'en-IN'; });
+    // Male Indian English: Microsoft Ravi first, then exclude known female (Heera), then any en-IN
+    var ravi = _voices.find(function(v){ return /ravi/i.test(v.name); });
+    if (ravi) return ravi;
+    var maleIN = _voices.find(function(v){ return v.lang === 'en-IN' && !/heera|female/i.test(v.name); });
+    if (maleIN) return maleIN;
+    var anyIN = _voices.find(function(v){ return v.lang === 'en-IN'; });
     if (anyIN) return anyIN;
-    return voices.find(function(v){ return v.lang.startsWith('en'); }) || null;
+    return _voices.find(function(v){ return v.lang.startsWith('en'); }) || null;
   }
+
+  var voiceSpeaking = false;
 
   function stopVoice() {
     window.speechSynthesis.cancel();
     voiceSpeaking = false;
-    var btn = document.getElementById('vbtn-global');
-    if (btn) { btn.innerHTML = '🔊'; btn.classList.remove('speaking'); }
     resumeProgress();
   }
 
   function speakCurrentSlide() {
-    if (!('speechSynthesis' in window)) { alert('Your browser does not support audio.'); return; }
-    var btn = document.getElementById('vbtn-global');
+    if (!('speechSynthesis' in window)) return;
     if (voiceSpeaking) { stopVoice(); return; }
     var slideId = 's' + cur;
+    var isTE = lang === 'te';
     var text = slideAudio[slideId] ? slideAudio[slideId][lang] : '';
     if (!text) return;
     window.speechSynthesis.cancel();
     var utter = new SpeechSynthesisUtterance(text);
-    var isTE = lang === 'te';
     utter.lang = isTE ? 'te-IN' : 'en-IN';
     utter.rate = 0.88;
     utter.pitch = 1;
-    // Wait for voices to load then assign
-    var assignVoice = function() {
-      var v = getBestVoice(isTE);
-      if (v) utter.voice = v;
-    };
-    if (window.speechSynthesis.getVoices().length) { assignVoice(); }
-    else { window.speechSynthesis.onvoiceschanged = function() { assignVoice(); window.speechSynthesis.onvoiceschanged = null; }; }
+    var v = getBestVoice(isTE);
+    if (v) utter.voice = v;
     pauseProgress();
     voiceSpeaking = true;
-    btn.innerHTML = '⏹';
-    btn.classList.add('speaking');
-    utter.onend = function() { voiceSpeaking = false; btn.innerHTML = '🔊'; btn.classList.remove('speaking'); resumeProgress(); };
-    utter.onerror = function() { voiceSpeaking = false; btn.innerHTML = '🔊'; btn.classList.remove('speaking'); resumeProgress(); };
+    utter.onend   = function() { voiceSpeaking = false; resumeProgress(); };
+    utter.onerror = function() { voiceSpeaking = false; resumeProgress(); };
     window.speechSynthesis.speak(utter);
   }
 
