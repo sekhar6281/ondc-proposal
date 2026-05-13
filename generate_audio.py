@@ -27,6 +27,8 @@ scripts = {
     "te_10": "PS IT&C పాలక మండలికి అధ్యక్షుడు, ప్రభుత్వం ప్రతి రేటు నిర్ణయిస్తుంది, CAG ఆడిట్ శాసనసభకు వెళ్తుంది — జియాన్ టెక్నాలజీస్ LLP పూర్తి ప్రభుత్వ పర్యవేక్షణ కింద పనిచేస్తుంది, డేటా AP SDCలో, IP అంతా GoAP కే చెందుతుంది.",
     "en_11": "APCS needs no new policy — Zian Technologies LLP directly executes 8 mandates already committed by Central and AP governments, from Digital India and ONDC expansion to AP Vision 2047 and the National Agri Export Policy.",
     "te_11": "APCSకు కొత్త విధానం అక్కరలేదు — జియాన్ టెక్నాలజీస్ LLP కేంద్ర మరియు AP ప్రభుత్వాలు ఇప్పటికే నిర్ణయించిన 8 విధానాలను నేరుగా అమలు చేస్తుంది, డిజిటల్ ఇండియా మరియు ONDC విస్తరణ నుండి AP విజన్ 2047 మరియు జాతీయ వ్యవసాయ ఎగుమతి విధానం వరకు.",
+    "en_12": "Four actions only — LoI from PS IT&C, APEITA empanelment of Zian Technologies LLP, GO for Governing Council, and 90-day pilot sanction — zero capital outlay from the state, revenue flowing back from Month 1.",
+    "te_12": "కేవలం నాలుగు చర్యలు — PS IT&C నుండి LoI, జియాన్ టెక్నాలజీస్ LLP కి APEITA ఎంపానెల్‌మెంట్, పాలక మండలికి GO, మరియు 90 రోజుల పైలట్ మంజూరు — రాష్ట్రం నుండి ఖర్చు సున్నా, నెల 1 నుండే ఆదాయం వస్తుంది.",
 }
 
 async def generate(key, text):
