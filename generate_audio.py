@@ -13,6 +13,8 @@ scripts = {
     "te_03": "ONDC ఇప్పటికే భారతదేశంలో రోజుకు 14 లక్షల లావాదేవీలు నిర్వహిస్తోంది — ఇంకా ఒక్క దక్షిణ భారత రాష్ట్రం కూడా నెట్‌వర్క్ పార్టిసిపెంట్ హోదా తీసుకోలేదు, ఆ అవకాశం AP కోసం నేటికీ తెరుచుకునే ఉంది. జియాన్ టెక్నాలజీస్ LLP సాంకేతిక సంసిద్ధత మరియు ONDC నైపుణ్యంతో AP ని వెంటనే ఆ స్థానంలో నిలపగలదు.",
     "en_04": "Just as NPCI owns UPI, Government of AP will own APCS — the state's digital commerce operating system built on ONDC, where AP controls the platform, the data, and the revenue, with Zian Technologies LLP building and running it as appointed TSP.",
     "te_04": "NPCI UPIని స్వంతం చేసుకున్నట్టే, AP ప్రభుత్వం APCSని స్వంతం చేసుకుంటుంది — ONDC పైన నిర్మించిన రాష్ట్ర డిజిటల్ వాణిజ్య వ్యవస్థ, ప్లాట్‌ఫారమ్, డేటా, ఆదాయం అన్నీ AP వే, జియాన్ టెక్నాలజీస్ LLP నియమిత TSPగా దాన్ని నిర్మించి నడుపుతుంది.",
+    "en_05": "Eight verticals under one government-owned roof — food, grocery, tickets, services, GI crafts, agri, MSMEs, and D2C — every sector AP earns zero from today becomes a direct state revenue source tomorrow, all operated by Zian Technologies LLP.",
+    "te_05": "ఒకే ప్రభుత్వ వేదిక కింద ఎనిమిది విభాగాలు — ఆహారం, కిరాణా, టికెట్లు, సేవలు, GI క్రాఫ్ట్స్, వ్యవసాయం, MSMEలు, D2C — ఈరోజు AP సున్నా సంపాదిస్తున్న ప్రతి రంగం రేపు నేరుగా రాష్ట్ర ఆదాయ వనరుగా మారుతుంది, అన్నీ జియాన్ టెక్నాలజీస్ LLP నిర్వహిస్తుంది.",
 }
 
 async def generate(key, text):
