@@ -7,8 +7,8 @@ TE_VOICE = "te-IN-MohanNeural"
 scripts = {
     "en_01": "AP Commerce Stack is Andhra Pradesh's own digital commerce platform — where every order placed, every rupee earned, and every data point generated belongs to the state, not to a private company. Proposed by Zian Technologies LLP, Visakhapatnam — built to make the CM's vision of One Entrepreneur Per One Family a measurable, funded reality.",
     "te_01": "AP కామర్స్ స్టాక్ అనేది ఆంధ్రప్రదేశ్ సొంత డిజిటల్ వాణిజ్య వేదిక — ఇక్కడ జరిగే ప్రతి ఆర్డర్, సంపాదించిన ప్రతి రూపాయి, తయారైన ప్రతి డేటా రాష్ట్రానిదే, ఏ ప్రైవేట్ కంపెనీదీ కాదు. జియాన్ టెక్నాలజీస్ LLP, విశాఖపట్నం సమర్పించింది — సీఎం ఒక్కో కుటుంబానికి ఒక్కో వ్యాపారవేత్త అనే దార్శనికతను నిజంగా అమలు చేయడానికి.",
-    "en_02": "Every single day, Swiggy, Amazon, and Flipkart collect 18 to 35 percent commission from AP's own consumers and MSMEs — and the state of Andhra Pradesh receives zero rupees from transactions happening on its own soil. AP built the market, AP has the people — Zian Technologies LLP is here to make sure AP finally keeps the money too.",
-    "te_02": "రోజూ Swiggy, Amazon, Flipkart లు AP వినియోగదారుల నుండి 18 నుండి 35 శాతం కమీషన్ తీసుకుంటున్నాయి — AP సొంత భూమిపై జరిగే లావాదేవీల నుండి రాష్ట్రానికి ఒక్క రూపాయి కూడా రావట్లేదు. AP మార్కెట్ సృష్టించింది, AP దగ్గర జనం ఉన్నారు — ఆ డబ్బు కూడా AP కే చెందేలా చేయడానికి జియాన్ టెక్నాలజీస్ LLP ఇక్కడ ఉంది.",
+    "en_02": "Every single day, Swiggy, Amazon, and Flipkart collect 18–35% commission from AP's own consumers and MSMEs — and the state of Andhra Pradesh receives zero rupees from transactions happening on its own soil. AP built the market, AP has the people — Zian Technologies LLP is here to make sure AP finally keeps the money too.",
+    "te_02": "రోజూ Swiggy, Amazon, Flipkart లు AP వినియోగదారుల నుండి 18–35% కమీషన్ తీసుకుంటున్నాయి — AP సొంత భూమిపై జరిగే లావాదేవీల నుండి రాష్ట్రానికి ఒక్క రూపాయి కూడా రావట్లేదు. AP మార్కెట్ సృష్టించింది, AP దగ్గర జనం ఉన్నారు — ఆ డబ్బు కూడా AP కే చెందేలా చేయడానికి జియాన్ టెక్నాలజీస్ LLP ఇక్కడ ఉంది.",
 }
 
 async def generate(key, text):
