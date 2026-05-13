@@ -15,6 +15,8 @@ scripts = {
     "te_04": "NPCI UPIని స్వంతం చేసుకున్నట్టే, AP ప్రభుత్వం APCSని స్వంతం చేసుకుంటుంది — ONDC పైన నిర్మించిన రాష్ట్ర డిజిటల్ వాణిజ్య వ్యవస్థ, ప్లాట్‌ఫారమ్, డేటా, ఆదాయం అన్నీ AP వే, జియాన్ టెక్నాలజీస్ LLP నియమిత TSPగా దాన్ని నిర్మించి నడుపుతుంది.",
     "en_05": "Eight verticals under one government-owned roof — food, grocery, tickets, services, GI crafts, agri, MSMEs, and D2C — every sector AP earns zero from today becomes a direct state revenue source tomorrow, all operated by Zian Technologies LLP.",
     "te_05": "ఒకే ప్రభుత్వ వేదిక కింద ఎనిమిది విభాగాలు — ఆహారం, కిరాణా, టికెట్లు, సేవలు, GI క్రాఫ్ట్స్, వ్యవసాయం, MSMEలు, D2C — ఈరోజు AP సున్నా సంపాదిస్తున్న ప్రతి రంగం రేపు నేరుగా రాష్ట్ర ఆదాయ వనరుగా మారుతుంది, అన్నీ జియాన్ టెక్నాలజీస్ LLP నిర్వహిస్తుంది.",
+    "en_06": "Six income streams start flowing from Month 1 — transaction fees, advertising, GI certification, seller subscriptions, GST services, and government procurement — all to the state exchequer, every rate decided by Government of AP, no ceiling.",
+    "te_06": "నెల 1 నుండే ఆరు ఆదాయ వనరులు మొదలవుతాయి — లావాదేవీ రుసుము, యాడ్స్, GI సర్టిఫికేషన్, విక్రేత సభ్యత్వాలు, GST సేవలు, ప్రభుత్వ కొనుగోలు — అన్నీ రాష్ట్ర ఖజానాకే, ప్రతి రేటు AP ప్రభుత్వమే నిర్ణయిస్తుంది, పరిమితి లేదు.",
 }
 
 async def generate(key, text):
