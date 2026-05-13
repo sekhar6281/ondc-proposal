@@ -23,6 +23,8 @@ scripts = {
     "te_08": "జియాన్ టెక్నాలజీస్ LLP రెండు పాత్రలు నిర్వహిస్తుంది — 7 పని రోజులలో ప్రభుత్వానికి ఆదాయం చెల్లించే నోడల్ ఏజెన్సీ, మరియు 99.5% అప్‌టైమ్ హామీ ఇచ్చే TSP — అన్ని డేటా మరియు IP GoAP కే చెందుతాయి, అన్ని రేట్లు GoAP నిర్ణయిస్తుంది, జీరో లాక్-ఇన్.",
     "en_09": "Month 6 — platform live in 3 districts, first revenue to government. Month 18 — all 26 districts, 8 verticals, 1 lakh entrepreneurs. Month 30 — platform fully self-sustaining, zero ongoing cost to the state.",
     "te_09": "నెల 6 — 3 జిల్లాలలో ప్లాట్‌ఫారమ్ లైవ్, ప్రభుత్వానికి మొదటి ఆదాయం. నెల 18 — 26 జిల్లాలు, 8 విభాగాలు, 1 లక్ష వ్యాపారవేత్తలు. నెల 30 — ప్లాట్‌ఫారమ్ స్వయంగా నిలబడుతుంది, రాష్ట్రానికి నిరంతర ఖర్చు సున్నా.",
+    "en_10": "PS IT&C chairs the council, government sets every fee rate, CAG audit goes to the legislature — Zian Technologies LLP operates under complete government oversight, all data in AP SDC, all IP owned by GoAP, zero vendor control.",
+    "te_10": "PS IT&C పాలక మండలికి అధ్యక్షుడు, ప్రభుత్వం ప్రతి రేటు నిర్ణయిస్తుంది, CAG ఆడిట్ శాసనసభకు వెళ్తుంది — జియాన్ టెక్నాలజీస్ LLP పూర్తి ప్రభుత్వ పర్యవేక్షణ కింద పనిచేస్తుంది, డేటా AP SDCలో, IP అంతా GoAP కే చెందుతుంది.",
 }
 
 async def generate(key, text):
