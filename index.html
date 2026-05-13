@@ -58,6 +58,25 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
 .sc2 .l { font-size:14px; font-weight:700; color:#1e1b4b; margin-bottom:4px; }
 .sc2 .s { font-size:13px; color:#6b7280; line-height:1.45; }
 
+/* Slide 1 staggered animations */
+#s1.active .s1-badge { animation:s3Down 0.5s ease both; animation-delay:0s; }
+#s1.active .s1-title { animation:s3Down 0.5s ease both; animation-delay:0.3s; }
+#s1.active .s1-bar   { animation:s3Up   0.4s ease both; animation-delay:0.6s; }
+#s1.active .s1-sub   { animation:s3Up   0.5s ease both; animation-delay:0.85s; }
+#s1.active .s1-tag   { animation:s3Up   0.5s ease both; animation-delay:1.1s; }
+#s1.active .s1-foot  { animation:s3Up   0.5s ease both; animation-delay:1.4s; }
+
+/* Slide 2 staggered animations */
+#s2.active .s2-label { animation:s3Down 0.5s ease both; animation-delay:0s; }
+#s2.active .s2-head  { animation:s3Down 0.5s ease both; animation-delay:0.3s; }
+#s2.active .s2-sub   { animation:s3Up   0.5s ease both; animation-delay:0.6s; }
+#s2.active .s2-row:nth-child(1) { animation:s3Up 0.4s ease both; animation-delay:0.85s; }
+#s2.active .s2-row:nth-child(2) { animation:s3Up 0.4s ease both; animation-delay:1.05s; }
+#s2.active .s2-row:nth-child(3) { animation:s3Up 0.4s ease both; animation-delay:1.25s; }
+#s2.active .s2-row:nth-child(4) { animation:s3Up 0.4s ease both; animation-delay:1.45s; }
+#s2.active .s2-row:nth-child(5) { animation:s3Up 0.4s ease both; animation-delay:1.65s; }
+#s2.active .s2-row:nth-child(6) { animation:s3Up 0.4s ease both; animation-delay:1.85s; }
+
 /* Slide 3 staggered animations */
 @keyframes s3Down { from{opacity:0;transform:translateY(-20px)} to{opacity:1;transform:translateY(0)} }
 @keyframes s3Up   { from{opacity:0;transform:translateY(28px)}  to{opacity:1;transform:translateY(0)} }
@@ -426,12 +445,12 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
 <div class="slide active" id="s1">
   <div class="body" style="justify-content:center;">
     <div class="cover">
-      <div class="badge" data-en="⚖ AP COMMERCE STACK" data-te="⚖ AP కామర్స్ స్టాక్">⚖ AP COMMERCE STACK</div>
-      <h1 data-en="AP <span>Commerce</span> Stack" data-te="AP <span>కామర్స్</span> స్టాక్">AP <span>Commerce</span> Stack</h1>
-      <div class="bar"></div>
-      <div class="sub" data-en="Andhra Pradesh ONDC Nodal Implementation Proposal" data-te="ఆంధ్రప్రదేశ్ ONDC నోడల్ అమలు ప్రతిపాదన">Andhra Pradesh ONDC Nodal Implementation Proposal</div>
-      <div class="tag" data-en="&quot;One Entrepreneur Per One Family&quot; — CM's Vision | Delivery Vehicle: AP Commerce Stack" data-te="&quot;ఒక్కో కుటుంబానికి ఒక్కో వ్యాపారవేత్త&quot; — సీఎం దార్శనికత | అమలు వాహనం: AP కామర్స్ స్టాక్">"One Entrepreneur Per One Family" — CM's Vision | Delivery Vehicle: AP Commerce Stack</div>
-      <div class="foot" data-en="SUBMITTED BY: Zian Technologies LLP, Visakhapatnam &nbsp;|&nbsp; SUBMITTED TO: Government of Andhra Pradesh — Dept. of IT&amp;C / Commerce &amp; Industries" data-te="సమర్పించిన వారు: జియాన్ టెక్నాలజీస్ LLP, విశాఖపట్నం &nbsp;|&nbsp; సమర్పించిన వారికి: ఆంధ్రప్రదేశ్ ప్రభుత్వం — IT&amp;C / వాణిజ్య &amp; పరిశ్రమల శాఖ">SUBMITTED BY: Zian Technologies LLP, Visakhapatnam &nbsp;|&nbsp; SUBMITTED TO: Government of Andhra Pradesh — Dept. of IT&amp;C / Commerce &amp; Industries</div>
+      <div class="badge s1-badge" data-en="⚖ AP COMMERCE STACK" data-te="⚖ AP కామర్స్ స్టాక్">⚖ AP COMMERCE STACK</div>
+      <h1 class="s1-title" data-en="AP <span>Commerce</span> Stack" data-te="AP <span>కామర్స్</span> స్టాక్">AP <span>Commerce</span> Stack</h1>
+      <div class="bar s1-bar"></div>
+      <div class="sub s1-sub" data-en="Andhra Pradesh ONDC Nodal Implementation Proposal" data-te="ఆంధ్రప్రదేశ్ ONDC నోడల్ అమలు ప్రతిపాదన">Andhra Pradesh ONDC Nodal Implementation Proposal</div>
+      <div class="tag s1-tag" data-en="&quot;One Entrepreneur Per One Family&quot; — CM's Vision | Delivery Vehicle: AP Commerce Stack" data-te="&quot;ఒక్కో కుటుంబానికి ఒక్కో వ్యాపారవేత్త&quot; — సీఎం దార్శనికత | అమలు వాహనం: AP కామర్స్ స్టాక్">"One Entrepreneur Per One Family" — CM's Vision | Delivery Vehicle: AP Commerce Stack</div>
+      <div class="foot s1-foot" data-en="SUBMITTED BY: Zian Technologies LLP, Visakhapatnam &nbsp;|&nbsp; SUBMITTED TO: Government of Andhra Pradesh — Dept. of IT&amp;C / Commerce &amp; Industries" data-te="సమర్పించిన వారు: జియాన్ టెక్నాలజీస్ LLP, విశాఖపట్నం &nbsp;|&nbsp; సమర్పించిన వారికి: ఆంధ్రప్రదేశ్ ప్రభుత్వం — IT&amp;C / వాణిజ్య &amp; పరిశ్రమల శాఖ">SUBMITTED BY: Zian Technologies LLP, Visakhapatnam &nbsp;|&nbsp; SUBMITTED TO: Government of Andhra Pradesh — Dept. of IT&amp;C / Commerce &amp; Industries</div>
     </div>
   </div>
 </div>
@@ -439,9 +458,9 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
 <!-- ═══ SLIDE 2 ═══ -->
 <div class="slide" id="s2">
   <div class="sh">
-    <h2 data-en="THE PROBLEM" data-te="సమస్య">THE PROBLEM</h2>
-    <h3 data-en="What Andhra Pradesh Loses Every Single Day" data-te="ఆంధ్రప్రదేశ్ ప్రతిరోజూ కోల్పోతున్నది">What Andhra Pradesh Loses Every Single Day</h3>
-    <p data-en="Private platforms extract value from AP's 5.3 crore consumers and 35 lakh+ MSMEs while the state earns zero." data-te="ప్రైవేట్ ప్లాట్‌ఫారమ్‌లు AP యొక్క 5.3 కోటి వినియోగదారుల నుండి మరియు 35 లక్షలకు పైగా MSMEల నుండి విలువను తీసుకుంటున్నాయి, రాష్ట్రానికి మాత్రం సున్నా ఆదాయం వస్తోంది.">Private platforms extract value from AP's 5.3 crore consumers and 35 lakh+ MSMEs while the state earns zero.</p>
+    <h2 class="s2-label" data-en="THE PROBLEM" data-te="సమస్య">THE PROBLEM</h2>
+    <h3 class="s2-head" data-en="What Andhra Pradesh Loses Every Single Day" data-te="ఆంధ్రప్రదేశ్ ప్రతిరోజూ కోల్పోతున్నది">What Andhra Pradesh Loses Every Single Day</h3>
+    <p class="s2-sub" data-en="Private platforms extract value from AP's 5.3 crore consumers and 35 lakh+ MSMEs while the state earns zero." data-te="ప్రైవేట్ ప్లాట్‌ఫారమ్‌లు AP యొక్క 5.3 కోటి వినియోగదారుల నుండి మరియు 35 లక్షలకు పైగా MSMEల నుండి విలువను తీసుకుంటున్నాయి, రాష్ట్రానికి మాత్రం సున్నా ఆదాయం వస్తోంది.">Private platforms extract value from AP's 5.3 crore consumers and 35 lakh+ MSMEs while the state earns zero.</p>
   </div>
   <div class="body" style="justify-content:center;">
     <div class="tbl-wrap">
@@ -455,12 +474,12 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
           </tr>
         </thead>
         <tbody>
-          <tr><td data-en="Food Delivery" data-te="ఆహార డెలివరీ">Food Delivery</td><td>Swiggy / Zomato</td><td>18–25%</td><td class="zero">ZERO</td></tr>
-          <tr><td data-en="Grocery" data-te="కిరాణా">Grocery</td><td>Blinkit / Zepto / Big Basket</td><td data-en="Full margin" data-te="పూర్తి మార్జిన్">Full margin</td><td class="zero">ZERO</td></tr>
-          <tr><td data-en="Ticket Booking" data-te="టికెట్ బుకింగ్">Ticket Booking</td><td>BookMyShow / Paytm</td><td data-en="Convenience fee" data-te="కన్వీనియన్స్ ఫీ">Convenience fee</td><td class="zero">ZERO</td></tr>
-          <tr><td data-en="GI Tag Products" data-te="GI ట్యాగ్ ఉత్పత్తులు">GI Tag Products</td><td>Amazon / Flipkart</td><td data-en="Sold without auth" data-te="అనుమతి లేకుండా అమ్ముతున్నారు">Sold without auth</td><td class="zero">ZERO</td></tr>
-          <tr><td data-en="MSME Products" data-te="MSME ఉత్పత్తులు">MSME Products</td><td>Flipkart Commerce</td><td>30–35%</td><td class="zero">ZERO</td></tr>
-          <tr><td data-en="Freelance / Services" data-te="ఫ్రీలాన్స్ / సేవలు">Freelance / Services</td><td>Urban Company / UrbanClap</td><td>25–30%</td><td class="zero">ZERO</td></tr>
+          <tr class="s2-row"><td data-en="Food Delivery" data-te="ఆహార డెలివరీ">Food Delivery</td><td>Swiggy / Zomato</td><td>18–25%</td><td class="zero">ZERO</td></tr>
+          <tr class="s2-row"><td data-en="Grocery" data-te="కిరాణా">Grocery</td><td>Blinkit / Zepto / Big Basket</td><td data-en="Full margin" data-te="పూర్తి మార్జిన్">Full margin</td><td class="zero">ZERO</td></tr>
+          <tr class="s2-row"><td data-en="Ticket Booking" data-te="టికెట్ బుకింగ్">Ticket Booking</td><td>BookMyShow / Paytm</td><td data-en="Convenience fee" data-te="కన్వీనియన్స్ ఫీ">Convenience fee</td><td class="zero">ZERO</td></tr>
+          <tr class="s2-row"><td data-en="GI Tag Products" data-te="GI ట్యాగ్ ఉత్పత్తులు">GI Tag Products</td><td>Amazon / Flipkart</td><td data-en="Sold without auth" data-te="అనుమతి లేకుండా అమ్ముతున్నారు">Sold without auth</td><td class="zero">ZERO</td></tr>
+          <tr class="s2-row"><td data-en="MSME Products" data-te="MSME ఉత్పత్తులు">MSME Products</td><td>Flipkart Commerce</td><td>30–35%</td><td class="zero">ZERO</td></tr>
+          <tr class="s2-row"><td data-en="Freelance / Services" data-te="ఫ్రీలాన్స్ / సేవలు">Freelance / Services</td><td>Urban Company / UrbanClap</td><td>25–30%</td><td class="zero">ZERO</td></tr>
         </tbody>
       </table>
     </div>
@@ -734,7 +753,7 @@ digital commerce income</div></div>
     cur = n;
     var slide = document.getElementById('s' + cur);
     // Reset animations so they replay every time the slide is entered
-    slide.querySelectorAll('.s3-label,.s3-head,.s3-anim,.s3-note,.s4-label,.s4-head,.s4-p,.s4-anim,.s4-note,.s5-label,.s5-head,.s5-anim,.s6-label,.s6-head,.s6-intro,.s6-anim,.s6-note,.s7-label,.s7-head,.s7-anim,.s7-sub,.s7-pill,.s8-label,.s8-head,.s8-anim,.s8-foot,.s9-label,.s9-head,.s9-anim,.s10-label,.s10-head,.s10-anim,.s10-note,.s11-label,.s11-head,.s11-anim,.s12-label,.s12-head,.s12-note,.s12-anim,.s13-head,.s13-list,.s13-q,.s13-sig').forEach(function(el) {
+    slide.querySelectorAll('.s1-badge,.s1-title,.s1-bar,.s1-sub,.s1-tag,.s1-foot,.s2-label,.s2-head,.s2-sub,.s2-row,.s3-label,.s3-head,.s3-anim,.s3-note,.s4-label,.s4-head,.s4-p,.s4-anim,.s4-note,.s5-label,.s5-head,.s5-anim,.s6-label,.s6-head,.s6-intro,.s6-anim,.s6-note,.s7-label,.s7-head,.s7-anim,.s7-sub,.s7-pill,.s8-label,.s8-head,.s8-anim,.s8-foot,.s9-label,.s9-head,.s9-anim,.s10-label,.s10-head,.s10-anim,.s10-note,.s11-label,.s11-head,.s11-anim,.s12-label,.s12-head,.s12-note,.s12-anim,.s13-head,.s13-list,.s13-q,.s13-sig').forEach(function(el) {
       el.style.animation = 'none';
       el.offsetHeight; // force reflow
       el.style.animation = '';
