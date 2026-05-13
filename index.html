@@ -552,16 +552,16 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
 }
 /* VOICE BUTTON */
 .voice-btn {
-  position:absolute; bottom:14px; right:14px; z-index:20;
+  position:fixed; bottom:22px; right:22px; z-index:9999;
   background:#4f46e5; color:#fff; border:none; border-radius:50%;
-  width:38px; height:38px; font-size:17px; cursor:pointer;
-  box-shadow:0 2px 10px rgba(79,70,229,0.35);
+  width:46px; height:46px; font-size:20px; cursor:pointer;
+  box-shadow:0 4px 16px rgba(79,70,229,0.45);
   display:flex; align-items:center; justify-content:center;
   transition:background 0.2s, transform 0.15s;
 }
 .voice-btn:hover { background:#4338ca; transform:scale(1.1); }
 .voice-btn.speaking { background:#dc2626; animation:pulse 1s infinite; }
-@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,0.4)} 50%{box-shadow:0 0 0 8px rgba(220,38,38,0)} }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,0.4)} 50%{box-shadow:0 0 0 10px rgba(220,38,38,0)} }
 </style>
 </head>
 <body>
@@ -585,7 +585,6 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
       <div class="foot s1-foot" data-en="SUBMITTED BY: Zian Technologies LLP, Visakhapatnam &nbsp;|&nbsp; SUBMITTED TO: Government of Andhra Pradesh — Dept. of IT&amp;C / Commerce &amp; Industries" data-te="సమర్పించిన వారు: జియాన్ టెక్నాలజీస్ LLP, విశాఖపట్నం &nbsp;|&nbsp; సమర్పించిన వారికి: ఆంధ్రప్రదేశ్ ప్రభుత్వం — IT&amp;C / వాణిజ్య &amp; పరిశ్రమల శాఖ">SUBMITTED BY: Zian Technologies LLP, Visakhapatnam &nbsp;|&nbsp; SUBMITTED TO: Government of Andhra Pradesh — Dept. of IT&amp;C / Commerce &amp; Industries</div>
     </div>
   </div>
-  <button class="voice-btn" id="vbtn-s1" onclick="speakSlide('s1')" title="Listen">🔊</button>
 </div>
 
 <!-- ═══ SLIDE 2 ═══ -->
@@ -864,6 +863,8 @@ digital commerce income</div></div>
   <div id="prog-bar"></div>
 </div><!-- /stage -->
 
+<button class="voice-btn" id="vbtn-global" onclick="speakCurrentSlide()" title="Listen">🔊</button>
+
 <script>
   var cur = 1, total = 13, lang = 'en';
 
@@ -918,6 +919,12 @@ digital commerce income</div></div>
   });
 
   function go(d) {
+    if (typeof voiceSpeaking !== 'undefined' && voiceSpeaking) {
+      window.speechSynthesis.cancel();
+      voiceSpeaking = false;
+      var gb = document.getElementById('vbtn-global');
+      if (gb) { gb.innerHTML = '🔊'; gb.classList.remove('speaking'); }
+    }
     var n = cur + d;
     if (n > total) n = 1;
     if (n < 1) n = total;
@@ -978,30 +985,34 @@ digital commerce income</div></div>
     }
   };
 
-  var currentVBtn = null;
+  var voiceSpeaking = false;
 
-  function speakSlide(slideId) {
+  function speakCurrentSlide() {
     if (!('speechSynthesis' in window)) { alert('Your browser does not support audio.'); return; }
-    var btn = document.getElementById('vbtn-' + slideId);
-    // If already speaking this slide — stop
-    if (currentVBtn === btn && window.speechSynthesis.speaking) {
+    var btn = document.getElementById('vbtn-global');
+    if (voiceSpeaking) {
       window.speechSynthesis.cancel();
-      if (btn) btn.classList.remove('speaking');
-      currentVBtn = null;
+      voiceSpeaking = false;
+      btn.innerHTML = '🔊';
+      btn.classList.remove('speaking');
       return;
     }
-    window.speechSynthesis.cancel();
-    if (currentVBtn) currentVBtn.classList.remove('speaking');
+    var slideId = 's' + cur;
     var text = slideAudio[slideId] ? slideAudio[slideId][lang] : '';
-    if (!text) return;
+    if (!text) { btn.title = 'No audio for this slide yet'; return; }
+    window.speechSynthesis.cancel();
     var utter = new SpeechSynthesisUtterance(text);
     utter.lang = lang === 'te' ? 'te-IN' : 'en-IN';
     utter.rate = 0.92;
-    if (btn) { btn.classList.add('speaking'); currentVBtn = btn; }
-    utter.onend = function() { if (btn) btn.classList.remove('speaking'); currentVBtn = null; };
-    utter.onerror = function() { if (btn) btn.classList.remove('speaking'); currentVBtn = null; };
+    voiceSpeaking = true;
+    btn.innerHTML = '⏹';
+    btn.classList.add('speaking');
+    utter.onend = function() { voiceSpeaking = false; btn.innerHTML = '🔊'; btn.classList.remove('speaking'); };
+    utter.onerror = function() { voiceSpeaking = false; btn.innerHTML = '🔊'; btn.classList.remove('speaking'); };
     window.speechSynthesis.speak(utter);
   }
+
+  function speakSlide(slideId) { speakCurrentSlide(); }
 </script>
 </body>
 </html>
