@@ -714,7 +714,8 @@ digital commerce income</div></div>
 
   function go(d) {
     var n = cur + d;
-    if (n < 1 || n > total) return;
+    if (n > total) n = 1;
+    if (n < 1) n = total;
     document.getElementById('s' + cur).classList.remove('active');
     cur = n;
     var slide = document.getElementById('s' + cur);
