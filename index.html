@@ -936,13 +936,18 @@ digital commerce income</div></div>
   }
 
   function setLang(l) {
-    if (typeof voiceSpeaking !== 'undefined' && voiceSpeaking) stopVoice();
+    if (typeof voiceSpeaking !== 'undefined' && voiceSpeaking) {
+      window.speechSynthesis.cancel();
+      voiceSpeaking = false;
+      _stopKA();
+    }
     lang = l;
     document.getElementById('btn-en').classList.toggle('active', l === 'en');
     document.getElementById('btn-te').classList.toggle('active', l === 'te');
     document.querySelectorAll('[data-en]').forEach(function(el) {
       el.innerHTML = el.getAttribute('data-' + l);
     });
+    startProgress();
   }
 
   setLang('en');
@@ -1028,7 +1033,7 @@ digital commerce income</div></div>
     }
   };
 
-  // Preload voices immediately to avoid delay
+  // Preload voices immediately — no delay on click
   var _voices = [];
   function _loadVoices() { _voices = window.speechSynthesis.getVoices(); }
   _loadVoices();
@@ -1036,16 +1041,32 @@ digital commerce income</div></div>
     window.speechSynthesis.onvoiceschanged = _loadVoices;
   }
 
+  // KeepAlive — prevents Chrome/Android from stopping audio on volume change
+  var _kaTimer = null;
+  function _startKA() {
+    _stopKA();
+    _kaTimer = setInterval(function() {
+      if (!voiceSpeaking) { _stopKA(); return; }
+      window.speechSynthesis.pause();
+      window.speechSynthesis.resume();
+    }, 8000);
+  }
+  function _stopKA() {
+    if (_kaTimer) { clearInterval(_kaTimer); _kaTimer = null; }
+  }
+
   function getBestVoice(isTE) {
     if (!_voices.length) _voices = window.speechSynthesis.getVoices();
     if (isTE) {
       return _voices.find(function(v){ return v.lang === 'te-IN' || v.lang === 'te'; }) || null;
     }
-    // Male Indian English: Microsoft Ravi first, then exclude known female (Heera), then any en-IN
+    // Male en-IN: Ravi (Windows) → any named male → exclude Heera/female → any en-IN → any en
     var ravi = _voices.find(function(v){ return /ravi/i.test(v.name); });
     if (ravi) return ravi;
-    var maleIN = _voices.find(function(v){ return v.lang === 'en-IN' && !/heera|female/i.test(v.name); });
-    if (maleIN) return maleIN;
+    var namedMale = _voices.find(function(v){ return /male/i.test(v.name) && v.lang.startsWith('en'); });
+    if (namedMale) return namedMale;
+    var nonFemIN = _voices.find(function(v){ return v.lang === 'en-IN' && !/heera|female|woman/i.test(v.name); });
+    if (nonFemIN) return nonFemIN;
     var anyIN = _voices.find(function(v){ return v.lang === 'en-IN'; });
     if (anyIN) return anyIN;
     return _voices.find(function(v){ return v.lang.startsWith('en'); }) || null;
@@ -1056,6 +1077,7 @@ digital commerce income</div></div>
   function stopVoice() {
     window.speechSynthesis.cancel();
     voiceSpeaking = false;
+    _stopKA();
     resumeProgress();
   }
 
@@ -1068,15 +1090,16 @@ digital commerce income</div></div>
     if (!text) return;
     window.speechSynthesis.cancel();
     var utter = new SpeechSynthesisUtterance(text);
-    utter.lang = isTE ? 'te-IN' : 'en-IN';
-    utter.rate = 0.88;
-    utter.pitch = 1;
+    utter.lang  = isTE ? 'te-IN' : 'en-IN';
+    utter.rate  = 0.88;
+    utter.pitch = isTE ? 1 : 0.8;  // lower pitch = deeper/male sound on devices without Ravi
     var v = getBestVoice(isTE);
     if (v) utter.voice = v;
     pauseProgress();
     voiceSpeaking = true;
-    utter.onend   = function() { voiceSpeaking = false; resumeProgress(); };
-    utter.onerror = function() { voiceSpeaking = false; resumeProgress(); };
+    _startKA();
+    utter.onend   = function() { voiceSpeaking = false; _stopKA(); resumeProgress(); };
+    utter.onerror = function() { voiceSpeaking = false; _stopKA(); resumeProgress(); };
     window.speechSynthesis.speak(utter);
   }
 
