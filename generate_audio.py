@@ -11,6 +11,8 @@ scripts = {
     "te_02": "రోజూ Swiggy, Amazon, Flipkart లు AP వినియోగదారుల నుండి 18–35% కమీషన్ తీసుకుంటున్నాయి — AP సొంత భూమిపై జరిగే లావాదేవీల నుండి రాష్ట్రానికి ఒక్క రూపాయి కూడా రావట్లేదు. AP మార్కెట్ సృష్టించింది, AP దగ్గర జనం ఉన్నారు — ఆ డబ్బు కూడా AP కే చెందేలా చేయడానికి జియాన్ టెక్నాలజీస్ LLP ఇక్కడ ఉంది.",
     "en_03": "ONDC is already processing 14 lakh transactions daily across India — and not a single South Indian state has claimed Network Participant status yet, leaving that first-mover advantage open for AP to take today. Zian Technologies LLP has the technical readiness and ONDC expertise to make AP that first mover — immediately.",
     "te_03": "ONDC ఇప్పటికే భారతదేశంలో రోజుకు 14 లక్షల లావాదేవీలు నిర్వహిస్తోంది — ఇంకా ఒక్క దక్షిణ భారత రాష్ట్రం కూడా నెట్‌వర్క్ పార్టిసిపెంట్ హోదా తీసుకోలేదు, ఆ అవకాశం AP కోసం నేటికీ తెరుచుకునే ఉంది. జియాన్ టెక్నాలజీస్ LLP సాంకేతిక సంసిద్ధత మరియు ONDC నైపుణ్యంతో AP ని వెంటనే ఆ స్థానంలో నిలపగలదు.",
+    "en_04": "Just as NPCI owns UPI, Government of AP will own APCS — the state's digital commerce operating system built on ONDC, where AP controls the platform, the data, and the revenue, with Zian Technologies LLP building and running it as appointed TSP.",
+    "te_04": "NPCI UPIని స్వంతం చేసుకున్నట్టే, AP ప్రభుత్వం APCSని స్వంతం చేసుకుంటుంది — ONDC పైన నిర్మించిన రాష్ట్ర డిజిటల్ వాణిజ్య వ్యవస్థ, ప్లాట్‌ఫారమ్, డేటా, ఆదాయం అన్నీ AP వే, జియాన్ టెక్నాలజీస్ LLP నియమిత TSPగా దాన్ని నిర్మించి నడుపుతుంది.",
 }
 
 async def generate(key, text):
