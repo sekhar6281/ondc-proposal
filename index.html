@@ -550,6 +550,18 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
   .cq { font-size:16px; line-height:1.75; padding:14px 18px; }
   .cs { font-size:13px; margin-top:8px; }
 }
+/* VOICE BUTTON */
+.voice-btn {
+  position:absolute; bottom:14px; right:14px; z-index:20;
+  background:#4f46e5; color:#fff; border:none; border-radius:50%;
+  width:38px; height:38px; font-size:17px; cursor:pointer;
+  box-shadow:0 2px 10px rgba(79,70,229,0.35);
+  display:flex; align-items:center; justify-content:center;
+  transition:background 0.2s, transform 0.15s;
+}
+.voice-btn:hover { background:#4338ca; transform:scale(1.1); }
+.voice-btn.speaking { background:#dc2626; animation:pulse 1s infinite; }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,0.4)} 50%{box-shadow:0 0 0 8px rgba(220,38,38,0)} }
 </style>
 </head>
 <body>
@@ -573,6 +585,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:#eef2ff; font-
       <div class="foot s1-foot" data-en="SUBMITTED BY: Zian Technologies LLP, Visakhapatnam &nbsp;|&nbsp; SUBMITTED TO: Government of Andhra Pradesh — Dept. of IT&amp;C / Commerce &amp; Industries" data-te="సమర్పించిన వారు: జియాన్ టెక్నాలజీస్ LLP, విశాఖపట్నం &nbsp;|&nbsp; సమర్పించిన వారికి: ఆంధ్రప్రదేశ్ ప్రభుత్వం — IT&amp;C / వాణిజ్య &amp; పరిశ్రమల శాఖ">SUBMITTED BY: Zian Technologies LLP, Visakhapatnam &nbsp;|&nbsp; SUBMITTED TO: Government of Andhra Pradesh — Dept. of IT&amp;C / Commerce &amp; Industries</div>
     </div>
   </div>
+  <button class="voice-btn" id="vbtn-s1" onclick="speakSlide('s1')" title="Listen">🔊</button>
 </div>
 
 <!-- ═══ SLIDE 2 ═══ -->
@@ -956,6 +969,39 @@ digital commerce income</div></div>
   }, { passive: true });
 
   startProgress();
+
+  /* ── VOICE / AUDIO ── */
+  var slideAudio = {
+    s1: {
+      en: "AP Commerce Stack is Andhra Pradesh's own digital commerce platform — where every order placed, every rupee earned, and every data point generated belongs to the state, not to a private company. Proposed by Zian Technologies LLP, Visakhapatnam — built to make the CM's vision of One Entrepreneur Per One Family a measurable, funded reality.",
+      te: "AP కామర్స్ స్టాక్ అనేది ఆంధ్రప్రదేశ్ సొంత డిజిటల్ వాణిజ్య వేదిక — ఇక్కడ జరిగే ప్రతి ఆర్డర్, సంపాదించిన ప్రతి రూపాయి, తయారైన ప్రతి డేటా రాష్ట్రానిదే, ఏ ప్రైవేట్ కంపెనీదీ కాదు. జియాన్ టెక్నాలజీస్ LLP, విశాఖపట్నం సమర్పించింది — సీఎం ఒక్కో కుటుంబానికి ఒక్కో వ్యాపారవేత్త అనే దార్శనికతను నిజంగా అమలు చేయడానికి."
+    }
+  };
+
+  var currentVBtn = null;
+
+  function speakSlide(slideId) {
+    if (!('speechSynthesis' in window)) { alert('Your browser does not support audio.'); return; }
+    var btn = document.getElementById('vbtn-' + slideId);
+    // If already speaking this slide — stop
+    if (currentVBtn === btn && window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel();
+      if (btn) btn.classList.remove('speaking');
+      currentVBtn = null;
+      return;
+    }
+    window.speechSynthesis.cancel();
+    if (currentVBtn) currentVBtn.classList.remove('speaking');
+    var text = slideAudio[slideId] ? slideAudio[slideId][lang] : '';
+    if (!text) return;
+    var utter = new SpeechSynthesisUtterance(text);
+    utter.lang = lang === 'te' ? 'te-IN' : 'en-IN';
+    utter.rate = 0.92;
+    if (btn) { btn.classList.add('speaking'); currentVBtn = btn; }
+    utter.onend = function() { if (btn) btn.classList.remove('speaking'); currentVBtn = null; };
+    utter.onerror = function() { if (btn) btn.classList.remove('speaking'); currentVBtn = null; };
+    window.speechSynthesis.speak(utter);
+  }
 </script>
 </body>
 </html>
