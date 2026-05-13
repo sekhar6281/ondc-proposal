@@ -937,6 +937,7 @@ digital commerce income</div></div>
 
   function setLang(l) {
     if (typeof voiceSpeaking !== 'undefined' && voiceSpeaking) {
+      if (_audioObj) { _audioObj.pause(); _audioObj.currentTime = 0; _audioObj = null; }
       window.speechSynthesis.cancel();
       voiceSpeaking = false;
       _stopKA();
