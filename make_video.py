@@ -27,73 +27,14 @@ URL    = "http://localhost:3333"
 WIDTH  = 1920
 HEIGHT = 1080
 
-# CSS injected into the page before recording
+# CSS injected into the page before recording — only hide UI controls
 INJECT_CSS = """
-/* Hide all UI controls permanently */
 .voice-btn, .lang-toggle, #prog-bar {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
     pointer-events: none !important;
 }
-
-/* Boost font sizes ~30% for readability */
-#stage .sh h2            { font-size: 20px  !important; }
-#stage .sh h3            { font-size: 50px  !important; }
-#stage .sh p             { font-size: 22px  !important; }
-#stage .cover h1         { font-size: 68px  !important; }
-#stage .cover .sub       { font-size: 24px  !important; }
-#stage .cover .tag       { font-size: 22px  !important; }
-#stage .cover .badge     { font-size: 18px  !important; }
-#stage .cover .foot      { font-size: 18px  !important; }
-#stage .sc2 .n           { font-size: 47px  !important; }
-#stage .sc2 .l           { font-size: 18px  !important; }
-#stage .sc2 .s           { font-size: 17px  !important; }
-#stage .tbl              { font-size: 17px  !important; }
-#stage .tbl th           { font-size: 16px  !important; }
-#stage .note             { font-size: 18px  !important; }
-#stage .lay h4           { font-size: 20px  !important; }
-#stage .lay p            { font-size: 17px  !important; }
-#stage .lay .ln          { font-size: 16px  !important; }
-#stage .arr              { font-size: 21px  !important; }
-#stage .sol-note         { font-size: 18px  !important; }
-#stage .vc .t            { font-size: 20px  !important; }
-#stage .vc .d            { font-size: 17px  !important; }
-#stage .vc .ico          { font-size: 32px  !important; }
-#stage .rc .rn           { font-size: 21px  !important; }
-#stage .rc .rt           { font-size: 20px  !important; }
-#stage .rc .rd           { font-size: 17px  !important; }
-#stage .rc .rl           { font-size: 16px  !important; }
-#stage .rev-intro        { font-size: 20px  !important; }
-#stage .rfoot            { font-size: 18px  !important; }
-#stage .col h4           { font-size: 20px  !important; }
-#stage .col li           { font-size: 18px  !important; }
-#stage .efoot            { font-size: 20px  !important; }
-#stage .pc .pn           { font-size: 34px  !important; }
-#stage .pc .pl           { font-size: 17px  !important; }
-#stage .pc .pu           { font-size: 17px  !important; }
-#stage .pc .pd           { font-size: 16px  !important; }
-#stage .pc .pt           { font-size: 17px  !important; }
-#stage .coh h4           { font-size: 17px  !important; }
-#stage .cpill            { font-size: 20px  !important; }
-#stage .rpt              { font-size: 20px  !important; }
-#stage .rptm             { font-size: 17px  !important; }
-#stage .rpi              { font-size: 16px  !important; }
-#stage .gov-tbl          { font-size: 18px  !important; }
-#stage .gov-tbl th       { font-size: 17px  !important; }
-#stage .gov-note         { font-size: 18px  !important; }
-#stage .pc2 h5           { font-size: 21px  !important; }
-#stage .pc2 p            { font-size: 18px  !important; }
-#stage .asks-note        { font-size: 21px  !important; }
-#stage .an               { font-size: 17px  !important; }
-#stage .at               { font-size: 21px  !important; }
-#stage .aa               { font-size: 18px  !important; }
-#stage .ai               { font-size: 17px  !important; }
-#stage .clos h2          { font-size: 52px  !important; }
-#stage .cbb li           { font-size: 21px  !important; }
-#stage .cq               { font-size: 21px  !important; }
-#stage .cs               { font-size: 18px  !important; }
-#stage .sn               { font-size: 13px  !important; }
 """
 
 
@@ -124,7 +65,7 @@ async def record_visual(lang: str) -> Path:
             }})();
         """)
 
-        # Remove 1.2 scale cap -- fills 1920x1080 fully
+        # Fill 1920x1080 fully — remove the 1.2 cap, use full viewport scale
         await page.evaluate("""
             (function() {
                 var stage = document.getElementById('stage');
@@ -134,6 +75,7 @@ async def record_visual(lang: str) -> Path:
                 stage.style.transformOrigin = 'top left';
                 stage.style.left = ((window.innerWidth  - bw * scale) / 2) + 'px';
                 stage.style.top  = ((window.innerHeight - bh * scale) / 2) + 'px';
+                stage.style.margin = '0';
             })();
         """)
 
